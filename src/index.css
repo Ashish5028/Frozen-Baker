@@ -1,0 +1,8 @@
+.bgImage {
+  /* background-image: url("/src/assets/cake.jpg"); */
+  /* background-repeat: no-repeat; */
+
+  background-color: rgb(238, 208, 138);
+  height: 120vh;
+  /* max-width: 200%; */
+}
