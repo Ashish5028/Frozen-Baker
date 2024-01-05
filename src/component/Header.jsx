@@ -6,7 +6,7 @@ const Header = () => {
       <div className="shadow-md bg-black text-white dark:bg-gray-900 dark:text-white duration-200 ">
         <div className=" mx-10 ">
           <div className="flex ">
-            <div className="text-4xl p-4 text-yellow-600 font-bold font-serif">
+            <div className="  text-4xl py-4 text-yellow-600 font-bold font-serif">
               Baker
             </div>
             <div className="flex items-center mx-52 space-x-6 ">
