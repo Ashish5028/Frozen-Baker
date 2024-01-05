@@ -1,5 +1,5 @@
 import "./App.css";
-import { Header } from "./component/Header";
+import Header from "./component/Header";
 import BoxSize from "./component/boxSize";
 import ImgPage from "./component/imagePage";
 import SimpleSlider from "./component/slider";
@@ -7,7 +7,7 @@ import SimpleSlider from "./component/slider";
 function App() {
   return (
     <>
-      <div className="">
+      <div className=" ">
         <Header />
         <div className=" ">
           <ImgPage></ImgPage>
