@@ -2,7 +2,26 @@
   /* background-image: url("/src/assets/cake.jpg"); */
   /* background-repeat: no-repeat; */
 
-  background-color: rgb(238, 208, 138);
-  height: 120vh;
+  /* background-color: rgb(238, 208, 138); */
+  background-image: url("./assets/carouls-1.jpg");
+  height: 130vh;
+  width: 200vh;
+
   /* max-width: 200%; */
+}
+
+.sec_img {
+  background-image: url("./assets/cake.jpg");
+}
+
+.imgname {
+  background-image: url("./assets/cake.jpg");
+}
+
+.css {
+  width: 100px;
+}
+
+.respo {
+  color: rebeccapurple;
 }

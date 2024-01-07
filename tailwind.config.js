@@ -62,6 +62,7 @@ export default {
         textColor: "#515151",
         cartNumBg: "#e80013",
         primary: "#e6dcde",
+        bgColor: "#eb9e34",
       },
     },
   },
