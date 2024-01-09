@@ -9,8 +9,8 @@ function FooterPage() {
           {FooterData.map((res) => {
             return (
               <>
-                <div className="ml-auto">
-                  <div className="float-left text-white  space-y-3   w-72 h-52 p-2">
+                <div className="">
+                  <div className="float-left text-white  space-y-3  justify-between    h-52 p-2">
                     <p className="text-3xl font-semibold font-serif py-5">
                       {res.heading}
                     </p>

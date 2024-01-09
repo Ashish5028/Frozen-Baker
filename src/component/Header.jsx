@@ -21,13 +21,13 @@ const Header = () => {
                 <Link to="/product">Product</Link>
               </li>
               <li className="text-xs text-white hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-                About Us
+                <Link to="/team"> Our Team</Link>
               </li>
               <li className="text-xs text-white hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-                Service
+                <Link to="/service">Service</Link>
               </li>
               <li className="text-xs text-white hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-                items
+                <Link to="/items">items</Link>
               </li>
             </ul>
           </div>
@@ -66,4 +66,4 @@ const Header = () => {
   );
 };
 
-export { Header };
+export default Header;

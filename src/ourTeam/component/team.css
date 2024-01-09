@@ -1,0 +1,11 @@
+.bgSize {
+  background-color: #1e1916;
+  height: 75vh;
+  /* margin-top: 128px; */
+}
+
+.Card {
+  height: 60vh;
+  background-color: hsl(0, 0%, 100%);
+}
+/* 

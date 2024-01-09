@@ -1,4 +1,4 @@
-import { Header } from "./Header";
+import Header from "./Header";
 import Card from "./card";
 import { FooterPage } from "./footerPage";
 import SimpleSlider from "./slider";
@@ -10,6 +10,7 @@ export default function HomePage() {
         <Header />
         <div className="">
           <SimpleSlider />
+          <Card />
           <Card />
         </div>
       </div>
