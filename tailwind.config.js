@@ -63,6 +63,8 @@ export default {
         cartNumBg: "#e80013",
         primary: "#e6dcde",
         bgColor: "#eb9e34",
+        cardbgColor: "#ffffff",
+        cardColor: "#f4e9da",
       },
     },
   },

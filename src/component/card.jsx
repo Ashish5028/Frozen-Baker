@@ -4,7 +4,17 @@ import cake from "../assets/cake.jpg";
 export default function Card() {
   return (
     <>
-      <div className=" ml-auto pl-32  space-x-7 p-10 ">
+      <div className="Card flex justify-between p-20 ">
+        <div className=" h-64 w-72 bg-cardColor rounded-md  transition ease-out delay-150 hover:duration-500  hover:shadow-xl hover:-translate-y-2 hover:bg-cardbgColor"></div>
+        <div className=" h-64 w-72 bg-cardColor rounded-md  transition ease-out delay-150  hover:duration-500  hover:shadow-xl hover:-translate-y-2 hover:bg-cardbgColor"></div>
+        <div className="h-64 w-72 bg-cardColor rounded-md  transition ease-out delay-150  hover:duration-500 hover:shadow-xl hover:-translate-y-2 hover:bg-cardbgColor"></div>
+        <div className="h-64 w-72 bg-cardColor rounded-md  transition ease-out delay-150  hover:duration-500 hover:shadow-xl hover:-translate-y-2 hover:bg-cardbgColor"></div>
+      </div>
+    </>
+  );
+}
+
+/*  <div className=" ml-auto pl-32  space-x-7 p-10 ">
         {Data.map((res) => {
           return (
             <div className="float-left border   bg-slate-200 rounded-md w-72  items-center  ">
@@ -17,7 +27,7 @@ export default function Card() {
               <p className="text-center items-center justify-center">
                 {res.year}
               </p>
-              <img src={cake} className="rounded-md " />
+              <p>{res.group}</p>
             </div>
           );
         })}
@@ -25,6 +35,4 @@ export default function Card() {
         <br />
         <br />
       </div>
-    </>
-  );
-}
+      */

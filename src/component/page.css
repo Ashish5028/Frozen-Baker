@@ -1,4 +1,32 @@
 .bgSize {
   background-color: #1e1916;
   height: 75vh;
+  /* margin-top: 128px; */
+}
+
+.Card {
+  height: 60vh;
+  background-color: hsl(0, 0%, 100%);
+}
+/* 
+.CardDiv {
+  background-color: rebeccapurple;
+  width: 300px;
+  transition:
+    width 2s,
+    height 3s;
+} */
+
+.CardDiv:hover {
+  /* width: 310px; */
+  /* height: 300px; */
+  /* transition: ease-out;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  transition:
+    width 2s,
+    height 3s;
+  box-shadow: 10px;
+  transition-duration: 3ms; */
+  /* transition-duration: 5ms; */
 }

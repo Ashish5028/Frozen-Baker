@@ -14,19 +14,28 @@ export default function FooterPage() {
                     <p className="text-3xl font-semibold font-serif py-5">
                       {res.heading}
                     </p>
-                    <p className="transition ease-out delay-75  hover:translate-x-3 hover:text-yellow-600 duration-300 cursor-pointer">
-                      {res.add}
-                    </p>
-                    <p className="transition ease-out delay-75   hover:translate-x-3 hover:text-yellow-600 duration-300 cursor-pointer">
-                      {res.call}
-                    </p>
-                    <p className="transition ease-out delay-75   hover:translate-x-3 hover:text-yellow-600 duration-300 cursor-pointer">
-                      {res.email}
-                    </p>
-                    <p className="transition ease-out delay-75   hover:translate-x-3 hover:text-yellow-600 duration-300 cursor-pointer">
+                    <div className="flex space-x-2">
+                      <p>{res.location}</p>
+                      <p className="transition ease-out delay-75  hover:translate-x-3 hover:text-yellow-600 duration-300 cursor-pointer">
+                        {res.add}
+                      </p>
+                    </div>
+                    <div className="flex space-x-2">
+                      <p>{res.calls}</p>
+                      <p className="transition ease-out delay-75   hover:translate-x-3 hover:text-yellow-600 duration-300 cursor-pointer">
+                        {res.call}
+                      </p>
+                    </div>
+                    <div className="flex space-x-2">
+                      <p>{res.mail}</p>
+                      <p className="transition ease-out delay-75   hover:translate-x-3 hover:text-yellow-600 duration-300 cursor-pointer">
+                        {res.email}
+                      </p>
+                    </div>
+                    <p className="transition ease-out delay-75 pl-2  hover:translate-x-3 hover:text-yellow-600 duration-300 cursor-pointer">
                       {res.support}
                     </p>
-                    <p className="transition ease-out delay-75   hover:translate-x-3 hover:text-yellow-600 duration-300 cursor-pointer">
+                    <p className="transition ease-out delay-75  pl-2 hover:translate-x-3 hover:text-yellow-600 duration-300 cursor-pointer">
                       {res.term}
                     </p>
                     <div className="flex space-x-5 pt-5 ">
@@ -60,7 +69,7 @@ export default function FooterPage() {
             <span className="text-yellow-400 ">Your Site Name</span>, All Right
             Reserved
           </p>
-          <p className="justify-items-end text-yellow-500">
+          <p className="justify-items-end text-yellow-500 cursor-pointer hover:text-yellow-700">
             Develope By Developer
           </p>
         </div>
