@@ -1,7 +1,7 @@
 import { FooterData } from "./data";
 import "./page.css";
 import cake from "../assets/cake.jpg";
-export default function FooterPage() {
+function FooterPage() {
   return (
     <>
       <div className="bgSize ">
@@ -62,7 +62,7 @@ export default function FooterPage() {
         <br />
         <br />
         <br />
-        <br />
+        {/* <br /> */}
         <div className=" bg-black h-32  text-white flex justify-between px-10 py-10">
           <p className="">
             <span className="px-1">@</span>
@@ -72,14 +72,10 @@ export default function FooterPage() {
           <p className="justify-items-end text-yellow-500 cursor-pointer hover:text-yellow-700">
             Develope By Developer
           </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam cum
-            reprehenderit dolore veniam blanditiis vero velit culpa, modi minus
-            esse nesciunt nisi. Vero voluptate molestias laborum aut accusantium
-            magni eos.
-          </p>
         </div>
       </div>
     </>
   );
 }
+
+export { FooterPage };
