@@ -72,6 +72,12 @@ export default function FooterPage() {
           <p className="justify-items-end text-yellow-500 cursor-pointer hover:text-yellow-700">
             Develope By Developer
           </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam cum
+            reprehenderit dolore veniam blanditiis vero velit culpa, modi minus
+            esse nesciunt nisi. Vero voluptate molestias laborum aut accusantium
+            magni eos.
+          </p>
         </div>
       </div>
     </>
