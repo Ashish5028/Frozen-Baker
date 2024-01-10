@@ -4,6 +4,9 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      backgroundImage: (theme) => ({
+        cake: "url(/src/assets/cake.jpg)",
+      }),
       colors: {
         primary: "#ffc001",
         secondary: "#ff9c01",

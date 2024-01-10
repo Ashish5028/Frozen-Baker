@@ -15,7 +15,7 @@ const Header = () => {
           <div className=" flex  gap-4">
             <ul className="flex items-center justify-center gap-5 ">
               <li className="text-xs text-white hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-                Home
+                <Link to="/"> Home</Link>
               </li>
               <li className="text-xs text-white hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
                 <Link to="/product">Product</Link>
@@ -27,7 +27,7 @@ const Header = () => {
                 <Link to="/service">Service</Link>
               </li>
               <li className="text-xs text-white hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-                <Link to="/items">items</Link>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </div>
