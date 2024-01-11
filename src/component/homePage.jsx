@@ -1,3 +1,4 @@
+import Team from "../ourTeam/component/team";
 import Header from "./Header";
 import Card from "./card";
 import { FooterPage } from "./footerPage";
@@ -11,7 +12,7 @@ export default function HomePage() {
         <div className="">
           <SimpleSlider />
           <Card />
-          <Card />
+          <Team />
         </div>
       </div>
       <br />
