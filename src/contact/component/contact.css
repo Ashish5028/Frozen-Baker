@@ -1,8 +1,10 @@
 .bgImagess {
-  height: 60vh;
-  margin-top: 100px;
-  background-attachment: scroll;
-  background-image: url("/src/assets/carouls-1.jpg");
+  margin-top: 20px;
+  background-repeat: no-repeat;
+  height: 100vh;
+  /* background: local; */
+  background-position-x: center;
+  background-image: url("/src/assets/pixle.jpg");
 
   /* background-color: blueviolet; */
 }
