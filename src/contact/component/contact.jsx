@@ -7,20 +7,17 @@ import cake from "/src/assets/cake.jpg";
 const ContactPage = () => {
   return (
     <>
-      <div className="bgImagess w-screen  ">
-        {/* <img src={carouls}></img> */}
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem a,
-          delectus atque repellendus accusantium unde sunt laudantium
-          consectetur quibusdam provident iste quam suscipit possimus voluptates
-          quaerat explicabo eos dolorem corporis?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem a,
-          delectus atque repellendus accusantium unde sunt laudantium
-          consectetur quibusdam provident iste quam suscipit possimus voluptates
-          quaerat explicabo eos dolorem corporis?
-        </p>
+      <div className=" bg-yellow-300 h-screen space-y-3 ">
+        <div className="  p-20 space-y-2 ">
+          <div className="h-72  bg-pink-400 rounded-md  transition ease-out delay-150 hover:duration-500  hover:shadow-xl hover:-translate-y-2 hover:bg-cardbgColor">
+            <p>welcome to ContactPage</p>
+            <p>Contact Us</p>
+          </div>
+          <div className=" bg-pink-400 rounded-md  transition ease-out delay-150 hover:duration-500  hover:shadow-xl hover:-translate-y-2 hover:bg-cardbgColor">
+            <p>welcome to ContactPage</p>
+            <p>Contact Us</p>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -68,6 +68,7 @@ export default {
         bgColor: "#eb9e34",
         cardbgColor: "#ffffff",
         cardColor: "#f4e9da",
+        conColor: "#fc466b",
       },
     },
   },
