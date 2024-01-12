@@ -27,6 +27,12 @@ export default function ProdctPage() {
 
   return (
     <div>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam
+        facilis quaerat dolorum, beatae quas suscipit necessitatibus ipsum amet
+        voluptatem dignissimos dolores pariatur iure maiores sint consequuntur,
+        nostrum ullam fuga excepturi!
+      </p>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={10}
