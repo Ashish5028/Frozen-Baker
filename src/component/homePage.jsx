@@ -1,4 +1,4 @@
-import Header from "./Header";
+import { Header } from "./Header.jsx";
 import Card from "./card";
 import { FooterPage } from "./footerPage";
 import SimpleSlider from "./slider";

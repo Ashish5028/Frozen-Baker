@@ -1,10 +1,18 @@
 .bgImagess {
-  margin-top: 20px;
-  background-repeat: no-repeat;
-  height: 100vh;
-  /* background: local; */
-  background-position-x: center;
   background-image: url("/src/assets/pixle.jpg");
 
-  /* background-color: blueviolet; */
+  height: 30vh;
+}
+
+apple {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 100px;
+  left: o;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  transition: 0.5s;
 }

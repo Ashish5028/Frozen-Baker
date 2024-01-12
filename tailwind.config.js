@@ -61,7 +61,7 @@ export default {
         "2xl": "1536px",
       },
       colors: {
-        headingColor: "#2e2e2e",
+        headingColor: "#f5b342",
         textColor: "#515151",
         cartNumBg: "#e80013",
         primary: "#e6dcde",
@@ -69,6 +69,8 @@ export default {
         cardbgColor: "#ffffff",
         cardColor: "#f4e9da",
         conColor: "#fc466b",
+
+        navBar: "#1e1916",
       },
     },
   },
