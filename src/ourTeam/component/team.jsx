@@ -3,6 +3,11 @@ import "./team.css";
 export default function Team() {
   return (
     <>
+      <div className="text-center ">
+        <h1 className="text-bgColor"> // OUR TEAM</h1>
+        <br />
+        <p className="text-3xl"> We're Super Professional At Our Skills </p>
+      </div>
       <div className=" flex justify-between p-20 ">
         <div className="  w-72 bg-cardColor   transition ease-out delay-150 hover:duration-500  hover:shadow-xl hover:-translate-y-3   hover:bg-cardbgColor">
           <img src="team-1.jpg" alt="" className="rounded-t-md" />
