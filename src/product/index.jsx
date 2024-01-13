@@ -1,4 +1,4 @@
-import ProductPage from "./components/productPage";
+import ProductPage from "./components/productPage.jsx";
 
 export default function ProductIndex() {
   return (

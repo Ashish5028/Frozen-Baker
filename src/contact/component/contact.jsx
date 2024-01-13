@@ -3,6 +3,7 @@ import ImgPage from "../../component/imagePage";
 import "./contact.css";
 import carouls from "/src/assets/carouls-1.jpg";
 import cake from "/src/assets/cake.jpg";
+import { LocationPage } from "./location.jsx";
 // bg-[url('/src/assets/carouls-1.jpg')]
 function ContactPage() {
   return (
@@ -47,11 +48,15 @@ function ContactPage() {
               className="w-full mt-3 border border-zinc-400   rounded-md outline-rose-300"
               rows={10}
             ></textarea>
-            <button className="rounded-full px-8 py-4 mt-4 text-white bg-bgColor">
+            <button
+              className="rounded-full px-8 py-4 mt-4 text-white bg-bgColor"
+              onClick={() => {}}
+            >
               Send Message
             </button>
           </div>
         </div>
+        {/* <LocationPage /> */}
       </div>
     </>
   );
