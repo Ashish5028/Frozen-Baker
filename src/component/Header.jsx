@@ -1,9 +1,12 @@
+import React from "react";
 import AddIcCallIcon from "@mui/icons-material/AddIcCall";
 import { Link } from "react-router-dom";
+import PersonIcon from "@mui/icons-material/Person";
+import PersonPinIcon from "@mui/icons-material/PersonPin";
 export function Header() {
   return (
     <>
-      <div className="fixed z-20  w-screen p-6 bg-navBar">
+      <div className="fixed z-20  w-screen p-3 bg-navBar">
         {/* laptop */}
         <div className="hidden md:flex w-full items-start-center justify-between">
           <div className="flex item-center gap-2">
@@ -30,9 +33,15 @@ export function Header() {
               </li>
             </ul>
           </div>
-          <div className="relative flex items-center justify-center text-yellow-200 pr-6 cursor-pointer">
+          <div className="relative flex items-center  text-yellow-300 pr-6 cursor-pointer">
             <AddIcCallIcon />
-            <span className="text-sm text-white "> +911234567892</span>
+            <span className="text-sm text-white pr-2"> +911234567892</span>
+            <Link to="/signUp">
+              <PersonPinIcon
+                fontSize="large"
+                className="items-center justify-center bottom-3 "
+              />
+            </Link>
           </div>
         </div>
 

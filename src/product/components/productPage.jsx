@@ -1,45 +1,19 @@
 import React from "react";
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-
-const libraries = ["places"];
-const mapContainerStyle = {
-  width: "100vw",
-  height: "100vh",
-};
-const center = {
-  lat: 7.2905715, // default latitude
-  lng: 80.6337262, // default longitude
-};
-
+import "./product.css";
 export default function ProdctPage() {
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "",
-    libraries,
-  });
-
-  if (loadError) {
-    return <div>Error loading maps</div>;
-  }
-
-  if (!isLoaded) {
-    return <div>Loading maps</div>;
-  }
-
   return (
     <div>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam
-        facilis quaerat dolorum, beatae quas suscipit necessitatibus ipsum amet
-        voluptatem dignissimos dolores pariatur iure maiores sint consequuntur,
-        nostrum ullam fuga excepturi!
-      </p>
-      <GoogleMap
-        mapContainerStyle={mapContainerStyle}
-        zoom={10}
-        center={center}
-      >
-        <Marker position={center} />
-      </GoogleMap>
+      {/* <Header /> */}
+      <div className="items-center justify-items-center">
+        <span>Product</span>
+      </div>
+      <div className=" bg-zinc-100 shadow-lg p-3 ">
+        <div className=" flex  space-x-4 px-10 ">
+          <span className="text-sm  cursor-pointer">Flavour</span>
+          <span className="text-sm  cursor-pointer">Catogery</span>
+          <span className="text-sm  cursor-pointer">Dessert</span>
+        </div>
+      </div>
     </div>
   );
 }
