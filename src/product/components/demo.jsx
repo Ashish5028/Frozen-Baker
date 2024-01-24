@@ -3,6 +3,8 @@ import axios from "axios";
 function DemoPage() {
   const [file, setFile] = useState("");
   const [image, setImage] = useState("");
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
 
   function previewFile(file) {
     const reader = new FileReader();
@@ -27,10 +29,10 @@ function DemoPage() {
   const uploadImage = async (base64EncodedImage) => {
     console.log(base64EncodedImage);
     try {
-      await fetch("http://localhost:3007/api/upload/image", {
+      await fetch("http://localhost:3001/api/upload/image", {
         method: "POST",
         mode: "cors",
-        body: JSON.stringify({ data: base64EncodedImage }),
+        body: JSON.stringify({ data: base64EncodedImage, name, price }),
         headers: { "Content-type": "application/json" },
       });
     } catch (error) {
@@ -39,8 +41,27 @@ function DemoPage() {
   };
   return (
     <>
-      <div className=" ">
-        <form onSubmit={(e) => handleSubmit(e)} className="">
+      <div className="container  bg-zinc-300">
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <input
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+            name="name"
+            type="text"
+            required
+            className="rounded-md  w-72  py-1 outline-none pl-2 shadow-sm mt-2"
+          />
+          <input
+            onChange={(e) => {
+              setPrice(e.target.value);
+            }}
+            name="price"
+            type="number"
+            required
+            className="rounded-md w-72 py-1 outline-none pl-2 shadow-sm mt-2"
+          />
+
           <div className="mb-3">
             <br />
             <input
