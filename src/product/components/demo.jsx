@@ -39,22 +39,83 @@ function DemoPage() {
   };
   return (
     <>
-      <div className="container  bg-zinc-300">
-        <form onSubmit={(e) => handleSubmit(e)}>
+      <div className=" ">
+        <form onSubmit={(e) => handleSubmit(e)} className="">
+          <div class="mb-4">
+            <label
+              for="name"
+              class="block text-gray-600 text-sm font-medium mb-2"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+              value={name}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div class="mb-4">
+            <label
+              for="price"
+              class="block text-gray-600 text-sm font-medium mb-2"
+            >
+              Price
+            </label>
+            <input
+              type="phone"
+              id="price"
+              name="price"
+              value={price}
+              onChange={handleChange}
+              class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              for="email"
+              class="block text-gray-600 text-sm font-medium mb-2"
+            >
+              Image
+            </label>
+          </div>
+          <div class="mb-6">
+            <label
+              for="message"
+              class="block text-gray-600 text-sm font-medium mb-2"
+            >
+              About
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={message}
+              onChange={handleChange}
+              rows="4"
+              class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
+          >
+            Add +
+          </button>
+
           <div className="mb-3">
-            <span>Image</span>
             <br />
             <input
               type="file"
               // value={() => fileInputState}
               onChange={(e) => handleChange(e)}
               accept="image/png,image/jpg,image/jpeg"
+              className=""
             />
           </div>
-
-          <button type="submit" className="p-2 bg-indigo-400 rounded-lg">
-            Submit
-          </button>
         </form>
         <div>
           <img src={image}></img>

@@ -5,7 +5,7 @@ export default function ProductIndex() {
   return (
     <>
       {/* <ProductPage /> */}
-      <DemoPage />
+      {/* <DemoPage /> */}
       <ProductPage />
       {/* <div className="items-center justify-items-center">
         <h1>Product</h1>
