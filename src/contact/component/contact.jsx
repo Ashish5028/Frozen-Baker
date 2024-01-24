@@ -30,18 +30,18 @@ function ContactPage() {
             <div className="flex space-x-2 my-3">
               <input
                 type="text"
-                placeholder="Your Name"
+                placeholder="First Name"
                 className="w-full p-3 border border-zinc-400 rounded-md outline-rose-300 "
               ></input>
               <input
                 type="email"
-                placeholder="Your Email"
+                placeholder="Last Name"
                 className="w-full p-3 border border-zinc-400 rounded-md outline-rose-300   "
               ></input>
             </div>
             <input
               type="text"
-              placeholder="Your Name"
+              placeholder="Email"
               className="p-3 border w-full  border-zinc-400 rounded-md outline-rose-300 "
             ></input>
             <textarea
