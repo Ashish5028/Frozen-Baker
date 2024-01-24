@@ -5,8 +5,9 @@ import ContactIndex from "../contact";
 import ProductIndex from "../product";
 import UserIndex from "../user";
 import HeaderIndex from "../header";
-import { FillFom } from "../admin/component/fillform";
+
 import ServicePage from "../service";
+import AdminIndex from "../admin";
 
 export default function AppRoutes() {
   return (
@@ -19,7 +20,7 @@ export default function AppRoutes() {
           <Route path="/contact" element={<ContactIndex />}></Route>
           <Route path="/product" element={<ProductIndex />}></Route>
           <Route path="/register" element={<UserIndex />}></Route>
-          <Route path="/form" element={<FillFom />}></Route>
+          <Route path="/form" element={<AdminIndex />}></Route>
           <Route path="service" element={<ServicePage />}></Route>
         </Routes>
       </BrowserRouter>

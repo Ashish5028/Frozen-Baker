@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-function DemoPage() {
+function AdminPage() {
   const [file, setFile] = useState("");
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
@@ -72,6 +72,7 @@ function DemoPage() {
               className=""
             />
           </div>
+          <button type="submit">submit</button>
         </form>
         <div>
           <img src={image}></img>
@@ -81,4 +82,4 @@ function DemoPage() {
   );
 }
 
-export { DemoPage };
+export { AdminPage };
