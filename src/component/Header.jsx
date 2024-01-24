@@ -51,7 +51,7 @@ export function Header() {
             {/* <img src={bakery} className="w-5 h-6" alt="bakery" /> */}
 
             <p className="text-headingColor text-xl font-semibold  font-serif">
-              <span className="px-1">Frozen</span>Baker
+              <span className="px-1">Frozen </span>Baker
             </p>
           </div>
           <ul className="flex items-center ml-auto gap-4 ">

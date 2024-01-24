@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import AddIcCallIcon from "@mui/icons-material/AddIcCall";
 import PersonPinIcon from "@mui/icons-material/PersonPin";
-import cake from "/home/ashish-singh/Documents/Baker/BakerUI/src/assets/baker.png";
+import cake from "../../assets/baker.png";
 import { Link } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";

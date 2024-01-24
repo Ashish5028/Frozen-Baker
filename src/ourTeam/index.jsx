@@ -6,7 +6,7 @@ import { Header } from "../component/Header.jsx";
 export const TeamIndex = () => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <br />
       <br />
       <br />

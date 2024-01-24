@@ -1,4 +1,4 @@
-import cake from "/home/ashish-singh/Documents/Baker/BakerUI/src/assets/baker.png";
+import cake from "../../assets/baker.png";
 
 export default function UserRegister() {
   return (

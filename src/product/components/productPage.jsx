@@ -5,10 +5,10 @@ import ProductItem from "../productItem";
 import { Header } from "../../component/Header";
 import { FooterPage } from "../../component/footerPage";
 import Card from "../../component/card";
+import HeaderIndex from "../../header";
 export default function ProdctPage() {
   return (
     <>
-      <Header />
       <br />
       <Card />
       <br />

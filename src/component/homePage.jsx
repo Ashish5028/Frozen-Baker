@@ -8,7 +8,6 @@ export default function HomePage() {
   return (
     <>
       <div className=" ">
-        <HeaderIndex />
         <div className="">
           <SimpleSlider />
           <Card />
