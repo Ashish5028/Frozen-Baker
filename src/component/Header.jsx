@@ -36,7 +36,7 @@ export function Header() {
           <div className="relative flex items-center  text-yellow-300 pr-6 cursor-pointer">
             <AddIcCallIcon />
             <span className="text-sm text-white pr-2"> +911234567892</span>
-            <Link to="/signUp">
+            <Link to="/register">
               <PersonPinIcon
                 fontSize="large"
                 className="items-center justify-center bottom-3 "
@@ -51,7 +51,7 @@ export function Header() {
             {/* <img src={bakery} className="w-5 h-6" alt="bakery" /> */}
 
             <p className="text-headingColor text-xl font-semibold  font-serif">
-              <span className="px-1">Frozen</span>Baker
+              <span className="px-1">Frozen </span>Baker
             </p>
           </div>
           <ul className="flex items-center ml-auto gap-4 ">
