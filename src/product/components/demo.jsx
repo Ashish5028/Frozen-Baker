@@ -63,19 +63,15 @@ function DemoPage() {
           />
 
           <div className="mb-3">
-            <span>Image</span>
             <br />
             <input
               type="file"
               // value={() => fileInputState}
               onChange={(e) => handleChange(e)}
               accept="image/png,image/jpg,image/jpeg"
+              className=""
             />
           </div>
-
-          <button type="submit" className="p-2 bg-indigo-400 rounded-lg">
-            Submit
-          </button>
         </form>
         <div>
           <img src={image}></img>
