@@ -1,8 +1,11 @@
+import { DemoPage } from "./components/demo.jsx";
 import ProductPage from "./components/productPage.jsx";
 
 export default function ProductIndex() {
   return (
     <>
+      {/* <ProductPage /> */}
+      <DemoPage />
       <ProductPage />
       {/* <div className="items-center justify-items-center">
         <h1>Product</h1>
