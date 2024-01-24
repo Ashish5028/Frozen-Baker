@@ -14,7 +14,8 @@ export default function AppRoutes() {
           <Route path="/team" element={<TeamIndex />}></Route>
           <Route path="/contact" element={<ContactIndex />}></Route>
           <Route path="/product" element={<ProductIndex />}></Route>
-          <Route path="/signUp" element={<UserIndex />}></Route>
+          <Route path="/register" element={<UserIndex />}></Route>
+          <Route path=""></Route>
         </Routes>
       </BrowserRouter>
     </>

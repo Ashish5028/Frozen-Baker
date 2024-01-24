@@ -1,9 +1,9 @@
-import UserSignUp from "./components/signUp";
-
+import UserRegister from "./components/signUp";
+import AdminPage from "./components/admin";
 export default function UserIndex() {
   return (
     <>
-      <UserSignUp />
+      <UserRegister />
     </>
   );
 }

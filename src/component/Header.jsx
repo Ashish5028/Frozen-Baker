@@ -36,7 +36,7 @@ export function Header() {
           <div className="relative flex items-center  text-yellow-300 pr-6 cursor-pointer">
             <AddIcCallIcon />
             <span className="text-sm text-white pr-2"> +911234567892</span>
-            <Link to="/signUp">
+            <Link to="/register">
               <PersonPinIcon
                 fontSize="large"
                 className="items-center justify-center bottom-3 "
