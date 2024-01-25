@@ -5,6 +5,7 @@ import cake from "../../assets/baker.png";
 import { Link } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import MenuItems from "./menuItems";
 
 const navigation = [
   { name: "Home", href: "/", current: false },
@@ -49,23 +50,7 @@ function HeaderPage() {
                   </p>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-yellow-700 text-white sticky top-0"
-                            : "text-white  hover:text-headingColor ",
-                          "rounded-md px-4 py-2 text-sm font-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
+                  <MenuItems />
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
