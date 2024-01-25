@@ -1,0 +1,7 @@
+.Product {
+  /* background-color: aquamarine; */
+  color: rgb(223, 223, 79);
+  /* justify-content: space-between; */
+  flex-direction: row;
+  margin-left: 10px;
+}
