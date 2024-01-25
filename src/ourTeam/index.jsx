@@ -7,13 +7,7 @@ import HeaderIndex from "../header/index.jsx";
 export const TeamIndex = () => {
   return (
     <div>
-      {/* <Header /> */}
-      <br />
-      <br />
-      <br />
-      <br />
       <Team />
-      <FooterPage />
     </div>
   );
 };

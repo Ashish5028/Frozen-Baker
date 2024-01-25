@@ -7,7 +7,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
+  { name: "Home", href: "/", current: false },
   { name: "Team", href: "Team", current: false },
   { name: "Product", href: "product", current: false },
   { name: "Our Team", href: "team", current: false },
@@ -18,13 +18,13 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function HeaderPage() {
+function HeaderPage() {
   return (
     <Disclosure as="nav" className="bg-navBar">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-1">
-            <div className="relative flex h-16 items-center justify-between">
+            <div className="relative flex py-3 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -56,8 +56,8 @@ export default function HeaderPage() {
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-yellow-700 text-white"
-                            : "text-white  hover:text-headingColor",
+                            ? "bg-yellow-700 text-white sticky top-0"
+                            : "text-white  hover:text-headingColor ",
                           "rounded-md px-4 py-2 text-sm font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
@@ -96,56 +96,54 @@ export default function HeaderPage() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-10 mt-4 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="absolute right-0 z-10 mt-4 w-44  text-center origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <p
                             className={classNames(
                               active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
+                              "block px-4 py-2 text-sm text-gray-700 hover:text-headingColor"
                             )}
                           >
                             <Link to="/form"> Admin</Link>
-                          </a>
+                          </p>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="/"
                             className={classNames(
                               active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
+                              "block px-4 py-2 text-sm text-gray-700 hover:text-headingColor"
                             )}
                           >
-                            <Link to="#"> User</Link>
+                            <Link to="signUp"> User</Link>
                           </a>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <p
                             className={classNames(
                               active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
+                              "block px-4 py-2 text-sm text-gray-700 hover:text-headingColor"
                             )}
                           >
-                            Settings
-                          </a>
+                            <Link to="setting">Settings</Link>
+                          </p>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="/"
                             className={classNames(
                               active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
+                              "block px-4 py-2 text-sm text-gray-700 hover:text-headingColor"
                             )}
                           >
-                            Sign out
+                            <Link to="signUp"> Sign out</Link>
                           </a>
                         )}
                       </Menu.Item>
@@ -181,3 +179,5 @@ export default function HeaderPage() {
     </Disclosure>
   );
 }
+
+export default HeaderPage;

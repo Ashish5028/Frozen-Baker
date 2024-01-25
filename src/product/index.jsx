@@ -1,7 +1,11 @@
+import { ProductPage } from "./components/productPage";
+
 export default function ProductIndex() {
   return (
     <>
-      <div></div>
+      <div>
+        <ProductPage />
+      </div>
     </>
   );
 }

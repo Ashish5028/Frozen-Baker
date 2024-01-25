@@ -2,8 +2,6 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import cake from "../assets/cake.jpg";
-import baker from "../assets/baker.png";
 import ImgPage from "./imagePage";
 export default function SimpleSlider() {
   var settings = {

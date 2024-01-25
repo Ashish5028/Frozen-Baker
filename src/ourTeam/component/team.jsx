@@ -38,19 +38,6 @@ export default function Team() {
           </div>
         </div>
       </div>
-
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae corporis
-        laborum magnam eum illum, blanditiis ullam perspiciatis voluptate
-        recusandae nemo doloremque sint, rerum quia placeat, saepe temporibus
-        omnis quaerat voluptatibus.
-      </p>
-      <span className="spans">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima
-        corrupti repudiandae ullam hic quo, illum sequi provident doloremque
-        fugiat non, facilis officiis labore ex consequatur delectus voluptatum
-        neque porro esse!gfh
-      </span>
     </>
   );
 }
