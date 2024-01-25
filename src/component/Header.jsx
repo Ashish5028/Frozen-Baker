@@ -11,7 +11,7 @@ export function Header() {
         <div className="hidden md:flex w-full items-start-center justify-between">
           <div className="flex item-center gap-2">
             <p className="text-yellow-500 text-3xl font-bold  font-serif">
-              <span className="px-1 ">Frozen</span>Baker
+              <span className="pelitrx-1 ">Frozen</span>Baker
             </p>
           </div>
           <div className=" flex  gap-4">

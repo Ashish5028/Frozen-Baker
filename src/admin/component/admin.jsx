@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { FooterPage } from "../../component/footerPage";
 import "./style.css";
+import AboutPage from "../../component/aboutPage";
 function AdminPage() {
   const [file, setFile] = useState("");
   const [image, setImage] = useState("");
@@ -105,6 +106,7 @@ function AdminPage() {
           ></img>
         </div>
       </div>
+      <AboutPage />
     </>
   );
 }
