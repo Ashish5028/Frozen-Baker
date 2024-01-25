@@ -5,7 +5,7 @@ import about from "../../assets/about.jpg";
 export default function ImagePage() {
   return (
     <>
-      <div className=" relative h-full mx-4 ">
+      <div className=" relative h-full mx-10  ">
         <div className=" absolute left-10 top-10 h-72 w-56 rounded-md ">
           <img src={down} alt="" className="rounded-md" />
         </div>
