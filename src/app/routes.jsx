@@ -4,11 +4,10 @@ import ContactIndex from "../contact";
 import ProductIndex from "../product";
 import UserIndex from "../user";
 import HeaderIndex from "../header";
-import { FooterPage } from "../component/footerPage";
+import { HomeIndex } from "../homePage/index";
+// import { FooterPage } from "../component/footerPage";
 import ServicePage from "../service";
 import AdminIndex from "../admin";
-import HomeIndex from "../homePage";
-import HomePages from "../homePage/component/homePage";
 
 function AppRoutes() {
   return (
@@ -16,7 +15,7 @@ function AppRoutes() {
       <BrowserRouter>
         <HeaderIndex />
         <Routes>
-          <Route path="/" element={<HomePages />}></Route>
+          <Route path="/" element={<HomeIndex />}></Route>
           <Route path="/team" element={<TeamIndex />}></Route>
           <Route path="/contact" element={<ContactIndex />}></Route>
           <Route path="/product" element={<ProductIndex />}></Route>
@@ -26,7 +25,7 @@ function AppRoutes() {
           <Route path="/signUp" element={<UserIndex />}></Route>
           <Route path="setting" element={<HomeIndex />}></Route>
         </Routes>
-        <FooterPage />
+        {/* <FooterPage /> */}
       </BrowserRouter>
     </>
   );

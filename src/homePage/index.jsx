@@ -1,9 +1,9 @@
 import MainPage from "./component/homePage";
 
-export default function HomeIndex() {
+export function HomeIndex() {
   return (
     <>
-      <div className="fixed transition ">
+      <div>
         <MainPage />
       </div>
     </>
