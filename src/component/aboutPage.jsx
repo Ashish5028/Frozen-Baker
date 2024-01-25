@@ -1,15 +1,24 @@
 import backerImage from "../assets/baker.png";
 import cakeImage from "../assets/cake.jpg";
 import cakekaImage from "../assets/cakeskaphoto.jpg";
+import service from "../assets/service-2.jpg";
+import down from "../assets/down.jpg";
+import about from "../assets/about.jpg";
 export default function AboutPage() {
   return (
     <>
       <div className="flex justify-around text-slate-600">
-        <img src={backerImage} className="w-60 h-60 " />
-
-        <img src={cakekaImage} className="w-60 h-60  left-2  " />
-
-        <img src={cakeImage} className="w-60 h-60  " />
+        <div className=" relative h-full mx-4 ">
+          <div className=" absolute left-10 top-10 h-72 w-56 rounded-md ">
+            <img src={down} alt="" className="rounded-md" />
+          </div>
+          <div className=" m-32 ml-auto absolute inset-0  rounded-md h-72 w-56 ">
+            <img src={about} alt="" className="rounded-md" />
+          </div>
+          <div className="  absolute bottom-10 right-0 h-72 w-56 ">
+            <img src={service} alt="" className="rounded-md" />
+          </div>
+        </div>
 
         <div className=" p-5">
           <div className=" text-yellow-600 text-xl pt-4">//ABOUT US</div>
