@@ -7,6 +7,7 @@ import HeaderIndex from "../header";
 import { HomeIndex } from "../homePage/index";
 import ServicePage from "../service";
 import AdminIndex from "../admin";
+import AboutMore from "../component/about-more";
 
 function AppRoutes() {
   return (
@@ -23,6 +24,7 @@ function AppRoutes() {
           <Route path="/service" element={<ServicePage />}></Route>
           <Route path="/signUp" element={<UserIndex />}></Route>
           <Route path="setting" element={<HomeIndex />}></Route>
+          <Route path="/about-more" element={<AboutMore />}></Route>
         </Routes>
       </BrowserRouter>
     </>
