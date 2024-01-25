@@ -5,7 +5,6 @@ import ProductIndex from "../product";
 import UserIndex from "../user";
 import HeaderIndex from "../header";
 import { HomeIndex } from "../homePage/index";
-// import { FooterPage } from "../component/footerPage";
 import ServicePage from "../service";
 import AdminIndex from "../admin";
 
@@ -25,7 +24,6 @@ function AppRoutes() {
           <Route path="/signUp" element={<UserIndex />}></Route>
           <Route path="setting" element={<HomeIndex />}></Route>
         </Routes>
-        {/* <FooterPage /> */}
       </BrowserRouter>
     </>
   );
