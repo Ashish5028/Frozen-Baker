@@ -9,7 +9,7 @@ export default function ImagePage() {
         <div className=" absolute left-10 top-10 h-72 w-56 rounded-md ">
           <img src={down} alt="" className="rounded-md" />
         </div>
-        <div className=" m-32 ml-auto absolute inset-0  rounded-md h-72 w-56 ">
+        <div className=" m-44  absolute inset-0  rounded-md h-72 w-56 ">
           <img src={about} alt="" className="rounded-md" />
         </div>
         <div className="  absolute bottom-10 right-0 h-72 w-56 ">

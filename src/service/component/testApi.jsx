@@ -8,7 +8,7 @@ const TestApi = () => {
     <div className="flex  h-screen px-14 ">
       <div className=" w-1/2  ">
         <h1 className="text-bgColor text-lg py-4 pl-12">//OUR SERVICE</h1>
-        <p className="text-4xl font-semibold font-serif px-10">
+        <p className="text-4xl font-semibold font-serif px-10 text-textColor">
           What Do We Offer For You ?
         </p>
         <p className=" py-4 px-10">
@@ -22,7 +22,9 @@ const TestApi = () => {
                 size="40px"
                 className=" text-white bg-yellow-500 rounded-full p-2 items-center justify-center"
               />
-              <h1 className="">Quality Products</h1>
+              <h1 className="text-textColor font-medium text-lg">
+                Quality Products
+              </h1>
             </div>
             <p className="py-5">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit
@@ -34,9 +36,11 @@ const TestApi = () => {
                 size="40px"
                 className="text-white bg-yellow-500 rounded-full p-2 items-center justify-center"
               />
-              <h1>Custom Products</h1>
+              <h1 className="text-textColor font-medium text-lg">
+                Custom Products
+              </h1>
             </div>
-            <p className="py-5">
+            <p className="py-5 ">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit
             </p>
           </div>
@@ -48,7 +52,7 @@ const TestApi = () => {
                 size="40px"
                 className="text-white bg-yellow-500 rounded-full p-2 items-center justify-center"
               />
-              <p className="text-headingColor text-lg">Online Order</p>
+              <p className="text-textColor font-medium text-lg">Online Order</p>
             </div>
             <p className="py-5">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit
@@ -60,7 +64,9 @@ const TestApi = () => {
                 size="40px"
                 className="text-white bg-yellow-500 rounded-full p-2 items-center justify-center"
               />
-              <p>Home Delivery</p>
+              <p className="text-textColor font-medium text-lg">
+                Home Delivery
+              </p>
             </div>
             <p className="py-5">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit
