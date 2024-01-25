@@ -4,23 +4,16 @@ import cakekaImage from "../assets/cakeskaphoto.jpg";
 import service from "../assets/service-2.jpg";
 import down from "../assets/down.jpg";
 import about from "../assets/about.jpg";
+import ImagePage from "../service/component/imagePage";
 export default function AboutPage() {
   return (
     <>
       <div className="flex justify-around text-slate-600">
-        <div className=" relative h-full mx-4 ">
-          <div className=" absolute left-10 top-10 h-72 w-56 rounded-md ">
-            <img src={down} alt="" className="rounded-md" />
-          </div>
-          <div className=" m-32 ml-auto absolute inset-0  rounded-md h-72 w-56 ">
-            <img src={about} alt="" className="rounded-md" />
-          </div>
-          <div className="  absolute bottom-10 right-0 h-72 w-56 ">
-            <img src={service} alt="" className="rounded-md" />
-          </div>
+        <div className="w-1/2">
+          <ImagePage />
         </div>
 
-        <div className=" p-5">
+        <div className=" p-5  w-1/2">
           <div className=" text-yellow-600 text-xl pt-4">//ABOUT US</div>
           <div className=" text-black text-2xl pt-4">
             We Bake Every Item From <br />
@@ -51,7 +44,10 @@ export default function AboutPage() {
             <div>Online Order</div>
           </div>
 
-          <button className="text-white px-8 py-3 bg-yellow-700 rounded-full my-5 hover:bg-yellow-600">
+          <button
+            className="text-white px-8 py-3 bg-yellow-700 rounded-full my-5 hover:bg-yellow-600"
+            onClick={() => {}}
+          >
             Read More
           </button>
         </div>
