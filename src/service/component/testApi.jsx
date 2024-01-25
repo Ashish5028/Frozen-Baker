@@ -5,7 +5,7 @@ import "./app.css";
 import ImagePage from "./imagePage";
 const TestApi = () => {
   return (
-    <div className="flex  h-screen px-14 ">
+    <div className="flex  h-full px-14 ">
       <div className=" w-1/2  ">
         <h1 className="text-bgColor text-lg py-4 pl-12">//OUR SERVICE</h1>
         <p className="text-4xl font-semibold font-serif px-10 text-textColor">
