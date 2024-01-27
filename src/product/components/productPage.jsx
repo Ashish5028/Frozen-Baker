@@ -13,12 +13,12 @@ const ProductPage = () => {
       });
   }, []);
   return (
-    <div className="px-10">
+    <div className="px-10 overflow-hidden">
       {photos.map((photo) => (
-        <div className="float-left h-72 w-72 m-3 bg-cardColor rounded-md  transition ease-out delay-75    hover:bg-cardbgColor">
+        <div className="float-left h-96 w-72 m-3 bg-cardColor rounded-md  transition ease-out delay-75    hover:bg-cardbgColor">
           <img
             src={photo.imageUrl}
-            className="w-72 h-52 hover:ease-in duration-300  "
+            className="w-72 h-72 hover:ease-in duration-300 rounded-sm cursor-pointer "
           />
           <div className="text-center py-4 cursor-pointer">
             <p className="">

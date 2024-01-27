@@ -1,7 +1,7 @@
 import { FaTshirt, FaCartPlus } from "react-icons/fa";
 import { BsCake2 } from "react-icons/bs";
 import { CiDeliveryTruck } from "react-icons/ci";
-import "./app.css";
+import "./testApi.css";
 import ImagePage from "./imagePage";
 const TestApi = () => {
   return (
@@ -40,7 +40,7 @@ const TestApi = () => {
                 Custom Products
               </h1>
             </div>
-            <p className="py-5 ">
+            <p className="py-5  ">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit
             </p>
           </div>
@@ -68,7 +68,7 @@ const TestApi = () => {
                 Home Delivery
               </p>
             </div>
-            <p className="py-5">
+            <p className="py-5 ">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit
             </p>
           </div>

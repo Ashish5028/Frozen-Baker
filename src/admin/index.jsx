@@ -1,9 +1,11 @@
-import { AdminPage } from "./component/admin";
+import AdminPage from "./component/admin";
 
 export default function AdminIndex() {
   return (
     <>
-      <AdminPage />
+      <div className="bg-stone-100 h-screen ">
+        <AdminPage />
+      </div>
     </>
   );
 }

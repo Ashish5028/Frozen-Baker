@@ -2,7 +2,9 @@ import UserRegister from "./components/signUp";
 export default function UserIndex() {
   return (
     <>
-      <UserRegister />
+      <div className="h-screen">
+        <UserRegister />
+      </div>
     </>
   );
 }
