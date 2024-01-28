@@ -1,6 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
-import { FooterPage } from "../../component/footerPage";
+import cake from "../../assets/baker.png";
 import "./style.css";
 import AboutPage from "../../component/aboutPage";
 function AdminPage() {
@@ -22,6 +21,7 @@ function AdminPage() {
     e.preventDefault();
     if (!image) return;
     uploadImage(image);
+    alert("image uploaded");
   };
   const handleChange = (e) => {
     const file = e.target.files[0];
@@ -44,13 +44,21 @@ function AdminPage() {
   };
   return (
     <>
-      <div className="text-xl text-yellow-200 shadow-md flex justify-center p-7 bg-black">
-        Welcome to your page
+      <div className="text-3xl italic font-light text-textColor flex justify-center pt-5 ">
+        Welcome here for Upload Product
       </div>
-      <div className=" flex p-10 bg-opacity-60 main">
-        <div className="bg-yellow-800 mx-10 p-5 w-1/2 rounded-md flex justify-center py-5 ">
+      <div className="flex pl-20">
+        <img src={cake} className="h-16" />
+        <p className="pt-4 italic text-bgColor text-2xl">
+          Upload Your Product Details Here
+        </p>
+      </div>
+      <div className=" flex bg-opacity-60 main  ">
+        <div className="   w-1/2 rounded-md flex justify-center pt-5 ">
           <form onSubmit={(e) => handleSubmit(e)}>
-            <label className="py-5 text-white">Enter Product Name</label>
+            <label className="text-bgColor text-lg italic">
+              Enter Product Name
+            </label>
             <br />
             <input
               onChange={(e) => {
@@ -59,11 +67,13 @@ function AdminPage() {
               name="name"
               type="text"
               required
-              className="rounded-md  py-1 outline-none pl-2 shadow-sm my-2"
+              className=" ring-1 mt-2  ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2"
             />
             <br />
             <br />
-            <label className="py-5 text-white">Enter Product Price</label>
+            <label className="text-bgColor text-lg italic ">
+              Enter Product Price
+            </label>
             <br />
             <input
               onChange={(e) => {
@@ -72,43 +82,43 @@ function AdminPage() {
               name="price"
               type="number"
               required
-              className="rounded-md  py-1 outline-none pl-2 shadow-sm mt-2"
+              className="ring-1 mt-2  ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
             />
-            <br />
-            <br />
 
-            <div className="mt-1">
-              <div className="text-white py-2">Choose Product Image</div>
+            <div className="mt-10">
+              <div className="text-bgColor text-lg italic">
+                Choose Product Image
+              </div>
               <br />
               <input
                 type="file"
                 // value={() => fileInputState}
                 onChange={(e) => handleChange(e)}
                 accept="image/png,image/jpg,image/jpeg"
-                className=""
+                className="text-bgColor italic cursor-pointer"
               />
             </div>
             <div className="flex justify-center m-auto py-2">
               <button
                 type="submit"
-                className="text-white rounded-md bg-black px-5 py-2 my-5 "
+                className="text-white rounded-md bg-bgColor px-7 py-2 my-5 "
               >
                 submit
               </button>
             </div>
           </form>
         </div>
-        <div className="px-8 w-1/2 my-3 ">
+        <div className="px-8 w-1/2 my-4 ">
           <img
             src={image}
-            className="h-96 w-96  "
+            className="h-96 w-96 rounded-md "
             alt=" Uploded Image Shown Here"
           ></img>
         </div>
       </div>
-      <AboutPage />
+      {/* <AboutPage /> */}
     </>
   );
 }
 
-export { AdminPage };
+export default AdminPage;
