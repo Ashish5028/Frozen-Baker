@@ -18,6 +18,7 @@ function AdminPage() {
     console.log(image);
   }
   const handleSubmit = async (e) => {
+    e.preventDefault();
     if (!image) return;
     uploadImage(image);
     alert("image uploaded");
@@ -43,8 +44,8 @@ function AdminPage() {
   };
   return (
     <>
-      <div className="text-3xl italic font-semibold text-textColor flex justify-center pt-5 ">
-        Welcome to your Upload Page
+      <div className="text-3xl italic font-light text-textColor flex justify-center pt-5 ">
+        Welcome here for Upload Product
       </div>
       <div className="flex pl-20">
         <img src={cake} className="h-16" />

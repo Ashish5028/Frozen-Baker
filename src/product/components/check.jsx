@@ -3,17 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getProductDetails } from "../productSlice";
 import POpUp from "./popup";
+import { getUsers } from "../../user/userSlice";
 
-export function CheckPage() {
+export default function CheckPage() {
   const [id, setId] = useState();
   const [pop, setPop] = useState(false);
 
   const dispatch = useDispatch();
   const { users, loading } = useSelector((state) => state.product);
   const data = useSelector((state) => state.product.users);
-
-  // console.log(data);
-
+  console.log(data);
   useEffect(() => {
     dispatch(getProductDetails());
   }, []);
@@ -23,7 +22,7 @@ export function CheckPage() {
   }
   return (
     <>
-      {/* {pop && <POpUp id={id} pop={pop} setPop={setPop} />} */}
+      {pop && <POpUp id={id} pop={pop} setPop={setPop} />}
       {/* <div>
         {users &&
           users.map((ele) => {
@@ -43,7 +42,13 @@ export function CheckPage() {
       </div> */}
       <div>
         {data.map((res) => {
-          return <div>{res.image}</div>;
+          return (
+            <div>
+              <p>{res.name}</p>
+              <p>{res.price}</p>
+              <img src={res.imageUrl} />
+            </div>
+          );
         })}
       </div>
     </>
