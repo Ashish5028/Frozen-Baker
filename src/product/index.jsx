@@ -1,4 +1,3 @@
-import { CheckPage } from "./components/check";
 import { ProductPage } from "./components/productPage";
 
 export default function ProductIndex() {
@@ -6,7 +5,6 @@ export default function ProductIndex() {
     <>
       <div>
         <ProductPage />
-        {/* <CheckPage /> */}
       </div>
     </>
   );
