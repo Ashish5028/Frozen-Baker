@@ -9,6 +9,7 @@ import ServicePage from "../service";
 import AdminIndex from "../admin";
 
 import { ViewDetails } from "../productDetails.jsx/component/viewDetails";
+import Details from "../product/components/details";
 
 function AppRoutes() {
   return (
@@ -27,7 +28,7 @@ function AppRoutes() {
           <Route path="/setting" element={<HomeIndex />}></Route>
           <Route
             path={`/product/view/details/:_id`}
-            element={<ViewDetails />}
+            element={<Details />}
           ></Route>
         </Routes>
       </BrowserRouter>
