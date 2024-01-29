@@ -1,11 +1,8 @@
-import backerImage from "../assets/baker.png";
-import cakeImage from "../assets/cake.jpg";
-import cakekaImage from "../assets/cakeskaphoto.jpg";
-import service from "../assets/service-2.jpg";
-import down from "../assets/down.jpg";
-import about from "../assets/about.jpg";
 import ImagePage from "../service/component/imagePage";
+import { useNavigate } from "react-router-dom";
+
 export default function AboutPage() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="flex justify-around text-slate-600">
@@ -46,7 +43,10 @@ export default function AboutPage() {
 
           <button
             className="text-white px-8 py-3 bg-yellow-700 rounded-full my-5 hover:bg-yellow-600"
-            onClick={() => {}}
+            onClick={() => {
+              navigate("/about-more");
+              console.log("this is clicked");
+            }}
           >
             Read More
           </button>
