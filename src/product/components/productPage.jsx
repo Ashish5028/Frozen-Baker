@@ -8,11 +8,11 @@ export const ProductPage = () => {
     return <h3>loading</h3>;
   }
   return (
-    <div className="justify-around m-4  flex  overflow-hidden">
+    <div className=" m-5 grid grid-cols-4 gap-4 ">
       {users.map((photo) => (
         <div
           key={photo._id}
-          className=" float-left  h-370 w-[350px]   bg-cardColor rounded-md  transition ease-out delay-75    hover:bg-stone-100"
+          className="bg-cardColor rounded-md  transition ease-out delay-75    hover:bg-stone-100"
         >
           <img
             src={photo.imageUrl}

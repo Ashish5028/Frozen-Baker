@@ -26,16 +26,11 @@ function AppRoutes() {
           <Route path="/form" element={<AdminIndex />}></Route>
           <Route path="/service" element={<ServicePage />}></Route>
           <Route path="/signUp" element={<UserIndex />}></Route>
-<<<<<<< HEAD
-          <Route path="setting" element={<HomeIndex />}></Route>
-          <Route path="/about-more" element={<AboutMore />}></Route>
-=======
           <Route path="/setting" element={<HomeIndex />}></Route>
           <Route
             path={`/product/view/details/:_id`}
             element={<Details />}
           ></Route>
->>>>>>> d2a6b8e8b3a17e644c54f95a5bf4354871eb5ed4
         </Routes>
       </BrowserRouter>
     </>
