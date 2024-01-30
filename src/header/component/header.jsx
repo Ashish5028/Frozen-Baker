@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import MenuItems from "./menuItems";
+import { SearchBarIndex } from "../../SearchBar";
 
 const navigation = [
   { name: "Home", href: "/", current: false },
@@ -46,6 +47,7 @@ function HeaderPage() {
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <MenuItems />
+                  {/* <SearchBarIndex /> */}
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
