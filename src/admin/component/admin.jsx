@@ -50,10 +50,10 @@ function AdminPage() {
           size,
           weight,
         }),
-        headers: { "Content-type": "application/json" },
+        headers: { "Content-Type": "application/json" },
       });
     } catch (error) {
-      console.log(error);
+      console.error("Error uploading image:", error);
     }
   };
   return (
