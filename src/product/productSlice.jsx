@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import axios from "axios";
+import { createProductApi } from "../app/apiUrls";
 
 // api/url
 const URL = "http://localhost:3001/api/get/image";
@@ -15,6 +16,23 @@ export const getProductDetails = createAsyncThunk("uploadUser", async () => {
   // console.log(response.data);
   return response.data;
 });
+export const uploadProductDetails = createAsyncThunk(
+  "uploadProductDetails",
+  async (datas, { rejectWithValue }) => {
+    const response = await fetch(createProductApi, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(datas),
+    });
+    try {
+      const result = await response.json();
+
+      return result;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
 
 const ProductSlice = createSlice({
   name: "getProduct",

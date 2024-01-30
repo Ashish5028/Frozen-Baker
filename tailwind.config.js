@@ -18,6 +18,11 @@ export default {
           sm: "3rem",
         },
       },
+      fontFamily: {
+        heading: ["Playfair Display", "serif"],
+        text: ["Roboto", "sans-serif"],
+      },
+
       width: {
         150: "150px",
         190: "190px",

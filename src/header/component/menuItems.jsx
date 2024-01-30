@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function MenuItems() {
   return (
     <>
-      <div className="flex space-x-5 mt-2 italic text-sm">
+      <div className="flex space-x-5 mt-2 font-text ">
         <p className="text-white hover:text-headingColor">
           <Link to="/">Home</Link>
         </p>

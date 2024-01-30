@@ -5,10 +5,10 @@ import "./testApi.css";
 import ImagePage from "./imagePage";
 const TestApi = () => {
   return (
-    <div className="flex  h-full px-14 ">
+    <div className="flex  h-full px-14 font-text">
       <div className=" w-1/2  ">
-        <h1 className="text-bgColor text-lg py-4 pl-12">//OUR SERVICE</h1>
-        <p className="text-4xl font-semibold font-serif px-10 text-textColor">
+        <h1 className="text-bgColor text-lg py-4 pl-12 ">//OUR SERVICE</h1>
+        <p className="text-4xl font-semibold font-heading px-10 text-textColor">
           What Do We Offer For You ?
         </p>
         <p className=" py-4 px-10">

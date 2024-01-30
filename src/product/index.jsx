@@ -1,9 +1,9 @@
-import { ProductPage } from "./components/productPage";
+import ProductPage from "./components/productPage";
 
 export default function ProductIndex() {
   return (
     <>
-      <div>
+      <div className="">
         <ProductPage />
       </div>
     </>

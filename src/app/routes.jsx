@@ -7,16 +7,16 @@ import HeaderIndex from "../header";
 import { HomeIndex } from "../homePage/index";
 import ServicePage from "../service";
 import AdminIndex from "../admin";
-import AboutMore from "../component/about-more";
 
-import { ViewDetails } from "../productDetails.jsx/component/viewDetails";
-import Details from "../product/components/details";
+import ProductDetails from "../product/components/productDetails";
 
-function AppRoutes() {
+export default function AppRoutes() {
   return (
     <>
       <BrowserRouter>
-        <HeaderIndex />
+        <div className=" w-full ">
+          <HeaderIndex />
+        </div>
         <Routes>
           <Route path="/" element={<HomeIndex />}></Route>
           <Route path="/team" element={<TeamIndex />}></Route>
@@ -29,7 +29,7 @@ function AppRoutes() {
           <Route path="/setting" element={<HomeIndex />}></Route>
           <Route
             path={`/product/view/details/:_id`}
-            element={<Details />}
+            element={<ProductDetails />}
           ></Route>
         </Routes>
       </BrowserRouter>
@@ -37,4 +37,4 @@ function AppRoutes() {
   );
 }
 
-export { AppRoutes };
+// export { AppRoutes };

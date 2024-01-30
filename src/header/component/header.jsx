@@ -40,12 +40,7 @@ function HeaderPage() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center justify-center">
-                  <p className="text-yellow-500 text-3xl font-bold  font-serif flex">
-                    {/* <img
-                      src={cake}
-                      alt="logo"
-                      className="h-14 relative flex rounded-full  text-sm text-yellow-500 "
-                    /> */}
+                  <p className="text-yellow-500 text-3xl font-heading   flex">
                     <span className="px-1 ">Frozen</span>Baker
                   </p>
                 </div>
@@ -56,11 +51,13 @@ function HeaderPage() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
-                  className="relative rounded-full text-yellow-500 p-1 "
+                  className="relative rounded-full text-yellow-400 p-1 "
                 >
                   <span className="" />
                   <AddIcCallIcon />
-                  <span className="text-sm text-white pr-2">+911234567892</span>
+                  <span className="font-text text-white pr-2">
+                    +911234567892
+                  </span>
                 </button>
 
                 {/* Profile dropdown */}
@@ -81,7 +78,7 @@ function HeaderPage() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-10 mt-4 w-44  text-center origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="absolute right-0 z-10 mt-4 w-44 font-text text-center origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
                           <p
