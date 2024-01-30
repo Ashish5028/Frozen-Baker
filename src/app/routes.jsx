@@ -7,7 +7,7 @@ import HeaderIndex from "../header";
 import { HomeIndex } from "../homePage/index";
 import ServicePage from "../service";
 import AdminIndex from "../admin";
-import ProductDetails from "../product/components/productDetails";
+import ProductDetails from "../product/productDetails/productDetails";
 import BirthdayPage from "../homePage/RoutePage/birthday";
 import AnniversaryPage from "../homePage/RoutePage/anniversary";
 import Bestseller from "../homePage/RoutePage/bestseller";
