@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import "./SearchBar.css";
+import { getProductApi } from "../app/apiUrls";
 
 export const SearchBar = ({ setResults }) => {
   const [input, setInput] = useState("");
   const fetData = (value) => {
-    fetch("http://localhost:4050/api/get/users")
+    fetch(getProductApi)
       .then((response) => response.json())
       .then((json) => {
         const results = json.filter((user) => {
