@@ -3,6 +3,7 @@ import axios from "axios";
 import { createProductApi } from "../app/apiUrls";
 import { getProductApi } from "../app/apiUrls";
 // api/url
+const URL = "http://localhost:4050/api/get/image";
 
 const initialState = {
   users: [],
