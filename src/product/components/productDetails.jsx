@@ -17,7 +17,7 @@ export default function ProductDetails() {
         <div className="w-3/2 flex justify-end ">
           <img src={res[0].imageUrl} className="h-[400px] w-[500px]" />
         </div>
-        <div className="w-1/3 pl-10 h-[450px] overflow-auto">
+        <div className="w-1/2 pl-10 h-[450px] overflow-auto">
           <div>
             <p>
               {res[0].name}
