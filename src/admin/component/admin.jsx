@@ -37,7 +37,7 @@ function AdminPage() {
   const uploadImage = async (base64EncodedImage) => {
     console.log(base64EncodedImage);
     try {
-      await fetch(createProductApi, {
+      await fetch("http://localhost:4050/api/upload/image", {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({

@@ -1,9 +1,12 @@
 import { createSlice, createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import axios from "axios";
-import { createDelivaryDetails, createProductApi } from "../app/apiUrls";
+import {
+  createDelivaryDetails,
+  createProductApi,
+  getProductApi,
+} from "../app/apiUrls";
 
 // api/url
-const URL = "http://localhost:4050/api/get/image";
 
 const initialState = {
   users: [],
