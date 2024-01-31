@@ -4,8 +4,10 @@ import { MainPage } from "./component/homePage";
 export function HomeIndex() {
   return (
     <>
-      <MainPage />
-      <FooterPage />
+      <div className="bg-stone-200">
+        <MainPage />
+        <FooterPage />
+      </div>
     </>
   );
 }
