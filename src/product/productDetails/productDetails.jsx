@@ -18,13 +18,13 @@ export default function ProductDetails() {
   //   console.log(users);
   return (
     <>
-      <div className="flex justify-around font-text text-sm h-screen bg-stone-100 pt-10 ">
+      <div className="flex justify-around font-text text-sm h-screen bg-stone-100  pt-5">
         <div className="w-3/2 flex justify-end ">
           <img src={res[0].imageUrl} className="h-[400px] w-[500px]" />
         </div>
 
-        <div className="w-1/2 pl-10 ">
-          <ScrollPanel style={{ height: "450px" }}>
+        <div className="w-1/2 bg-white shadow-md  mb-10 h-screen p-4 ">
+          <ScrollPanel className="h-screen ">
             <div>
               <p>
                 {res[0].name}

@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import { TeamIndex } from "../ourTeam";
 import ContactIndex from "../contact";
 import ProductIndex from "../product";
@@ -13,6 +13,14 @@ import AnniversaryPage from "../homePage/RoutePage/anniversary";
 import Bestseller from "../homePage/RoutePage/bestseller";
 import MidSeller from "../homePage/RoutePage/midseller";
 import BrandSeller from "../homePage/RoutePage/brandseller";
+import { ChocolateFile } from "../page/freshCake/navigatePage/chocolateFile";
+import { ButterScotch } from "../page/freshCake/navigatePage/butterScotch";
+import { FlowerCake } from "../page/freshCake/navigatePage/flowerCake";
+import { Fruit } from "../page/freshCake/navigatePage/fruit";
+import { PineApple } from "../page/freshCake/navigatePage/pineApple";
+import { RedVelvet } from "../page/freshCake/navigatePage/redVelvet";
+import { Truffle } from "../page/freshCake/navigatePage/truffle";
+import { Vanilla } from "../page/freshCake/navigatePage/vanilla";
 
 export default function AppRoutes() {
   return (
@@ -41,6 +49,14 @@ export default function AppRoutes() {
           <Route path="/api/midnight" element={<Bestseller />}></Route>
           <Route path="/api/dayseller" element={<MidSeller />}></Route>
           <Route path="/api/brandnew" element={<BrandSeller />}></Route>
+          <Route path="/api/chocolate" element={<ChocolateFile />}></Route>
+          <Route path="/api/butterscotch" element={<ButterScotch />}></Route>
+          <Route path="/api/flowerscake" element={<FlowerCake />}></Route>
+          <Route path="/api/fruit" element={<Fruit />}></Route>
+          <Route path="/api/pineapple" element={<PineApple />}></Route>
+          <Route path="/api/redVelvet" element={<RedVelvet />}></Route>
+          <Route path="/api/vanila" element={<Vanilla />}></Route>
+          <Route path="/api/truffle" element={<Truffle />}></Route>
         </Routes>
       </BrowserRouter>
     </>
