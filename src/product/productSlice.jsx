@@ -1,9 +1,12 @@
 import { createSlice, createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import axios from "axios";
-import { createDelivaryDetails, createProductApi } from "../app/apiUrls";
+import {
+  createDelivaryDetails,
+  createProductApi,
+  getProductApi,
+} from "../app/apiUrls";
 
 // api/url
-const URL = "http://localhost:3001/api/get/image";
 
 const initialState = {
   users: [],
@@ -12,7 +15,7 @@ const initialState = {
 };
 
 export const getProductDetails = createAsyncThunk("uploadUser", async () => {
-  const response = await axios.get(URL);
+  const response = await axios.get(getProductApi);
   // console.log(response.data);
   return response.data;
 });
