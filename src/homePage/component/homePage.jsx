@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { getProductDetails } from "../../product/productSlice";
 import { CelebrationPage } from "./celebration";
 import CakeFlavour from "./cakeFlavour";
+import FreshCake from "./freshCake";
 export function MainPage() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -13,11 +14,12 @@ export function MainPage() {
   });
   return (
     <>
-      <div className="">
+      <div className="space-y-10">
         <SimpleSlider />
         <CakeFlavour />
         <Team />
         <CelebrationPage />
+        <FreshCake />
       </div>
       {/* <ClientReview /> */}
     </>

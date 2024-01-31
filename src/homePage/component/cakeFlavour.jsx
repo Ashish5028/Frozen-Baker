@@ -6,11 +6,11 @@ import mid1 from "../../assets/freshFlavour/New.webp";
 
 export default function CakeFlavour() {
   return (
-    <div>
+    <div className="bg-white  shadow-md rounded-md py-3 mx-6">
       <p className="text-center text-3xl font-heading py-10 space-x-2">
         Cake : Fresh & Flavour
       </p>
-      <div className=" grid grid-cols-2 px-16  gap-6">
+      <div className=" grid grid-cols-2 px-14  gap-6">
         <Link to="/api/bestseller">
           <img src={bestSeller} className="rounded-lg" />
         </Link>
