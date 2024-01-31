@@ -4,7 +4,7 @@ import cake from "../assets/cake.jpg";
 function FooterPage() {
   return (
     <>
-      <div className=" mt-32 bg-navBar h-[300px]  grid grid-cols-4 px-10">
+      <div className="  bg-navBar h-[300px]  grid grid-cols-4 px-10">
         {FooterData.map((res) => {
           return (
             <>

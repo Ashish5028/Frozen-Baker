@@ -5,7 +5,7 @@ import ClientReview from "./clientReview";
 import { useDispatch } from "react-redux";
 import { getProductDetails } from "../../product/productSlice";
 import { CelebrationPage } from "./celebration";
-import CakeFlavour from "./cakeFlavour";
+import { CakeFlavour } from "./cakeFlavour";
 import FreshCake from "./freshCake";
 export function MainPage() {
   const dispatch = useDispatch();

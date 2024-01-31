@@ -6,6 +6,7 @@ import DelivaryPage from "./delivary";
 import { uploadDeivaryDetails } from "../productSlice";
 import OffersPage from "./offersPage";
 import { ScrollPanel } from "primereact/scrollpanel";
+import { FooterPage } from "../../component/footerPage";
 
 export default function ProductDetails() {
   const dispatch = useDispatch();
@@ -18,13 +19,13 @@ export default function ProductDetails() {
   //   console.log(users);
   return (
     <>
-      <div className="flex justify-around font-text text-sm h-screen bg-stone-100 pt-10 ">
+      <div className="flex justify-around font-text text-sm h-screen bg-stone-100 py-5 ">
         <div className="w-3/2 flex justify-end ">
           <img src={res[0].imageUrl} className="h-[400px] w-[500px]" />
         </div>
 
-        <div className="w-1/2 pl-10 ">
-          <ScrollPanel style={{ height: "450px" }}>
+        <div className="w-1/2  bg-white ">
+          <ScrollPanel className="h-screen p-4">
             <div>
               <p>
                 {res[0].name}
@@ -70,6 +71,9 @@ export default function ProductDetails() {
             </div>
           </ScrollPanel>
         </div>
+      </div>
+      <div className=" ">
+        <FooterPage />
       </div>
     </>
   );
