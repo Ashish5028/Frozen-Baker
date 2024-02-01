@@ -37,7 +37,7 @@ function AdminPage() {
   const uploadImage = async (base64EncodedImage) => {
     console.log(base64EncodedImage);
     try {
-      await fetch("http://localhost:4050/api/upload/image", {
+      await fetch(createProductApi, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
@@ -197,7 +197,7 @@ function AdminPage() {
             <div className="flex justify-end   py-2">
               <button
                 type="submit"
-                className="text-white  font-text rounded-md bg-bgColor px-7 py-2 my-5 "
+                className="text-white pl-1 font-text rounded-md bg-bgColor px-7 py-2 my-5 "
               >
                 submit
               </button>

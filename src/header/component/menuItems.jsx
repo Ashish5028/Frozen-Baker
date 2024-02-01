@@ -11,10 +11,10 @@ export default function MenuItems() {
           <Link to="team">Team</Link>
         </p>
         <p className="text-white hover:text-headingColor">
-          <Link to="product">Product</Link>
+          <Link to="product">Cake</Link>
         </p>
         <p className="text-white hover:text-headingColor">
-          <Link to="team">OurTeam</Link>
+          <Link to="cupcake">Cup Cake</Link>
         </p>
         <p className="text-white hover:text-headingColor">
           <Link to="service">Service</Link>

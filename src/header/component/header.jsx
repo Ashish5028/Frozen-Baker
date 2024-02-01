@@ -10,9 +10,9 @@ import { SearchBarIndex } from "../../SearchBar";
 
 const navigation = [
   { name: "Home", href: "/", current: false },
-  { name: "Team", href: "Team", current: false },
-  { name: "Product", href: "product", current: false },
-  { name: "Our Team", href: "team", current: false },
+  { name: "Shop", href: "Team", current: false },
+  { name: "Cake", href: "product", current: false },
+  { name: "Cup Cake", href: "product", current: false },
   { name: "Service", href: "service", current: false },
 ];
 
