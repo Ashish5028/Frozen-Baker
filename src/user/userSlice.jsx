@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { createUserApi } from "../app/apiUrls";
-
-const URL = "http://localhost:3001/api/get/users";
+import { createUserApi, getUserApi, loginUserApi } from "../app/apiUrls";
 
 export const createUser = createAsyncThunk(
   "createUser",
@@ -22,9 +20,23 @@ export const createUser = createAsyncThunk(
     }
   }
 );
+export const loginUser = createAsyncThunk("loginUser", async (datas) => {
+  console.log("sadjk", datas);
+  const response = await fetch(loginUserApi, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(datas),
+  });
+  let data = await response.json();
+  {
+    data
+      ? localStorage.setItem("user", JSON.stringify(data.user))
+      : alert("enter correct details  ");
+  }
+});
 
 export const getUsers = createAsyncThunk("getUsers", async () => {
-  const response = await axios.get(URL);
+  const response = await axios.get(getUserApi);
   console.log(response.data);
   return response.data;
 });

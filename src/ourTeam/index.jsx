@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Team from "./component/team";
 
 import { MegaMenuIndex } from "../megamenu";
+import MovieDetails from "./component/movieDetails";
+import { useDispatch } from "react-redux";
+import { getApi } from "./teamSlice";
 
 export const TeamIndex = () => {
-  const [results, setResults] = useState([]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getApi());
+  });
   return (
-    <div className="bg-zinc-300 h-screen">
-      <MegaMenuIndex />
+    <div className=" h-screen">
+      <MovieDetails />
     </div>
   );
 };
