@@ -13,7 +13,7 @@ export const TeamIndex = () => {
   });
   return (
     <div className=" h-screen">
-      <MovieDetails />
+      <Team />
     </div>
   );
 };
