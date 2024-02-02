@@ -30,16 +30,18 @@ export default function DelivaryPage({ onClickRegister }) {
             <div className="flex justify-center items-center space-x-2">
               <FormInput
                 control={control}
-                name="radio"
+                name="gender"
                 type="radio"
+                value="Female"
               ></FormInput>
               <p>With Egg</p>
             </div>
             <div className="flex justify-center items-center space-x-2">
               <FormInput
                 control={control}
-                name="radio"
+                name="gender"
                 type="radio"
+                value="Male"
               ></FormInput>
               <p>Without Egg</p>
             </div>

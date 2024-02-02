@@ -1,12 +1,10 @@
 import { Fragment } from "react";
 import AddIcCallIcon from "@mui/icons-material/AddIcCall";
-import PersonPinIcon from "@mui/icons-material/PersonPin";
-import cake from "../../assets/baker.png";
 import { Link } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import MenuItems from "./menuItems";
-import { SearchBarIndex } from "../../SearchBar";
+import LoginItems from "./loginItems";
 
 const navigation = [
   { name: "Home", href: "/", current: false },
@@ -22,10 +20,10 @@ function classNames(...classes) {
 
 function HeaderPage() {
   return (
-    <Disclosure as="nav" className="bg-navBar">
+    <Disclosure as="nav" className="bg-navBar ">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-1">
+          <div className="mx-auto max-w-7xl  sm:px-6 lg:px-1">
             <div className="relative flex py-3 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -47,7 +45,6 @@ function HeaderPage() {
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <MenuItems />
-                  {/* <SearchBarIndex /> */}
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -57,7 +54,7 @@ function HeaderPage() {
                 >
                   <span className="" />
                   <AddIcCallIcon />
-                  <span className="font-text text-white pr-2">
+                  <span className="font-text text-sm text-white pr-2">
                     +911234567892
                   </span>
                 </button>
@@ -68,7 +65,9 @@ function HeaderPage() {
                     <Menu.Button className="relative flex rounded-full  text-sm text-yellow-500">
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
-                      <PersonPinIcon fontSize="large" />
+                      <span className="material-symbols-outlined ">
+                        account_circle
+                      </span>
                     </Menu.Button>
                   </div>
                   <Transition
@@ -80,57 +79,8 @@ function HeaderPage() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-10 mt-4 w-44 font-text text-center origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <p
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700 hover:text-headingColor"
-                            )}
-                          >
-                            <Link to="/form"> Admin</Link>
-                          </p>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="/"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700 hover:text-headingColor"
-                            )}
-                          >
-                            <Link to="signUp"> User</Link>
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <p
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700 hover:text-headingColor"
-                            )}
-                          >
-                            <Link to="setting">Settings</Link>
-                          </p>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="/"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700 hover:text-headingColor"
-                            )}
-                          >
-                            <Link to="signUp"> Sign out</Link>
-                          </a>
-                        )}
-                      </Menu.Item>
+                    <Menu.Items className="absolute -right-5  z-30 mt-5 w-60 font-text  origin-top-right rounded-sm bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <LoginItems />
                     </Menu.Items>
                   </Transition>
                 </Menu>
@@ -164,4 +114,4 @@ function HeaderPage() {
   );
 }
 
-export default HeaderPage;
+export { HeaderPage };

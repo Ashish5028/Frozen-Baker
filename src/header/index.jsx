@@ -1,4 +1,4 @@
-import HeaderPage from "./component/header";
+import { HeaderPage } from "./component/header";
 
 export default function HeaderIndex() {
   return (

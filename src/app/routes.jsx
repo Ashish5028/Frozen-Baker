@@ -21,6 +21,7 @@ import { PineApple } from "../page/freshCake/navigatePage/pineApple";
 import { RedVelvet } from "../page/freshCake/navigatePage/redVelvet";
 import { Truffle } from "../page/freshCake/navigatePage/truffle";
 import { Vanilla } from "../page/freshCake/navigatePage/vanilla";
+import SummaryMovie from "../ourTeam/component/summary";
 
 export default function AppRoutes() {
   return (
@@ -35,14 +36,18 @@ export default function AppRoutes() {
           <Route path="/contact" element={<ContactIndex />}></Route>
           <Route path="/product" element={<ProductIndex />}></Route>
           <Route path="/register" element={<UserIndex />}></Route>
-          <Route path="/form" element={<AdminIndex />}></Route>
+          <Route
+            path="/upload/product/details"
+            element={<AdminIndex />}
+          ></Route>
           <Route path="/service" element={<ServicePage />}></Route>
-          <Route path="/signUp" element={<UserIndex />}></Route>
+          <Route path="/user/signin" element={<UserIndex />}></Route>
           <Route path="/setting" element={<HomeIndex />}></Route>
           <Route
             path={`/product/view/details/:_id`}
             element={<ProductDetails />}
           ></Route>
+          <Route path={`/view/:id`} element={<SummaryMovie />}></Route>
           <Route path="/api/anniversary" element={<AnniversaryPage />}></Route>
           <Route path="/api/birthday" element={<BirthdayPage />}></Route>
           <Route path="/api/bestseller" element={<Bestseller />}></Route>

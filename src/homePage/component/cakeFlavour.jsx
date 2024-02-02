@@ -4,7 +4,7 @@ import day from "../../assets/freshFlavour/day.webp";
 import mid from "../../assets/freshFlavour/mid.webp";
 import mid1 from "../../assets/freshFlavour/New.webp";
 
-export default function CakeFlavour() {
+export function CakeFlavour() {
   return (
     <div className="bg-white  shadow-md rounded-md py-3 mx-6">
       <p className="text-center text-3xl font-heading py-10 space-x-2">
