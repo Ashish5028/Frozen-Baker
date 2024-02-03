@@ -1,11 +1,13 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import AddIcCallIcon from "@mui/icons-material/AddIcCall";
-import { Link } from "react-router-dom";
+import { FaCartArrowDown } from "react-icons/fa";
+
+import { Link, useParams } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import MenuItems from "./menuItems";
 import LoginItems from "./loginItems";
-
+import { useDispatch, useSelector } from "react-redux";
 const navigation = [
   { name: "Home", href: "/", current: false },
   { name: "Shop", href: "Team", current: false },
@@ -19,12 +21,15 @@ function classNames(...classes) {
 }
 
 function HeaderPage() {
+  const value = useSelector((state) => state.header.value);
+  const cartId = useSelector((state) => state.product.users);
+
   return (
     <Disclosure as="nav" className="bg-navBar ">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl  sm:px-6 lg:px-1">
-            <div className="relative flex py-3 items-center justify-between">
+            <div className="relative flex py-3 items-center ">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -47,17 +52,18 @@ function HeaderPage() {
                   <MenuItems />
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
-                  type="button"
-                  className="relative rounded-full text-yellow-400 p-1 "
-                >
-                  <span className="" />
-                  <AddIcCallIcon />
-                  <span className="font-text text-sm text-white pr-2">
-                    +911234567892
-                  </span>
-                </button>
+              <div className="absolute space-x-6 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <Link to="/cartitems">
+                  <div className="font-text text-sm position-relative text-white -space-x-4 top-1 ">
+                    <div className="absolute top-1  rounded-full bg-bgColor px-2">
+                      {value}
+                    </div>
+                    <FaCartArrowDown
+                      fontSize="20px"
+                      className="hover:text-bgColor   "
+                    />
+                  </div>
+                </Link>
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">

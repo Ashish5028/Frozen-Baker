@@ -7,6 +7,8 @@ import { getProductDetails } from "../../product/productSlice";
 import { CelebrationPage } from "./celebration";
 import { CakeFlavour } from "./cakeFlavour";
 import FreshCake from "./freshCake";
+import { FooterPage } from "../../component/footerPage";
+import OccasionCake from "./occasionCake";
 export function MainPage() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -14,12 +16,14 @@ export function MainPage() {
   });
   return (
     <>
-      <div className="space-y-10">
+      <div className="space-y-5">
         <SimpleSlider />
+        <OccasionCake />
         <CakeFlavour />
-        <Team />
         <CelebrationPage />
         <FreshCake />
+        <Team />
+        <FooterPage />
       </div>
       {/* <ClientReview /> */}
     </>

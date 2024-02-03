@@ -1,12 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
 import { LuIndianRupee } from "react-icons/lu";
 import { Link } from "react-router-dom";
+import { addtoCart } from "../productSlice";
+import { CiLight } from "react-icons/ci";
 
 const ProductPage = () => {
   const { users, loading } = useSelector((state) => state.product);
+  const dispatch = useDispatch();
   if (loading) {
     return <h3>loading</h3>;
   }
+  const add = (product) => {
+    console.log(dispatch(addtoCart(product)));
+  };
   return (
     <div className="h-4 ">
       <div className=" m-10 grid grid-cols-4 gap-6 font-text">
@@ -23,7 +29,10 @@ const ProductPage = () => {
                   <LuIndianRupee />
                   {photo.price}
                 </p>
-                <button className="text-center items-center w-full bg-bgColor px-4 rounded-sm p-1">
+                <button
+                  className="text-center items-center w-full bg-bgColor px-4 rounded-sm p-1"
+                  onClick={add}
+                >
                   BUY NOW
                 </button>
               </div>

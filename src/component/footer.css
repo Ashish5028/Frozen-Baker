@@ -1,0 +1,9 @@
+.footerCss {
+  transition: transform 1s ease-out;
+}
+.footerCss:hover {
+  transition-delay: 100ms;
+  cursor: pointer;
+  transform: translate(8px);
+  color: #eb9e34;
+}

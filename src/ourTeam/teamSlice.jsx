@@ -15,6 +15,7 @@ export const getApi = createAsyncThunk("getApi", async () => {
 const TeamSlice = createSlice({
   name: "apiDetails",
   initialState,
+
   extraReducers: (builder) => {
     builder
       .addCase(getApi.pending, (state) => {

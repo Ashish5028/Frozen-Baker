@@ -14,9 +14,6 @@ export default function ProductDetails() {
   const { _id } = param;
   const { users, loading } = useSelector((state) => state.product);
   const res = users.filter((e) => e._id === _id);
-
-  console.log(res);
-  //   console.log(users);
   return (
     <>
       <div className="flex justify-around font-text text-sm h-screen bg-stone-100 py-5 ">

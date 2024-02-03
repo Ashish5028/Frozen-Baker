@@ -5,6 +5,7 @@ import { MegaMenuIndex } from "../megamenu";
 import MovieDetails from "./component/movieDetails";
 import { useDispatch } from "react-redux";
 import { getApi } from "./teamSlice";
+import AppCart from "./component/cart";
 
 export const TeamIndex = () => {
   const dispatch = useDispatch();
@@ -13,7 +14,8 @@ export const TeamIndex = () => {
   });
   return (
     <div className=" h-screen">
-      <Team />
+      {/* <Team /> */}
+      <AppCart />
     </div>
   );
 };

@@ -6,7 +6,6 @@ export function HomeIndex() {
     <>
       <div className="bg-stone-200">
         <MainPage />
-        <FooterPage />
       </div>
     </>
   );

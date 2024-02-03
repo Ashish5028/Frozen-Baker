@@ -10,6 +10,7 @@ import {
 
 const initialState = {
   users: [],
+  cartItems: [],
   loading: false,
   error: null,
 };
@@ -40,6 +41,18 @@ export const uploadDeivaryDetails = createAsyncThunk(
 const ProductSlice = createSlice({
   name: "getProduct",
   initialState,
+  reducers: {
+    addtoCart: (state, action) => {
+      state.users = state.users.map((todo) =>
+        todo.id === action.payload
+          ? { ...todo, completed: !todo.completed }
+          : todo
+      );
+    },
+    removetoCart: (state, action) => {
+      state = state.filter((item) => item.id !== action.payload);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getProductDetails.pending, (state) => {
@@ -56,4 +69,5 @@ const ProductSlice = createSlice({
   },
 });
 
+export const { addtoCart, removetoCart } = ProductSlice.actions;
 export default ProductSlice.reducer;

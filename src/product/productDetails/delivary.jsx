@@ -1,13 +1,19 @@
 import { useForm } from "react-hook-form";
 import FormInput from "../../component/formInput";
+import { useDispatch } from "react-redux";
+import { increment } from "../../header/headerSlice";
 
 export default function DelivaryPage({ onClickRegister }) {
+  const dispatch = useDispatch();
   const { handleSubmit, control } = useForm({
     mode: "onTouched",
   });
 
   const onSubmitInternal = (e) => {
     onClickRegister(e);
+  };
+  const handleAddCart = () => {
+    dispatch(increment());
   };
   return (
     <div>
@@ -52,7 +58,10 @@ export default function DelivaryPage({ onClickRegister }) {
             type="message"
             placeholder="Message On Cake"
           ></FormInput>
-          <button className="bg-[#88882b] p-3 shadow-md  text-white rounded-md flex justify-center items-center">
+          <button
+            className="bg-[#88882b] p-3 shadow-md  text-white rounded-md flex justify-center items-center"
+            onClick={handleAddCart}
+          >
             <span class="material-symbols-outlined">shopping_cart</span> ADD TO
             CART
           </button>
