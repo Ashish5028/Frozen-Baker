@@ -1,6 +1,6 @@
-p {
-  /* color: white; */
+.manuItems {
+  color: white;
 }
-p :hover {
-  color: rgb(255, 187, 0);
+.manuItems:hover {
+  color: #f5b342;
 }

@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import FormInput from "../../component/formInput";
 import { useDispatch } from "react-redux";
 import { increment } from "../../header/headerSlice";
+import { Link } from "react-router-dom";
 
 export default function DelivaryPage({ onClickRegister }) {
   const dispatch = useDispatch();
@@ -32,8 +33,8 @@ export default function DelivaryPage({ onClickRegister }) {
             type="date"
             placeholder="Select Delivary Date"
           ></FormInput>
-          <div className="flex justify-around   ring-zinc-300      ">
-            <div className="flex justify-center items-center space-x-2">
+          <div className="grid grid-cols-2 ring-zinc-300 px-2">
+            <div className="flex justify-start items-center space-x-2">
               <FormInput
                 control={control}
                 name="gender"

@@ -1,36 +1,92 @@
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 
-import { Link } from "react-router-dom";
+class ParlorForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = this.initialState();
+    // this is to set the initial state of the component
+    this.handleChange = this.handleChange.bind(this);
+    // as you probably
+    // know, if you're going to be passing functions around and invoke them as
+    // callbacks, you'll need to hold onto 'this' because it's bound at runtime
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-const MovieDetails = () => {
-  const users = useSelector((state) => state.team.users);
+  initialState() {
+    // woohoo, just an object that represents an empty parlor
+    return {
+      name: "",
+      street_address: "",
+      city: "",
+      state: "",
+      zip_code: "",
+      googleMapLink: "",
+    };
+  }
 
-  return (
-    <div className="h-4 ">
-      <div className=" m-10 grid grid-cols-4 gap-6 font-text">
-        {users.map((photo) => (
-          <Link to={`/view/${photo.show.id}`}>
-            <div key={photo.show.id} className="  rounded-lg  shadow-md">
-              <img
-                src={
-                  photo.show.image ? photo.show.image.medium : "placeholder-url"
-                }
-                alt={photo.show.name}
-                className="w-[310px] h-60 hover:ease-in duration-300 rounded-sm cursor-pointer "
-              />
-              ;
-              <div className=" py-2 cursor-pointer font-medium text-white ">
-                <p className=" text-textColor  p-1">{photo.show.name}</p>
-                <button className="text-center items-center w-full bg-bgColor px-4 rounded-sm p-1">
-                  BUY NOW
-                </button>
-              </div>
-            </div>
-          </Link>
-        ))}
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.dispatch(addParlor(this.state));
+    // this is just some redux.
+    // just trust that it does what it's supposed to do,
+    // send an ajax request to my server
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Add New Parlor</h1>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            id="autocomplete"
+            className="input-field"
+            ref="input"
+            type="text"
+          />
+          // this is the input field used specifically for autocomplete // note
+          that it doesn't respond to changes in state, // nor does it change
+          state // it's just talking to the Google Maps API // I've given it an
+          id so we can reference it when we // instantiate the Google
+          Autocomplete box
+          <input
+            name={"name"}
+            value={this.state.name}
+            placeholder={"Name"}
+            onChange={this.handleChange}
+          />
+          <input
+            name={"street_address"}
+            value={this.state.street_address}
+            placeholder={"Street Address"}
+            onChange={this.handleChange}
+          />
+          <input
+            name={"city"}
+            value={this.state.city}
+            placeholder={"City"}
+            onChange={this.handleChange}
+          />
+          <input
+            name={"state"}
+            value={this.state.state}
+            placeholder={"State"}
+            onChange={this.handleChange}
+          />
+          <input
+            name={"zip_code"}
+            value={this.state.zip_code}
+            placeholder={"Zipcode"}
+            onChange={this.handleChange}
+          />
+          <button onSubmit={this.handleSubmit}>Submit</button>
+        </form>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
-export default MovieDetails;
+export default ParlorForm;

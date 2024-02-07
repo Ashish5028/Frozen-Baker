@@ -1,24 +1,30 @@
 import { Link } from "react-router-dom";
-
+import "./app.css";
 export default function MenuItems() {
   return (
     <>
       <div className="flex space-x-5 mt-2 font-text ">
-        <p className="text-white hover:text-headingColor">
-          <Link to="/">Home</Link>
-        </p>
-        <p className="text-white hover:text-headingColor">
-          <Link to="team">Team</Link>
-        </p>
-        <p className="text-white hover:text-headingColor">
-          <Link to="product">Cake</Link>
-        </p>
-        <p className="text-white hover:text-headingColor">
-          <Link to="cupcake">Cup Cake</Link>
-        </p>
-        <p className="text-white hover:text-headingColor">
-          <Link to="service">Service</Link>
-        </p>
+        <Link to="/" className="manuItems">
+          Home
+        </Link>
+        <Link to="team" className="manuItems">
+          Team
+        </Link>
+        <Link to="product" className="manuItems">
+          Cakes
+        </Link>
+        <Link to="/pastry" className="manuItems">
+          Pastrys
+        </Link>
+        <Link to="/chocolate" className="manuItems">
+          Chocolates
+        </Link>
+        <Link to="/icecreams" className="manuItems">
+          IceCream
+        </Link>
+        <Link to="/service" className="manuItems">
+          Service
+        </Link>
       </div>
     </>
   );

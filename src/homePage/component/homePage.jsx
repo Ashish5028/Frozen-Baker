@@ -9,10 +9,15 @@ import { CakeFlavour } from "./cakeFlavour";
 import FreshCake from "./freshCake";
 import { FooterPage } from "../../component/footerPage";
 import OccasionCake from "./occasionCake";
+import { Pastrys } from "../../page/pastrys/pastrys";
+import { Chocolates } from "../../page/chocolate/chocolate";
+import { IceCreams } from "../../page/iceCream/iceCream";
+import { getUsers } from "../../user/userSlice";
 export function MainPage() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProductDetails());
+    dispatch(getUsers());
   });
   return (
     <>
@@ -22,6 +27,9 @@ export function MainPage() {
         <CakeFlavour />
         <CelebrationPage />
         <FreshCake />
+        <Pastrys />
+        <Chocolates />
+        <IceCreams />
         <Team />
         <FooterPage />
       </div>

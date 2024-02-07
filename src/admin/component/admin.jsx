@@ -4,16 +4,11 @@ import "./style.css";
 import { IoCloudUploadSharp } from "react-icons/io5";
 import { createProductApi } from "../../app/apiUrls";
 function AdminPage() {
-  const [product, setProduct] = useState({
-    file: "",
-    name: "",
-    price: "",
-    caketype: "",
-    flavour: "",
-    shape: "",
-    size: "",
-    weight: "",
-  });
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [flavour, setFlavour] = useState("");
+  const [weight, setWeight] = useState("");
+  const [shape, setShape] = useState("");
   const [image, setImage] = useState("");
   const [file, setFile] = useState("");
   function previewFile(file) {
@@ -42,33 +37,21 @@ function AdminPage() {
       await fetch(createProductApi, {
         method: "POST",
         mode: "cors",
-        body: JSON.stringify({ ...product, data: base64EncodedImage }),
+        body: JSON.stringify({
+          name,
+          flavour,
+          weight,
+          price,
+          shape,
+          data: base64EncodedImage,
+        }),
         headers: { "Content-Type": "application/json" },
       });
     } catch (error) {
       console.error("Error uploading image:", error);
     }
   };
-  const onChangeInput = (name, value) => {
-    setProduct({ ...product, [name]: value });
-  };
-  const FormField = ({ label, name, type, className }) => {
-    return (
-      <div>
-        <label className="text-textColor  pl-1 font-text ">{label}</label>
-        <br />
-        <input
-          onChange={(e) => {
-            onChangeInput(name, e.target.value);
-          }}
-          name={name}
-          type={type}
-          required
-          className={`ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 ${className}`}
-        />
-      </div>
-    );
-  };
+
   return (
     <>
       <p className="text-3xl   font-heading  text-bgColor flex justify-center pt-5 ">
@@ -88,12 +71,74 @@ function AdminPage() {
             onSubmit={(e) => handleSubmit(e)}
             className="grid grid-cols-2 gap-10  px-5 "
           >
-            <FormField label={"Product Name"} name="name" type="text" />
-            <FormField label={"Product Price"} name="number" type="number" />
-            <FormField label={"Product Shape"} name="shape" type="text" />
-            <FormField label={"Product Weight"} name="weight" type="text" />
-            <FormField label={"Cake Flavour"} name="flavour" type="text" />
-            <FormField label={"Product Type"} name="type" type="text" />
+            <div>
+              <label className="text-textColor  pl-1 font-text ">
+                ProductName
+              </label>
+              <br />
+              <input
+                onChange={(e) => setName(e.target.value)}
+                name="name"
+                type="text"
+                required
+                className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
+              />
+            </div>
+
+            <div>
+              <label className="text-textColor  pl-1 font-text ">
+                Product Price
+              </label>
+              <br />
+              <input
+                onChange={(e) => setPrice(e.target.value)}
+                name="price"
+                type="number"
+                required
+                className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
+              />
+            </div>
+
+            <div>
+              <label className="text-textColor  pl-1 font-text ">
+                Product Weight
+              </label>
+              <br />
+              <input
+                onChange={(e) => setWeight(e.target.value)}
+                name="weight"
+                type="text"
+                required
+                className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
+              />
+            </div>
+
+            <div>
+              <label className="text-textColor  pl-1 font-text ">
+                Product Shape
+              </label>
+              <br />
+              <input
+                onChange={(e) => setShape(e.target.value)}
+                name="shape"
+                type="text"
+                required
+                className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
+              />
+            </div>
+            <div>
+              <label className="text-textColor  pl-1 font-text ">
+                Product Flavour
+              </label>
+              <br />
+              <input
+                onChange={(e) => setFlavour(e.target.value)}
+                name="flavour"
+                type="text"
+                required
+                className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
+              />
+            </div>
             <div>
               <label>Product Image</label>
               <input
@@ -103,7 +148,7 @@ function AdminPage() {
                 className=" mt-1  ring-neutral-300  py-2 pl-2 "
               ></input>
             </div>
-            <div className="flex    py-2">
+            <div className="flex  justify-center  py-2">
               <button
                 type="submit"
                 className="text-white  font-text rounded-md bg-bgColor px-7 py-2 my-5 "
@@ -126,4 +171,4 @@ function AdminPage() {
   );
 }
 
-export default AdminPage;
+export { AdminPage };
