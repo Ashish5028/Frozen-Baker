@@ -77,7 +77,7 @@ function AdminPage() {
       </p>
 
       <div className=" flex bg-opacity-60 justify-evenly  px-5">
-        <div className=" 2/3 rounded-md  pt-5  ">
+        <div className=" 1/2 grid grid-cols-1 rounded-md  pt-5  ">
           <div className="flex justify-center">
             <img src={cake} className="h-16" />
             <p className="pt-4  font-heading text-textColor text-2xl">
@@ -86,7 +86,7 @@ function AdminPage() {
           </div>
           <form
             onSubmit={(e) => handleSubmit(e)}
-            className="grid grid-cols-2 gap-6"
+            className="grid grid-cols-2 gap-10  px-5 "
           >
             <FormField label={"Product Name"} name="name" type="text" />
             <FormField label={"Product Price"} name="number" type="number" />
@@ -113,10 +113,10 @@ function AdminPage() {
             </div>
           </form>
         </div>
-        <div className="px-8 w-1/3 my-4 ">
+        <div className="px-8 w-1/2  my-4 ">
           <img
             src={image}
-            className="h-96 w-96 rounded-md text-2xl pl-1 font-heading text-textColor"
+            className="h-96 w-96 rounded-md text-2xl pl-1 pt-10 font-heading text-textColor"
             alt=" Uploded Image Shown Here"
           ></img>
         </div>

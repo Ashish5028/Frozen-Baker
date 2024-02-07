@@ -1,4 +1,4 @@
-const serverHost = "http://localhost:3001";
+const serverHost = "http://192.168.1.7:3001";
 
 export const createUserApi = `${serverHost}/api/user/register`;
 export const loginUserApi = `${serverHost}/api/user/login`;
