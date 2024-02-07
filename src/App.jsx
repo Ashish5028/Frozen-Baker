@@ -2,11 +2,10 @@ import "./App.css";
 import AppRoutes from "./app/routes";
 
 function App() {
+  const user = () => {};
   return (
     <>
-      <div className="">
-        <AppRoutes />
-      </div>
+      <div>{user ? <AppRoutes /> : null}</div>
     </>
   );
 }

@@ -5,7 +5,6 @@ import { createUserApi, getUserApi, loginUserApi } from "../app/apiUrls";
 export const createUser = createAsyncThunk(
   "createUser",
   async (datas, { rejectWithValue }) => {
-    console.log("sadjk", datas);
     const response = await fetch(createUserApi, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -20,20 +19,24 @@ export const createUser = createAsyncThunk(
     }
   }
 );
-export const loginUser = createAsyncThunk("loginUser", async (datas) => {
-  console.log("sadjk", datas);
-  const response = await fetch(loginUserApi, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(datas),
-  });
-  let data = await response.json();
-  {
-    data
-      ? localStorage.setItem("user", JSON.stringify(data.user))
-      : alert("enter correct details  ");
+
+export const loginUser = createAsyncThunk(
+  "loginUser",
+  async (datas, { rejectWithValue }) => {
+    const response = await fetch(loginUserApi, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(datas),
+    });
+    try {
+      const result = await response.json();
+
+      return result;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
   }
-});
+);
 
 export const getUsers = createAsyncThunk("getUsers", async () => {
   const response = await axios.get(getUserApi);

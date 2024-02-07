@@ -1,20 +1,41 @@
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import FormInput from "../../component/formInput";
 import { useEffect, useState } from "react";
 import cake from "../../assets/baker.png";
+import { FaLongArrowAltRight } from "react-icons/fa";
 import { BsEmojiSmileFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { createUserApi } from "../../app/apiUrls";
 
-export default function Register({ onClickRegister }) {
+export default function Register({ onClickRegister, onClickLogin }) {
+  const [name, setName] = useState();
+  const [category, setCategory] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { handleSubmit, control } = useForm({
-    mode: "onTouched",
-  });
-  const onSubmitInternal = (e) => {
+  const handlechange = (e) => {
+    setCategory(e.target.value);
+  };
+
+  const onSubmitInternal = async (e) => {
     onClickRegister(e);
     navigate("/");
+    const result = await fetch(createUserApi, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, category, email, password }),
+    });
+    let data = await result.json();
+
+    {
+      data.auth
+        ? localStorage.setItem("user", JSON.stringify(data.user)) &&
+          localStorage.setItem("jwtKey", JSON.stringify(data.auth))
+        : alert("enter correct details");
+    }
   };
 
   return (
@@ -32,33 +53,65 @@ export default function Register({ onClickRegister }) {
         </div>
         <div className="mt-2 sm:mx-auto sm:w-full sm:max-w-sm">
           <form
-            className="flex flex-col p-2"
-            onSubmit={handleSubmit(onSubmitInternal)}
+            className="flex flex-col p-2  space-y-4"
+            onSubmit={onSubmitInternal}
           >
+            <div className="flex justify-around items-center text-textColor">
+              <p>Select for</p> <FaLongArrowAltRight />
+              <label className="  pl-1 font-text flex ">
+                User :
+                <input
+                  onChange={handlechange}
+                  type="radio"
+                  value="User"
+                  required
+                  className="w-4 ml-2"
+                />
+              </label>
+              <p>or</p>
+              <label className="text-textColor  pl-1 font-text flex ">
+                Seller :
+                <input
+                  onChange={handlechange}
+                  type="radio"
+                  value="Seller"
+                  required
+                  className="w-4 ml-2"
+                />
+              </label>
+            </div>
+            <label className="text-textColor  pl-1 font-text">Name</label>
+            <input
+              onChange={(e) => setName(e.target.value)}
+              name="name"
+              type="text"
+              required
+              className="ring-1 mt-1 ring-inset ring-neutral-300 border w-full py-2 outline-none rounded-md pl-2 "
+            />
+
             <div>
-              <FormInput
-                control={control}
-                label="Name"
-                name="name"
-                type="name"
-                placeholder="Enter your name"
-              ></FormInput>
+              <label className="text-textColor  pl-1 font-text ">Email</label>
               <br />
-              <FormInput
-                control={control}
-                label="Email"
+              <input
+                onChange={(e) => setEmail(e.target.value)}
                 name="email"
                 type="email"
-                placeholder="Enter your email"
-              ></FormInput>
+                required
+                className="ring-1 mt-1 ring-inset ring-neutral-300 border w-full py-2 outline-none rounded-md pl-2 "
+              />
+            </div>
+            <div>
+              <label className="text-textColor  pl-1 font-text ">
+                Password
+              </label>
               <br />
-              <FormInput
-                control={control}
-                label="Password"
+              <input
+                onChange={(e) => setPassword(e.target.value)}
                 name="password"
                 type="password"
-                placeholder="Enter your password"
-              ></FormInput>
+                required
+                className="ring-1 mt-1 ring-inset ring-neutral-300 border w-full py-2 outline-none rounded-md pl-2 "
+              />
             </div>
             <br />
             <button
@@ -69,7 +122,7 @@ export default function Register({ onClickRegister }) {
             </button>
           </form>
         </div>
-        {/* <p className=" py-3 text-center text-sm text-gray-500">
+        <p className=" py-3 text-center text-sm text-gray-500">
           Not a member?
           <button
             className="font-semibold leading-6 text-violet-500 hover:text-violet-600 pl-2"
@@ -77,7 +130,7 @@ export default function Register({ onClickRegister }) {
           >
             SignUp
           </button>
-        </p> */}
+        </p>
       </div>
     </>
   );

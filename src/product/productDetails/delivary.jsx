@@ -66,12 +66,14 @@ export default function DelivaryPage({ onClickRegister }) {
             <span class="material-symbols-outlined">shopping_cart</span> ADD TO
             CART
           </button>
-          <button
-            onSubmit="submit"
-            className="bg-bgColor  text-white ml-2 p-3 shadow-md rounded-md flex justify-center items-center "
+          <Link
+            to="/delivaryaddress"
+            className="bg-bgColor shadow-md rounded-md flex justify-center"
           >
-            <span class="material-symbols-outlined">flash_on</span> BUY NOW
-          </button>
+            <button className="  text-white ml-2 p-3 flex items-center ">
+              <span class="material-symbols-outlined">flash_on</span> BUY NOW
+            </button>
+          </Link>
         </div>
       </form>
     </div>
