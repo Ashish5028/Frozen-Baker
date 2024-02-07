@@ -26,6 +26,9 @@ import CartItems from "../product/productDetails/cartItems";
 import { Pastrys } from "../page/pastrys/pastrys";
 import { Chocolates } from "../page/chocolate/chocolate";
 import { IceCreams } from "../page/iceCream/iceCream";
+import Address from "../page/address/address";
+import LoginUser from "../user/components/login";
+import Register from "../user/components/register";
 
 export default function AppRoutes() {
   return (
@@ -39,7 +42,8 @@ export default function AppRoutes() {
           <Route path="/team" element={<TeamIndex />}></Route>
           <Route path="/contact" element={<ContactIndex />}></Route>
           <Route path="/product" element={<ProductIndex />}></Route>
-          <Route path="/register" element={<UserIndex />}></Route>
+          <Route path="/login/register" element={<UserIndex />}></Route>
+
           <Route
             path="/upload/product/details"
             element={<AdminIndex />}
@@ -70,6 +74,7 @@ export default function AppRoutes() {
           <Route path="/pastry" element={<Pastrys />}></Route>
           <Route path="/chocolate" element={<Chocolates />}></Route>
           <Route path="/icecreams" element={<IceCreams />}></Route>
+          <Route path="/delivaryaddress" element={<Address />}></Route>
         </Routes>
       </BrowserRouter>
     </>

@@ -3,12 +3,17 @@ import { IoMdCall } from "react-icons/io";
 import { HiOutlineLogout } from "react-icons/hi";
 import { MdInventory } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function LoginItems() {
+  const naviate = useNavigate();
+  const logout = () => {
+    localStorage.clear();
+    naviate("/login/register");
+  };
   return (
     <div className="grid grid-cols-1 divide-y ">
-      <Link to="/user/signin">
+      <Link to="/login/register">
         <div className=" px-6  items-center py-2  flex  text-gray-700 hover:bg-zinc-200">
           <FaUserCircle fontSize="large" />
           <p className="px-3">Login/Register</p>
@@ -32,12 +37,14 @@ export default function LoginItems() {
           <p className="px-3"> My Order</p>
         </div>
       </Link>
-      <Link to="logout">
+      <div>
         <div className=" px-6  items-center py-2  flex   text-gray-700 hover:bg-zinc-200">
           <HiOutlineLogout fontSize="large" />
-          <p className="px-3">Logout</p>
+          <button onClick={logout} className="px-3">
+            Logout
+          </button>
         </div>
-      </Link>
+      </div>
     </div>
   );
 }

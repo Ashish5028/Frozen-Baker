@@ -4,15 +4,30 @@ import FormInput from "../../component/formInput";
 import cake from "../../assets/baker.png";
 import { BsEmojiSmileFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { loginUserApi } from "../../app/apiUrls";
 
-export default function LoginUser({ onClickLogin, onClickRegister }) {
+export default function LoginUser({ onClickRegister, onClickLogin }) {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   const navigate = useNavigate();
 
-  const { handleSubmit, control } = useForm({
-    mode: "onTouched",
-  });
-  const onSubmitInternal = (e) => {
+  const onSubmitInternal = async (e) => {
+    e.preventDefault();
     onClickLogin(e);
+    const result = await fetch(loginUserApi, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+    let data = await result.json();
+    console.log(JSON.stringify(data));
+    {
+      data.auth
+        ? localStorage.setItem("user", JSON.stringify(data.user)) &&
+          localStorage.setItem("jwtKey", JSON.stringify(data.auth))
+        : alert("enter correct details");
+    }
     navigate("/");
   };
 
@@ -30,26 +45,32 @@ export default function LoginUser({ onClickLogin, onClickRegister }) {
           </h2>
         </div>
         <div className="mt-2 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form
-            className="flex flex-col p-2"
-            onSubmit={handleSubmit(onSubmitInternal)}
-          >
-            <div>
-              <FormInput
-                control={control}
-                label="Email"
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-              ></FormInput>
-              <br />
-              <FormInput
-                control={control}
-                label="Password"
-                name="password"
-                type="password"
-                placeholder="Enter your password"
-              ></FormInput>
+          <form className="flex flex-col p-2" onSubmit={onSubmitInternal}>
+            <div className="space-y-6">
+              <div>
+                <label className="text-textColor  pl-1 font-text ">Email</label>
+                <br />
+                <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  name="email"
+                  type="email"
+                  required
+                  className="ring-1 mt-1 ring-inset ring-neutral-300 border w-full py-2 outline-none rounded-md pl-2 "
+                />
+              </div>
+              <div>
+                <label className="text-textColor  pl-1 font-text ">
+                  Password
+                </label>
+                <br />
+                <input
+                  onChange={(e) => setPassword(e.target.value)}
+                  name="password"
+                  type="password"
+                  required
+                  className="ring-1 mt-1 ring-inset ring-neutral-300 border w-full py-2 outline-none rounded-md pl-2 "
+                />
+              </div>
             </div>
             <br />
             <button
