@@ -62,6 +62,7 @@ export default function Register({ onClickRegister, onClickLogin }) {
                 User :
                 <input
                   onChange={handlechange}
+                  name="user"
                   type="radio"
                   value="User"
                   required
@@ -73,6 +74,7 @@ export default function Register({ onClickRegister, onClickLogin }) {
                 Seller :
                 <input
                   onChange={handlechange}
+                  name="user"
                   type="radio"
                   value="Seller"
                   required
