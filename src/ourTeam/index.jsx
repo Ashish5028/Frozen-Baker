@@ -6,6 +6,8 @@ import MovieDetails from "./component/movieDetails";
 import { useDispatch } from "react-redux";
 import { getApi } from "./teamSlice";
 import AppCart from "./component/cart";
+import CARTPAGE from "./component/cart";
+import ParlorForm from "./component/movieDetails";
 
 export const TeamIndex = () => {
   const dispatch = useDispatch();
@@ -15,7 +17,8 @@ export const TeamIndex = () => {
   return (
     <div className=" h-screen">
       {/* <Team /> */}
-      <AppCart />
+      <CARTPAGE />
+      {/* <ParlorForm /> */}
     </div>
   );
 };

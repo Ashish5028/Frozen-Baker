@@ -9,6 +9,7 @@ export default function FormInput({
   control,
   rules,
   type,
+  require,
 }) {
   return (
     <Controller
@@ -30,6 +31,7 @@ export default function FormInput({
           onChange={onChange}
           onBlur={onBlur}
           name={name}
+          require={require}
         ></Input>
       )}
     />

@@ -8,6 +8,7 @@ export default function UserIndex() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [register, setRegister] = useState("");
+
   return (
     <>
       <div className="h-screen">

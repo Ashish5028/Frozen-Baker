@@ -23,6 +23,9 @@ import { Truffle } from "../page/freshCake/navigatePage/truffle";
 import { Vanilla } from "../page/freshCake/navigatePage/vanilla";
 import SummaryMovie from "../ourTeam/component/summary";
 import CartItems from "../product/productDetails/cartItems";
+import { Pastrys } from "../page/pastrys/pastrys";
+import { Chocolates } from "../page/chocolate/chocolate";
+import { IceCreams } from "../page/iceCream/iceCream";
 
 export default function AppRoutes() {
   return (
@@ -64,6 +67,9 @@ export default function AppRoutes() {
           <Route path="/api/vanila" element={<Vanilla />}></Route>
           <Route path="/api/truffle" element={<Truffle />}></Route>
           <Route path="/cartitems" element={<CartItems />}></Route>
+          <Route path="/pastry" element={<Pastrys />}></Route>
+          <Route path="/chocolate" element={<Chocolates />}></Route>
+          <Route path="/icecreams" element={<IceCreams />}></Route>
         </Routes>
       </BrowserRouter>
     </>
