@@ -8,18 +8,18 @@ import {
 
 // api/url
 
-const initialState = {
-  users: [],
-  cartItems: [],
-  loading: false,
-  error: null,
-};
-
-export const getProductDetails = createAsyncThunk("uploadUser", async () => {
+// const initialState = {
+//   users: [],
+//   cartItems: [],
+//   loading: false,
+//   error: null,
+// };
+export const getProductDetails = createAsyncThunk("getProduct", async () => {
   const response = await axios.get(getProductApi);
   // console.log(response.data);
   return response.data;
 });
+
 export const uploadDeivaryDetails = createAsyncThunk(
   "uploadDelivaryDetails",
   async (datas, { rejectWithValue }) => {
@@ -40,7 +40,12 @@ export const uploadDeivaryDetails = createAsyncThunk(
 
 const ProductSlice = createSlice({
   name: "getProduct",
-  initialState,
+  initialState: {
+    users: [],
+    cartItems: [],
+    loading: false,
+    error: null,
+  },
   reducers: {
     addtoCart: (state, action) => {
       state.users = state.users.map((todo) =>

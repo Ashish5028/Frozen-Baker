@@ -13,12 +13,18 @@ import { Pastrys } from "../../page/pastrys/pastrys";
 import { Chocolates } from "../../page/chocolate/chocolate";
 import { IceCreams } from "../../page/iceCream/iceCream";
 import { getUsers } from "../../user/userSlice";
+import { getIcecreamDetails } from "../../page/uploadProduct/iceCream/icecreamSlice";
+import { getChocolateDetail } from "../../page/uploadProduct/chocolate/chocolateSlice";
+import { getPastryDetails } from "../../page/uploadProduct/pastry/pastrySlice";
 export function MainPage() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProductDetails());
     dispatch(getUsers());
-  });
+    dispatch(getIcecreamDetails());
+    dispatch(getChocolateDetail());
+    dispatch(getPastryDetails());
+  }, []);
   return (
     <>
       <div className="space-y-5">

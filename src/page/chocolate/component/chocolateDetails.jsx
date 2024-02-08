@@ -1,11 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { LuIndianRupee } from "react-icons/lu";
 import { Link } from "react-router-dom";
-import { addtoCart } from "../productSlice";
-import { CiLight } from "react-icons/ci";
+import { addtoCart } from "../../../product/productSlice";
 
-const ProductPage = () => {
-  const { users, loading } = useSelector((state) => state.product);
+const ChocolateDetails = () => {
+  const { data, loading } = useSelector((state) => state.chocolate);
   const dispatch = useDispatch();
   if (loading) {
     return <h3>loading</h3>;
@@ -14,14 +13,11 @@ const ProductPage = () => {
     console.log(dispatch(addtoCart(product)));
   };
   return (
-    <div className="h-screen  ">
-      <div className=" m-10 grid grid-cols-4 gap-6 font-text ">
-        {users.map((photo) => (
+    <div className="h-4 ">
+      <div className=" m-10 grid grid-cols-4 gap-6 font-text">
+        {data.map((photo) => (
           <Link to={`view/details/${photo._id}`}>
-            <div
-              key={photo._id}
-              className="  rounded-lg bg-stone-100 shadow-md"
-            >
+            <div key={photo._id} className="  rounded-lg  shadow-md">
               <img
                 src={photo.imageUrl}
                 className="w-[310px] h-60 hover:ease-in duration-300 rounded-sm cursor-pointer "
@@ -47,4 +43,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default ChocolateDetails;
