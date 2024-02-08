@@ -1,14 +1,13 @@
-import { set, useForm } from "react-hook-form";
-import FormInput from "../../component/formInput";
-import { useEffect, useState } from "react";
+import { FaCloudUploadAlt } from "react-icons/fa";
+
 import cake from "../../assets/baker.png";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { BsEmojiSmileFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createUserApi } from "../../app/apiUrls";
+import { useState } from "react";
 
-export default function Register({ onClickRegister, onClickLogin }) {
+export function Register({ onClickRegister, onClickLogin }) {
   const [name, setName] = useState();
   const [category, setCategory] = useState();
   const [email, setEmail] = useState();
@@ -43,9 +42,9 @@ export default function Register({ onClickRegister, onClickLogin }) {
       <div className="flex  flex-1 flex-col justify-center px-6  lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm mt-3">
           <img className="mx-auto h-32 w-auto" src={cake} alt="Your Company" />
-          <h2 className="flex justify-center items-center  italic text-center text-2xl font-semibold leading-9 tracking-tight text-gray-900">
+          <h2 className="flex justify-center items-center   text-3xl font-heading leading-9 tracking-tight text-gray-900">
             Register here
-            <BsEmojiSmileFill
+            <FaCloudUploadAlt
               size="35px"
               className="ml-3 text-bgColor cursor-pointer  "
             />

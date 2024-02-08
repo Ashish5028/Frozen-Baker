@@ -1,17 +1,16 @@
-import { useForm } from "react-hook-form";
-import FormInput from "../../component/formInput";
-
 import cake from "../../assets/baker.png";
-import { BsEmojiSmileFill } from "react-icons/bs";
+import { FaCloudUploadAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { loginUserApi } from "../../app/apiUrls";
+import { useDispatch } from "react-redux";
+import { setUserData } from "../userSlice";
 
 export default function LoginUser({ onClickRegister, onClickLogin }) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const onSubmitInternal = async (e) => {
     e.preventDefault();
     onClickLogin(e);
@@ -21,10 +20,11 @@ export default function LoginUser({ onClickRegister, onClickLogin }) {
       body: JSON.stringify({ email, password }),
     });
     let data = await result.json();
-    console.log(JSON.stringify(data));
+
     {
       data.auth
-        ? localStorage.setItem("user", JSON.stringify(data.user)) &&
+        ? dispatch(setUserData({ user: data.users, jwtKey: data.auth })) &&
+          localStorage.setItem("user", JSON.stringify(data.user)) &&
           localStorage.setItem("jwtKey", JSON.stringify(data.auth))
         : alert("enter correct details");
     }
@@ -38,7 +38,7 @@ export default function LoginUser({ onClickRegister, onClickLogin }) {
           <img className="mx-auto h-32 w-auto" src={cake} alt="Your Company" />
           <h2 className="flex justify-center items-center font-heading  text-center text-3xl font-semibold leading-9 tracking-tight text-gray-900">
             Login here
-            <BsEmojiSmileFill
+            <FaCloudUploadAlt
               size="35px"
               className="ml-3 text-bgColor cursor-pointer  "
             />

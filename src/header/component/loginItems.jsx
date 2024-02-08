@@ -1,5 +1,7 @@
 import { FaUser } from "react-icons/fa6";
 import { IoMdCall } from "react-icons/io";
+import { RiCake3Line } from "react-icons/ri";
+
 import { HiOutlineLogout } from "react-icons/hi";
 import { MdInventory } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
@@ -19,10 +21,10 @@ export default function LoginItems() {
           <p className="px-3">Login/Register</p>
         </div>
       </Link>
-      <Link to="/upload/product/details">
+      <Link to="/upload">
         <div className=" px-6  items-center py-2  flex  text-gray-700 hover:bg-zinc-200">
-          <FaUser fontSize="medium" />
-          <p className="px-3">My Account</p>
+          <RiCake3Line fontSize="large" />
+          <p className="px-3">Upload Product</p>
         </div>
       </Link>
       <Link to="/">

@@ -27,8 +27,11 @@ import { Pastrys } from "../page/pastrys/pastrys";
 import { Chocolates } from "../page/chocolate/chocolate";
 import { IceCreams } from "../page/iceCream/iceCream";
 import Address from "../page/address/address";
-import LoginUser from "../user/components/login";
-import Register from "../user/components/register";
+import ProductUpload from "../page/uploadProduct";
+import { CakeUpload } from "../page/uploadProduct/cake/cake";
+import { PastryUpload } from "../page/uploadProduct/pastry/pastry";
+import { ChocolateUpload } from "../page/uploadProduct/chocolate/chocolate";
+import { IcecreamUpload } from "../page/uploadProduct/iceCream/icecream";
 
 export default function AppRoutes() {
   return (
@@ -43,11 +46,7 @@ export default function AppRoutes() {
           <Route path="/contact" element={<ContactIndex />}></Route>
           <Route path="/product" element={<ProductIndex />}></Route>
           <Route path="/login/register" element={<UserIndex />}></Route>
-
-          <Route
-            path="/upload/product/details"
-            element={<AdminIndex />}
-          ></Route>
+          <Route path="/upload" element={<ProductUpload />}></Route>
           <Route path="/service" element={<ServicePage />}></Route>
           <Route path="/user/signin" element={<UserIndex />}></Route>
           <Route path="/setting" element={<HomeIndex />}></Route>
@@ -73,7 +72,11 @@ export default function AppRoutes() {
           <Route path="/cartitems" element={<CartItems />}></Route>
           <Route path="/pastry" element={<Pastrys />}></Route>
           <Route path="/chocolate" element={<Chocolates />}></Route>
+          <Route path="/cakeupload" element={<CakeUpload />}></Route>
           <Route path="/icecreams" element={<IceCreams />}></Route>
+          <Route path="/icecreamupload" element={<IcecreamUpload />}></Route>
+          <Route path="/pastryupload" element={<PastryUpload />}></Route>
+          <Route path="/chocolateupload" element={<ChocolateUpload />}></Route>
           <Route path="/delivaryaddress" element={<Address />}></Route>
         </Routes>
       </BrowserRouter>

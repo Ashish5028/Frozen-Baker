@@ -40,7 +40,7 @@ export const loginUser = createAsyncThunk(
 
 export const getUsers = createAsyncThunk("getUsers", async () => {
   const response = await axios.get(getUserApi);
-  console.log(response.data);
+  // console.log(response.data);
   return response.data;
 });
 const UserSlice = createSlice({
@@ -49,6 +49,14 @@ const UserSlice = createSlice({
     user: [],
     loading: false,
     error: null,
+    users: null,
+    jwtKey: null,
+  },
+  reducers: {
+    setUserData: (state, action) => {
+      // state.jwtKey = action.payload.jwtKey;
+      state.users = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -65,5 +73,7 @@ const UserSlice = createSlice({
       });
   },
 });
+
+export const { setUserData } = UserSlice.actions;
 
 export default UserSlice.reducer;
