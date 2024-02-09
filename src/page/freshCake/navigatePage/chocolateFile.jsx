@@ -1,34 +1,59 @@
-import React from "react";
-import { CiAlarmOn } from "react-icons/ci";
-import { MdLocalShipping } from "react-icons/md";
-import { LiaGiftSolid } from "react-icons/lia";
-import { FaRegSmile } from "react-icons/fa";
-import ProductPage from "../../../product/components/productPage";
+import { useDispatch, useSelector } from "react-redux";
+import { LuIndianRupee } from "react-icons/lu";
+import { Link } from "react-router-dom";
+import { addtoCart } from "../../../product/productSlice";
+import { GiWeightScale } from "react-icons/gi";
 
-export const ChocolateFile = () => {
+const ChocolateFile = () => {
+  const { chocolate, loading } = useSelector((state) => state.product);
+  const dispatch = useDispatch();
+  if (loading) {
+    return <h3>loading</h3>;
+  }
+  const add = (product) => {
+    console.log(dispatch(addtoCart(product)));
+  };
   return (
-    <>
-      <div className="h-8 bg-white">
-        <ul className="flex justify-around">
-          <li className="flex items-center gap-2 ">
-            <CiAlarmOn fontSize="large" /> 2 Hours Delivery
-          </li>
-          <li className="flex items-center gap-2">
-            <MdLocalShipping fontSize="large" /> Free Shipping
-          </li>
-          <li className="flex items-center gap-2">
-            <LiaGiftSolid fontSize="large" /> Thousand + Gifts
-          </li>
-          <li className="flex items-center gap-2">
-            <FaRegSmile fontSize="large" /> Million Happy Customers
-          </li>
-        </ul>
+    <div className="h-full bg-stone-100">
+      <div className="flex justify-center pt-2 text-headingColor font-heading text-4xl">
+        <h1> Decadent Chocolate Cake</h1>
       </div>
-
-      <div className="   ml-8">
-        <h1 className="text-2xl  "> Decadent Chocolate Cake</h1>
+      <div className=" px-10 mt-4 grid grid-cols-4 gap-6 font-text ">
+        {chocolate.map((photo) => (
+          <Link to={`view/details/${photo._id}`}>
+            <div
+              key={photo._id}
+              className="  rounded-sm bg-stone-50 shadow-md space-y-2"
+            >
+              <img
+                src={photo.imageUrl}
+                className="w-[310px] h-60 hover:ease-in duration-300 rounded-sm cursor-pointer "
+              />
+              <div className=" text-textColor cursor-pointer font-medium  ">
+                <p className="pl-1">{photo.flavour}</p>
+                <div className="px-1 flex items-center justify-between ">
+                  <p className=" flex relative  items-center ">
+                    <LuIndianRupee className="text-bgColor " />
+                    {photo.price}
+                  </p>
+                  <p className=" flex relative  items-center pb-2">
+                    <GiWeightScale className="text-bgColor mx-1" />
+                    {photo.weight}
+                  </p>
+                </div>
+                <button
+                  className="text-center items-center w-full bg-bgColor px-4 mb-2 rounded-sm p-1 text-white"
+                  onClick={add}
+                >
+                  BUY NOW
+                </button>
+              </div>
+            </div>
+          </Link>
+        ))}
       </div>
-      <ProductPage />
-    </>
+    </div>
   );
 };
+
+export { ChocolateFile };

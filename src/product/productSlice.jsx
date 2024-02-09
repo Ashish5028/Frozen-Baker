@@ -3,23 +3,32 @@ import axios from "axios";
 import {
   createDelivaryDetails,
   createProductApi,
+  getButterScotchCake,
+  getChocolateCake,
   getProductApi,
 } from "../app/apiUrls";
 
-// api/url
-
-// const initialState = {
-//   users: [],
-//   cartItems: [],
-//   loading: false,
-//   error: null,
-// };
 export const getProductDetails = createAsyncThunk("getProduct", async () => {
   const response = await axios.get(getProductApi);
   // console.log(response.data);
   return response.data;
 });
 
+export const getChocolateData = createAsyncThunk(
+  "getChocolateCake",
+  async () => {
+    const response = await axios.get(getChocolateCake);
+    return response.data;
+  }
+);
+
+export const getButterScotchData = createAsyncThunk(
+  "getChocolateData",
+  async () => {
+    const response = await axios.get(getButterScotchCake);
+    return response.data;
+  }
+);
 export const uploadDeivaryDetails = createAsyncThunk(
   "uploadDelivaryDetails",
   async (datas, { rejectWithValue }) => {
@@ -43,6 +52,8 @@ const ProductSlice = createSlice({
   initialState: {
     users: [],
     cartItems: [],
+    chocolate: [],
+    butterscotch: [],
     loading: false,
     error: null,
   },
@@ -68,6 +79,28 @@ const ProductSlice = createSlice({
         state.users = action.payload;
       })
       .addCase(getProductDetails.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error;
+      })
+      .addCase(getChocolateData.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getChocolateData.fulfilled, (state, action) => {
+        state.loading = false;
+        state.chocolate = action.payload;
+      })
+      .addCase(getChocolateData.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error;
+      })
+      .addCase(getButterScotchData.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getButterScotchData.fulfilled, (state, action) => {
+        state.loading = false;
+        state.butterscotch = action.payload;
+      })
+      .addCase(getButterScotchData.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error;
       });
