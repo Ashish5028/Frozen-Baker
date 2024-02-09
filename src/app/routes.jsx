@@ -6,7 +6,6 @@ import UserIndex from "../user";
 import HeaderIndex from "../header";
 import { HomeIndex } from "../homePage/index";
 import ServicePage from "../service";
-import AdminIndex from "../admin";
 import ProductDetails from "../product/productDetails/productDetails";
 import BirthdayPage from "../homePage/RoutePage/birthday";
 import AnniversaryPage from "../homePage/RoutePage/anniversary";
@@ -23,12 +22,16 @@ import { Truffle } from "../page/freshCake/navigatePage/truffle";
 import { Vanilla } from "../page/freshCake/navigatePage/vanilla";
 import SummaryMovie from "../ourTeam/component/summary";
 import CartItems from "../product/productDetails/cartItems";
-import { Pastrys } from "../page/pastrys/pastrys";
-import { Chocolates } from "../page/chocolate/chocolate";
-import { IceCreams } from "../page/iceCream/iceCream";
 import Address from "../page/address/address";
-import LoginUser from "../user/components/login";
-import Register from "../user/components/register";
+import ProductUpload from "../page/uploadProduct";
+import { CakeUpload } from "../page/uploadProduct/cake/cake";
+import { PastryUpload } from "../page/uploadProduct/pastry/pastry";
+import { ChocolateUpload } from "../page/uploadProduct/chocolate/chocolate";
+import { IcecreamUpload } from "../page/uploadProduct/iceCream/icecream";
+import PastryDetails from "../page/pastrys/component/pastryDetails";
+import ChocolateDetails from "../page/chocolate/component/chocolateDetails";
+import { IceCreamDetails } from "../page/iceCream/component/iceCreamDetails";
+import IceCreamShop from "../page/iceCream/component/icecreamShop";
 
 export default function AppRoutes() {
   return (
@@ -43,17 +46,17 @@ export default function AppRoutes() {
           <Route path="/contact" element={<ContactIndex />}></Route>
           <Route path="/product" element={<ProductIndex />}></Route>
           <Route path="/login/register" element={<UserIndex />}></Route>
-
-          <Route
-            path="/upload/product/details"
-            element={<AdminIndex />}
-          ></Route>
+          <Route path="/upload" element={<ProductUpload />}></Route>
           <Route path="/service" element={<ServicePage />}></Route>
           <Route path="/user/signin" element={<UserIndex />}></Route>
           <Route path="/setting" element={<HomeIndex />}></Route>
           <Route
             path={`/product/view/details/:_id`}
             element={<ProductDetails />}
+          ></Route>
+          <Route
+            path={`/icecreams/view/details/:_id`}
+            element={<IceCreamShop />}
           ></Route>
           <Route path={`/view/:id`} element={<SummaryMovie />}></Route>
           <Route path="/api/anniversary" element={<AnniversaryPage />}></Route>
@@ -71,9 +74,13 @@ export default function AppRoutes() {
           <Route path="/api/vanila" element={<Vanilla />}></Route>
           <Route path="/api/truffle" element={<Truffle />}></Route>
           <Route path="/cartitems" element={<CartItems />}></Route>
-          <Route path="/pastry" element={<Pastrys />}></Route>
-          <Route path="/chocolate" element={<Chocolates />}></Route>
-          <Route path="/icecreams" element={<IceCreams />}></Route>
+          <Route path="/pastry" element={<PastryDetails />}></Route>
+          <Route path="/chocolate" element={<ChocolateDetails />}></Route>
+          <Route path="/cakeupload" element={<CakeUpload />}></Route>
+          <Route path="/icecreams" element={<IceCreamDetails />}></Route>
+          <Route path="/icecreamupload" element={<IcecreamUpload />}></Route>
+          <Route path="/pastryupload" element={<PastryUpload />}></Route>
+          <Route path="/chocolateupload" element={<ChocolateUpload />}></Route>
           <Route path="/delivaryaddress" element={<Address />}></Route>
         </Routes>
       </BrowserRouter>

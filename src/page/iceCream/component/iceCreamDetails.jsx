@@ -1,11 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { LuIndianRupee } from "react-icons/lu";
 import { Link } from "react-router-dom";
-import { addtoCart } from "../productSlice";
-import { CiLight } from "react-icons/ci";
+import { addtoCart } from "../../../product/productSlice";
 
-const ProductPage = () => {
-  const { users, loading } = useSelector((state) => state.product);
+const IceCreamDetails = () => {
+  const { data, loading } = useSelector((state) => state.icecream);
   const dispatch = useDispatch();
   if (loading) {
     return <h3>loading</h3>;
@@ -14,9 +13,10 @@ const ProductPage = () => {
     console.log(dispatch(addtoCart(product)));
   };
   return (
-    <div className="h-screen  ">
-      <div className=" m-10 grid grid-cols-4 gap-6 font-text ">
-        {users.map((photo) => (
+    <div className="">
+      <p className="">Click any icecream and see details</p>
+      <div className=" m-10 grid grid-cols-4 gap-6 font-text mt-10 ">
+        {data.map((photo) => (
           <Link to={`view/details/${photo._id}`}>
             <div
               key={photo._id}
@@ -47,4 +47,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export { IceCreamDetails };
