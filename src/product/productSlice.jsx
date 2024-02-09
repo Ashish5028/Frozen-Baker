@@ -5,15 +5,21 @@ import {
   createProductApi,
   getButterScotchCake,
   getChocolateCake,
+  getFlowerCake,
+  getFruitCake,
+  getPineappleCake,
   getProductApi,
+  getRedvelvetCake,
+  getTruffleCake,
+  getVanillaCake,
 } from "../app/apiUrls";
-
+// Product Details
 export const getProductDetails = createAsyncThunk("getProduct", async () => {
   const response = await axios.get(getProductApi);
   // console.log(response.data);
   return response.data;
 });
-
+// Chocolate Data
 export const getChocolateData = createAsyncThunk(
   "getChocolateCake",
   async () => {
@@ -21,7 +27,7 @@ export const getChocolateData = createAsyncThunk(
     return response.data;
   }
 );
-
+// Butterscotch Data
 export const getButterScotchData = createAsyncThunk(
   "getChocolateData",
   async () => {
@@ -29,6 +35,43 @@ export const getButterScotchData = createAsyncThunk(
     return response.data;
   }
 );
+// Flower Data
+export const getFlowercakeData = createAsyncThunk("getFlowerData", async () => {
+  const response = await axios.get(getFlowerCake);
+  return response.data;
+});
+// Truffle Data
+export const getTruffleData = createAsyncThunk("getTruffleData", async () => {
+  const response = await axios.get(getTruffleCake);
+  return response.data;
+});
+// Redvelvet Data
+export const getRedvelvetData = createAsyncThunk(
+  "getRedvelvetData",
+  async () => {
+    const response = await axios.get(getRedvelvetCake);
+    return response.data;
+  }
+);
+// Vanilla Data
+export const getVanillaData = createAsyncThunk("getVanillaData", async () => {
+  const response = await axios.get(getVanillaCake);
+  return response.data;
+});
+// FruitCake Data
+export const getFruitData = createAsyncThunk("getFruitData", async () => {
+  const response = await axios.get(getFruitCake);
+  return response.data;
+});
+// PineApple Data
+export const getPineappleData = createAsyncThunk(
+  "getPineappleData",
+  async () => {
+    const response = await axios.get(getPineappleCake);
+    return response.data;
+  }
+);
+// upload Api
 export const uploadDeivaryDetails = createAsyncThunk(
   "uploadDelivaryDetails",
   async (datas, { rejectWithValue }) => {
@@ -54,6 +97,12 @@ const ProductSlice = createSlice({
     cartItems: [],
     chocolate: [],
     butterscotch: [],
+    flower: [],
+    truffle: [],
+    velvet: [],
+    vanila: [],
+    fruitcake: [],
+    pineapple: [],
     loading: false,
     error: null,
   },
@@ -101,6 +150,72 @@ const ProductSlice = createSlice({
         state.butterscotch = action.payload;
       })
       .addCase(getButterScotchData.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error;
+      })
+      .addCase(getFlowercakeData.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getFlowercakeData.fulfilled, (state, action) => {
+        state.loading = false;
+        state.flower = action.payload;
+      })
+      .addCase(getFlowercakeData.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error;
+      })
+      .addCase(getTruffleData.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getTruffleData.fulfilled, (state, action) => {
+        state.loading = false;
+        state.truffle = action.payload;
+      })
+      .addCase(getTruffleData.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error;
+      })
+      .addCase(getRedvelvetData.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getRedvelvetData.fulfilled, (state, action) => {
+        state.loading = false;
+        state.velvet = action.payload;
+      })
+      .addCase(getRedvelvetData.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error;
+      })
+      .addCase(getVanillaData.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getVanillaData.fulfilled, (state, action) => {
+        state.loading = false;
+        state.vanila = action.payload;
+      })
+      .addCase(getVanillaData.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error;
+      })
+      .addCase(getFruitData.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getFruitData.fulfilled, (state, action) => {
+        state.loading = false;
+        state.fruitcake = action.payload;
+      })
+      .addCase(getFruitData.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error;
+      })
+      .addCase(getPineappleData.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(getPineappleData.fulfilled, (state, action) => {
+        state.loading = false;
+        state.pineapple = action.payload;
+      })
+      .addCase(getPineappleData.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error;
       });

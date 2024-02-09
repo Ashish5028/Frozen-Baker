@@ -7,6 +7,9 @@ import truffle from "../../assets/freshCake/Truffle.webp";
 import red from "../../assets/freshCake/Red-Velvet.webp";
 import fruit from "../../assets/freshCake/Fresh-Fruit.webp";
 import vanila from "../../assets/freshCake/Vanila.webp";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getButterScotchData } from "../../product/productSlice";
 
 export default function FreshCake() {
   return (
@@ -33,7 +36,7 @@ export default function FreshCake() {
           <img src={truffle} className="rounded-lg" />
           <p className="text-center text-xl py-3">Truffle Cakes</p>
         </Link>
-        <Link to="/redVelvet">
+        <Link to="/redvelvet">
           <img src={red} className="rounded-lg" />
           <p className="text-center text-xl py-3">Red Velvet Cake</p>
         </Link>
