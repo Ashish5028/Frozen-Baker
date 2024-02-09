@@ -13,17 +13,17 @@ export function IceCreams() {
         Ice-Creams
       </div>
       <div className=" grid grid-cols-2 px-14  gap-6 pt-4">
-        <Link to="/api/bestseller">
-          <img src={splash} className="rounded-lg h-[300px] w-[600px]" />
+        <Link to="/icecreams">
+          <img src={splash} className="rounded-lg h-[350px] w-[600px]" />
         </Link>
-        <Link to="/api/dayseller">
-          <img src={cadbury} className="rounded-lg h-[300px] w-[600px]" />
+        <Link to="/icecreams">
+          <img src={cadbury} className="rounded-lg h-[350px] w-[600px]" />
         </Link>
-        <Link to="/api/midnight">
-          <img src={chocolate} className="rounded-lg h-[300px] w-[600px]" />
+        <Link to="/icecreams">
+          <img src={chocolate} className="rounded-lg h-[350px] w-[600px]" />
         </Link>
-        <Link to="/api/brandnew">
-          <img src={choco} className="rounded-lg h-[300px] w-[600px]" />
+        <Link to="/icecreams">
+          <img src={choco} className="rounded-lg h-[350px] w-[600px]" />
         </Link>
       </div>
     </div>

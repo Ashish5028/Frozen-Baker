@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { loginUserApi } from "../../app/apiUrls";
 import { useDispatch } from "react-redux";
-import { setUserData } from "../userSlice";
+import { loginUser, setUserData } from "../userSlice";
 
 export default function LoginUser({ onClickRegister, onClickLogin }) {
   const [email, setEmail] = useState();
@@ -14,17 +14,16 @@ export default function LoginUser({ onClickRegister, onClickLogin }) {
   const onSubmitInternal = async (e) => {
     e.preventDefault();
     onClickLogin(e);
+    dispatch(loginUser({ email, password }));
     const result = await fetch(loginUserApi, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
     let data = await result.json();
-
     {
       data.auth
-        ? dispatch(setUserData({ user: data.users, jwtKey: data.auth })) &&
-          localStorage.setItem("user", JSON.stringify(data.user)) &&
+        ? localStorage.setItem("user", JSON.stringify(data.user)) &&
           localStorage.setItem("jwtKey", JSON.stringify(data.auth))
         : alert("enter correct details");
     }
