@@ -1,0 +1,13 @@
+.circle-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 15px; /* Adjust the size of the circle */
+  height: 15px; /*Adjust the size of the circle */
+  border-radius: 50%; /* Makes the checkbox round */
+  border: 2px solid #e35f26; /* Border around the circle */
+}
+
+.circle-checkbox:checked {
+  background-color: #cd3a3a; /* Color when the checkbox is checked */
+}

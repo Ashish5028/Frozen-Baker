@@ -125,12 +125,12 @@ export default function Register({ onClickRegister, onClickLogin }) {
           </form>
         </div>
         <p className=" py-3 text-center text-sm text-gray-500">
-          Not a member?
+          Already SignUp
           <button
             className="font-semibold leading-6 text-violet-500 hover:text-violet-600 pl-2"
             onClick={onClickLogin}
           >
-            SignUp
+            Log In
           </button>
         </p>
       </div>
