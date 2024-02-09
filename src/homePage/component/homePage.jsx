@@ -3,7 +3,11 @@ import { SimpleSlider } from "../../component/slider";
 import Team from "../../ourTeam/component/team";
 import ClientReview from "./clientReview";
 import { useDispatch } from "react-redux";
-import { getProductDetails } from "../../product/productSlice";
+import {
+  getButterScotchData,
+  getChocolateData,
+  getProductDetails,
+} from "../../product/productSlice";
 import { CelebrationPage } from "./celebration";
 import { CakeFlavour } from "./cakeFlavour";
 import FreshCake from "./freshCake";
@@ -16,6 +20,7 @@ import { getUsers, loginUser } from "../../user/userSlice";
 import { getIcecreamDetails } from "../../page/uploadProduct/iceCream/icecreamSlice";
 import { getChocolateDetail } from "../../page/uploadProduct/chocolate/chocolateSlice";
 import { getPastryDetails } from "../../page/uploadProduct/pastry/pastrySlice";
+
 export function MainPage() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -24,6 +29,8 @@ export function MainPage() {
     dispatch(getIcecreamDetails());
     dispatch(getChocolateDetail());
     dispatch(getPastryDetails());
+    dispatch(getChocolateData());
+    dispatch(getButterScotchData());
   }, []);
   return (
     <>

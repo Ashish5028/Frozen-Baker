@@ -13,7 +13,7 @@ import Bestseller from "../homePage/RoutePage/bestseller";
 import MidSeller from "../homePage/RoutePage/midseller";
 import BrandSeller from "../homePage/RoutePage/brandseller";
 import { ChocolateFile } from "../page/freshCake/navigatePage/chocolateFile";
-import { ButterScotch } from "../page/freshCake/navigatePage/butterScotch";
+import ButterScotchCake from "../page/freshCake/navigatePage/butterScotch";
 import { FlowerCake } from "../page/freshCake/navigatePage/flowerCake";
 import { Fruit } from "../page/freshCake/navigatePage/fruit";
 import { PineApple } from "../page/freshCake/navigatePage/pineApple";
@@ -65,8 +65,8 @@ export default function AppRoutes() {
           <Route path="/api/midnight" element={<Bestseller />}></Route>
           <Route path="/api/dayseller" element={<MidSeller />}></Route>
           <Route path="/api/brandnew" element={<BrandSeller />}></Route>
-          <Route path="/api/chocolate" element={<ChocolateFile />}></Route>
-          <Route path="/api/butterscotch" element={<ButterScotch />}></Route>
+          <Route path="/chocolate" element={<ChocolateFile />}></Route>
+          <Route path="/butterscotch" element={<ButterScotchCake />}></Route>
           <Route path="/api/flowerscake" element={<FlowerCake />}></Route>
           <Route path="/api/fruit" element={<Fruit />}></Route>
           <Route path="/api/pineapple" element={<PineApple />}></Route>

@@ -7,6 +7,8 @@ export const getProductApi = `${serverHost}/api/get/image`;
 export const getPastryApi = `${serverHost}/api/get/pastry`;
 export const getChocolateApi = `${serverHost}/api/get/chocolate`;
 export const getIcecreamApi = `${serverHost}/api/get/icecream`;
+export const getChocolateCake = `${serverHost}/api/get/chocolate`;
+export const getButterScotchCake = `${serverHost}/api/get/butterscotch`;
 // Upload Apis
 
 export const createUserApi = `${serverHost}/api/user/register`;
