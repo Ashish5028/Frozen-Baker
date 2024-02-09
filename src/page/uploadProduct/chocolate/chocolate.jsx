@@ -4,7 +4,6 @@ import { SiChocolatey } from "react-icons/si";
 import { IoCloudUploadSharp } from "react-icons/io5";
 import { uploadChocolateApi } from "../../../app/apiUrls";
 function ChocolateUpload() {
-  const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [flavour, setFlavour] = useState("");
   const [weight, setWeight] = useState("");
@@ -38,7 +37,6 @@ function ChocolateUpload() {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
-          name,
           weight,
           price,
           flavour,
@@ -74,12 +72,12 @@ function ChocolateUpload() {
             >
               <div>
                 <label className="text-textColor  pl-1 font-text ">
-                  Chocolate Name :
+                  Chocolate Flavour :
                 </label>
                 <br />
                 <input
-                  onChange={(e) => setName(e.target.value)}
-                  name="name"
+                  onChange={(e) => setFlavour(e.target.value)}
+                  name="flavour"
                   type="text"
                   required
                   className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
@@ -113,19 +111,7 @@ function ChocolateUpload() {
                   className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
                 />
               </div>
-              <div>
-                <label className="text-textColor  pl-1 font-text ">
-                  Chocolate Flavour :
-                </label>
-                <br />
-                <input
-                  onChange={(e) => setFlavour(e.target.value)}
-                  name="flavour"
-                  type="text"
-                  required
-                  className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
-                />
-              </div>
+
               <div>
                 <label>Chocolate Image</label>
                 <input

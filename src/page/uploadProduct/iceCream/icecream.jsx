@@ -4,7 +4,6 @@ import { LuIceCream } from "react-icons/lu";
 import { IoCloudUploadSharp } from "react-icons/io5";
 import { createProductApi, uploadIcecreamApi } from "../../../app/apiUrls";
 function IcecreamUpload() {
-  const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [flavour, setFlavour] = useState("");
   const [weight, setWeight] = useState("");
@@ -38,7 +37,6 @@ function IcecreamUpload() {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
-          name,
           flavour,
           weight,
           price,
@@ -71,12 +69,12 @@ function IcecreamUpload() {
             >
               <div>
                 <label className="text-textColor  pl-1 font-text ">
-                  IceCream Name
+                  IceCream Flavour
                 </label>
                 <br />
                 <input
-                  onChange={(e) => setName(e.target.value)}
-                  name="name"
+                  onChange={(e) => setFlavour(e.target.value)}
+                  name="flavour"
                   type="text"
                   required
                   className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
@@ -110,19 +108,7 @@ function IcecreamUpload() {
                   className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
                 />
               </div>
-              <div>
-                <label className="text-textColor  pl-1 font-text ">
-                  IceCream Flavour
-                </label>
-                <br />
-                <input
-                  onChange={(e) => setFlavour(e.target.value)}
-                  name="flavour"
-                  type="text"
-                  required
-                  className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
-                />
-              </div>
+
               <div>
                 <label className="pl-2">IceCream Image</label>
                 <input

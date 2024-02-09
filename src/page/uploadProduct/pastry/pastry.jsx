@@ -4,7 +4,6 @@ import { GiCakeSlice } from "react-icons/gi";
 import { IoCloudUploadSharp } from "react-icons/io5";
 import { createProductApi, uploadPastryApi } from "../../../app/apiUrls";
 function PastryUpload() {
-  const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [flavour, setFlavour] = useState("");
   const [weight, setWeight] = useState("");
@@ -37,7 +36,6 @@ function PastryUpload() {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
-          name,
           flavour,
           weight,
           price,
@@ -63,25 +61,23 @@ function PastryUpload() {
               <GiCakeSlice className="text-headingColor mr-3" fontSize="40px" />{" "}
               Upload Your Pastry Details Here
             </p>
-
             <form
               onSubmit={(e) => handleSubmit(e)}
               className="grid grid-cols-2 gap-6 my-3"
             >
               <div>
                 <label className="text-textColor  pl-1 font-text ">
-                  Pastry Name
+                  Pastry Flavour
                 </label>
                 <br />
                 <input
-                  onChange={(e) => setName(e.target.value)}
-                  name="name"
+                  onChange={(e) => setFlavour(e.target.value)}
+                  name="flavour"
                   type="text"
                   required
                   className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
                 />
               </div>
-
               <div>
                 <label className="text-textColor  pl-1 font-text ">
                   Pastry Price
@@ -95,7 +91,6 @@ function PastryUpload() {
                   className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
                 />
               </div>
-
               <div>
                 <label className="text-textColor  pl-1 font-text ">
                   Pastry Weight
@@ -104,19 +99,6 @@ function PastryUpload() {
                 <input
                   onChange={(e) => setWeight(e.target.value)}
                   name="weight"
-                  type="text"
-                  required
-                  className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
-                />
-              </div>
-              <div>
-                <label className="text-textColor  pl-1 font-text ">
-                  Pastry Flavour
-                </label>
-                <br />
-                <input
-                  onChange={(e) => setFlavour(e.target.value)}
-                  name="flavour"
                   type="text"
                   required
                   className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "

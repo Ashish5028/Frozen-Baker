@@ -22,16 +22,15 @@ export const createUser = createAsyncThunk(
 
 export const loginUser = createAsyncThunk(
   "loginUser",
-  async (datas, { rejectWithValue }) => {
-    const response = await fetch(loginUserApi, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(datas),
-    });
+  async ({ email, password }, { rejectWithValue }) => {
     try {
-      const result = await response.json();
-
-      return result;
+      const response = await fetch(loginUserApi, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await response.json();
+      console.log(data);
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -47,15 +46,20 @@ const UserSlice = createSlice({
   name: getUsers,
   initialState: {
     user: [],
+    data: [],
+    item: null,
+    isLoggedIn: false,
     loading: false,
     error: null,
-    users: null,
-    jwtKey: null,
   },
   reducers: {
-    setUserData: (state, action) => {
-      // state.jwtKey = action.payload.jwtKey;
-      state.users = action.payload;
+    login: (state, action) => {
+      state.isLoggedIn = true;
+      state.item = action.payload;
+    },
+    logout: (state) => {
+      state.isLoggedIn = false;
+      state.item = null;
     },
   },
   extraReducers: (builder) => {
@@ -70,10 +74,22 @@ const UserSlice = createSlice({
       .addCase(getUsers.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error;
+      })
+      .addCase(loginUser.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(loginUser.fulfilled, (state, action) => {
+        state.loading = false;
+        state.data.push(action.payload);
+        state.error = null;
+      })
+      .addCase(loginUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
       });
   },
 });
 
-export const { setUserData } = UserSlice.actions;
+export const { setUserData, login, logout } = UserSlice.actions;
 
 export default UserSlice.reducer;

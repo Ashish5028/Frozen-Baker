@@ -12,7 +12,7 @@ import OccasionCake from "./occasionCake";
 import { Pastrys } from "../../page/pastrys/pastrys";
 import { Chocolates } from "../../page/chocolate/chocolate";
 import { IceCreams } from "../../page/iceCream/iceCream";
-import { getUsers } from "../../user/userSlice";
+import { getUsers, loginUser } from "../../user/userSlice";
 import { getIcecreamDetails } from "../../page/uploadProduct/iceCream/icecreamSlice";
 import { getChocolateDetail } from "../../page/uploadProduct/chocolate/chocolateSlice";
 import { getPastryDetails } from "../../page/uploadProduct/pastry/pastrySlice";

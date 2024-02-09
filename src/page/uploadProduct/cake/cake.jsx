@@ -7,7 +7,6 @@ import { BsCake } from "react-icons/bs";
 import { IoCloudUploadSharp } from "react-icons/io5";
 import { createProductApi } from "../../../app/apiUrls";
 function CakeUpload() {
-  const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [flavour, setFlavour] = useState("");
   const [weight, setWeight] = useState("");
@@ -41,7 +40,6 @@ function CakeUpload() {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
-          name,
           flavour,
           weight,
           price,
@@ -75,18 +73,17 @@ function CakeUpload() {
             >
               <div>
                 <label className="text-textColor  pl-1 font-text ">
-                  Cake Name
+                  Cake Flavour
                 </label>
                 <br />
                 <input
-                  onChange={(e) => setName(e.target.value)}
-                  name="name"
+                  onChange={(e) => setFlavour(e.target.value)}
+                  name="flavour"
                   type="text"
                   required
                   className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
                 />
               </div>
-
               <div>
                 <label className="text-textColor  pl-1 font-text ">
                   Cake Price
@@ -100,7 +97,6 @@ function CakeUpload() {
                   className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
                 />
               </div>
-
               <div>
                 <label className="text-textColor  pl-1 font-text ">
                   Cake Weight
@@ -128,19 +124,7 @@ function CakeUpload() {
                   className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
                 />
               </div>
-              <div>
-                <label className="text-textColor  pl-1 font-text ">
-                  Cake Flavour
-                </label>
-                <br />
-                <input
-                  onChange={(e) => setFlavour(e.target.value)}
-                  name="flavour"
-                  type="text"
-                  required
-                  className="ring-1 mt-1 ring-inset ring-neutral-300 border py-2 outline-none rounded-md pl-2 "
-                />
-              </div>
+
               <div>
                 <label>Cake Image</label>
                 <input
