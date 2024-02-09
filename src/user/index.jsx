@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { createUser } from "./userSlice";
 import { Register } from "./components/register";
-import LoginUser from "./components/login";
+import { LoginUser } from "./components/login";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

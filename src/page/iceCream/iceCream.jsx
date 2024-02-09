@@ -3,6 +3,7 @@ import splash from "../../assets/iceCreams/360.jpg";
 import cadbury from "../../assets/iceCreams/1077.jpg";
 import choco from "../../assets/iceCreams/colorful.avif";
 import chocolate from "../../assets/iceCreams/grop.jpg";
+import butter from "../../assets/iceCreams/ice.png";
 
 import { Link } from "react-router-dom";
 export function IceCreams() {
@@ -20,7 +21,7 @@ export function IceCreams() {
           <img src={cadbury} className="rounded-lg h-[350px] w-[600px]" />
         </Link>
         <Link to="/icecreams">
-          <img src={chocolate} className="rounded-lg h-[350px] w-[600px]" />
+          <img src={butter} className="rounded-lg h-[350px] w-[600px]" />
         </Link>
         <Link to="/icecreams">
           <img src={choco} className="rounded-lg h-[350px] w-[600px]" />

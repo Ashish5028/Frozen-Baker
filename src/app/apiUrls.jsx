@@ -9,6 +9,12 @@ export const getChocolateApi = `${serverHost}/api/get/chocolate`;
 export const getIcecreamApi = `${serverHost}/api/get/icecream`;
 export const getChocolateCake = `${serverHost}/api/get/chocolate`;
 export const getButterScotchCake = `${serverHost}/api/get/butterscotch`;
+export const getFlowerCake = `${serverHost}/api/get/flower`;
+export const getTruffleCake = `${serverHost}/api/get/truffle`;
+export const getRedvelvetCake = `${serverHost}/api/get/redvelvet`;
+export const getVanillaCake = `${serverHost}/api/get/vanilla`;
+export const getFruitCake = `${serverHost}/api/get/fruit`;
+export const getPineappleCake = `${serverHost}/api/get/pineapple`;
 // Upload Apis
 
 export const createUserApi = `${serverHost}/api/user/register`;

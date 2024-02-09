@@ -3,24 +3,26 @@ import { FaCloudUploadAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { loginUserApi } from "../../app/apiUrls";
-import { useDispatch } from "react-redux";
-import { loginUser, setUserData } from "../userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../userSlice";
 
-export default function LoginUser({ onClickRegister, onClickLogin }) {
+export function LoginUser({ onClickRegister, onClickLogin }) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const data = useSelector((state) => state.users.status);
   const onSubmitInternal = async (e) => {
     e.preventDefault();
     onClickLogin(e);
-    dispatch(loginUser({ email, password }));
+
     const result = await fetch(loginUserApi, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
     let data = await result.json();
+    dispatch(login(data));
     {
       data.auth
         ? localStorage.setItem("user", JSON.stringify(data.user)) &&

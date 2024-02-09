@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { HeaderPage } from "./component/header";
+import HeaderPage from "./component/header";
 import { useDispatch } from "react-redux";
 import { getUsers } from "../user/userSlice";
 

@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { createUserApi, getUserApi, loginUserApi } from "../app/apiUrls";
+import { useDispatch } from "react-redux";
 
 export const createUser = createAsyncThunk(
   "createUser",
@@ -12,7 +13,6 @@ export const createUser = createAsyncThunk(
     });
     try {
       const result = await response.json();
-
       return result;
     } catch (error) {
       return rejectWithValue(error);
@@ -23,6 +23,7 @@ export const createUser = createAsyncThunk(
 export const loginUser = createAsyncThunk(
   "loginUser",
   async ({ email, password }, { rejectWithValue }) => {
+    const dispatch = useDispatch();
     try {
       const response = await fetch(loginUserApi, {
         method: "POST",
@@ -31,6 +32,8 @@ export const loginUser = createAsyncThunk(
       });
       const data = await response.json();
       console.log(data);
+      // dispatch(login(data));
+      // localStorage.setItem("token", data.token);
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -47,7 +50,7 @@ const UserSlice = createSlice({
   initialState: {
     user: [],
     data: [],
-    item: null,
+    item: [],
     isLoggedIn: false,
     loading: false,
     error: null,
@@ -55,7 +58,7 @@ const UserSlice = createSlice({
   reducers: {
     login: (state, action) => {
       state.isLoggedIn = true;
-      state.item = action.payload;
+      state.item.push(action.payload);
     },
     logout: (state) => {
       state.isLoggedIn = false;
@@ -80,7 +83,7 @@ const UserSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.loading = false;
-        state.data.push(action.payload);
+        state.data = action.payload;
         state.error = null;
       })
       .addCase(loginUser.rejected, (state, action) => {

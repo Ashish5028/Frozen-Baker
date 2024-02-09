@@ -67,12 +67,12 @@ export default function AppRoutes() {
           <Route path="/api/brandnew" element={<BrandSeller />}></Route>
           <Route path="/chocolate" element={<ChocolateFile />}></Route>
           <Route path="/butterscotch" element={<ButterScotchCake />}></Route>
-          <Route path="/api/flowerscake" element={<FlowerCake />}></Route>
-          <Route path="/api/fruit" element={<Fruit />}></Route>
-          <Route path="/api/pineapple" element={<PineApple />}></Route>
-          <Route path="/api/redVelvet" element={<RedVelvet />}></Route>
-          <Route path="/api/vanila" element={<Vanilla />}></Route>
-          <Route path="/api/truffle" element={<Truffle />}></Route>
+          <Route path="/flowerscake" element={<FlowerCake />}></Route>
+          <Route path="/fruit" element={<Fruit />}></Route>
+          <Route path="/pineapple" element={<PineApple />}></Route>
+          <Route path="/redvelvet" element={<RedVelvet />}></Route>
+          <Route path="/vanila" element={<Vanilla />}></Route>
+          <Route path="/truffle" element={<Truffle />}></Route>
           <Route path="/cartitems" element={<CartItems />}></Route>
           <Route path="/pastry" element={<PastryDetails />}></Route>
           <Route path="/chocolate" element={<ChocolateDetails />}></Route>

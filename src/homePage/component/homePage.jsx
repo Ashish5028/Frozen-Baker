@@ -6,7 +6,13 @@ import { useDispatch } from "react-redux";
 import {
   getButterScotchData,
   getChocolateData,
+  getFlowercakeData,
+  getFruitData,
+  getPineappleData,
   getProductDetails,
+  getRedvelvetData,
+  getTruffleData,
+  getVanillaData,
 } from "../../product/productSlice";
 import { CelebrationPage } from "./celebration";
 import { CakeFlavour } from "./cakeFlavour";
@@ -21,7 +27,7 @@ import { getIcecreamDetails } from "../../page/uploadProduct/iceCream/icecreamSl
 import { getChocolateDetail } from "../../page/uploadProduct/chocolate/chocolateSlice";
 import { getPastryDetails } from "../../page/uploadProduct/pastry/pastrySlice";
 
-export function MainPage() {
+export default function MainPage() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProductDetails());
@@ -31,6 +37,12 @@ export function MainPage() {
     dispatch(getPastryDetails());
     dispatch(getChocolateData());
     dispatch(getButterScotchData());
+    dispatch(getVanillaData());
+    dispatch(getPineappleData());
+    dispatch(getFruitData());
+    dispatch(getTruffleData());
+    dispatch(getRedvelvetData());
+    dispatch(getFlowercakeData());
   }, []);
   return (
     <>
