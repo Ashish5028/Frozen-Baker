@@ -11,13 +11,13 @@ export default function MenuItems() {
           Team
         </Link>
         <Link to="product" className="manuItems">
-          Cakes
+          Cake
         </Link>
         <Link to="/pastry" className="manuItems">
-          Pastrys
+          Pastry
         </Link>
         <Link to="/chocolate" className="manuItems">
-          Chocolates
+          Chocolate
         </Link>
         <Link to="/icecreams" className="manuItems">
           IceCream

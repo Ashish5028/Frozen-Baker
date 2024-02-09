@@ -22,6 +22,8 @@ function classNames(...classes) {
 
 function HeaderPage() {
   const value = useSelector((state) => state.header.value);
+  const user = useSelector((state) => state.users.item);
+  const name = user[0]?.data.name;
   const cartId = useSelector((state) => state.product.users);
 
   return (
@@ -68,12 +70,17 @@ function HeaderPage() {
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
-                    <Menu.Button className="relative flex rounded-full  text-sm text-yellow-500">
+                    <Menu.Button className="relative flex rounded-full  text-sm text-white">
                       <span className="absolute -inset-1.5" />
-                      <span className="sr-only">Open user menu</span>
-                      <span className="material-symbols-outlined ">
-                        account_circle
-                      </span>
+                      <div>
+                        {name ? (
+                          name
+                        ) : (
+                          <span className="material-symbols-outlined ">
+                            account_circle
+                          </span>
+                        )}
+                      </div>
                     </Menu.Button>
                   </div>
                   <Transition
@@ -120,4 +127,4 @@ function HeaderPage() {
   );
 }
 
-export { HeaderPage };
+export default HeaderPage;
