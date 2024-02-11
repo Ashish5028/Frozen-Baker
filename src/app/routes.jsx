@@ -32,6 +32,15 @@ import PastryDetails from "../page/pastrys/component/pastryDetails";
 import ChocolateDetails from "../page/chocolate/component/chocolateDetails";
 import { IceCreamDetails } from "../page/iceCream/component/iceCreamDetails";
 import IceCreamShop from "../page/iceCream/component/icecreamShop";
+import PastryShop from "../page/pastrys/component/pastryShop";
+import ChocolateShop from "../page/chocolate/component/chocolateShop";
+import MyAccount from "../page/userAccount/component/myAccount";
+import MyOrder from "../page/userAccount/navigateFiles/myOrder";
+import MyProfile from "../page/userAccount/navigateFiles/myProfile";
+import MyRemainder from "../page/userAccount/navigateFiles/myRemainder";
+import GiftVoucher from "../page/userAccount/navigateFiles/gifts";
+import SaveAddress from "../page/userAccount/navigateFiles/saveAddress";
+import ChangePassword from "../page/userAccount/navigateFiles/changePassword";
 
 export default function AppRoutes() {
   return (
@@ -58,6 +67,14 @@ export default function AppRoutes() {
             path={`/icecreams/view/details/:_id`}
             element={<IceCreamShop />}
           ></Route>
+          <Route
+            path={`/pastry/view/details/:_id`}
+            element={<PastryShop />}
+          ></Route>
+          <Route
+            path={`/chocolate/view/details/:_id`}
+            element={<ChocolateShop />}
+          ></Route>
           <Route path={`/view/:id`} element={<SummaryMovie />}></Route>
           <Route path="/api/anniversary" element={<AnniversaryPage />}></Route>
           <Route path="/api/birthday" element={<BirthdayPage />}></Route>
@@ -82,6 +99,14 @@ export default function AppRoutes() {
           <Route path="/pastryupload" element={<PastryUpload />}></Route>
           <Route path="/chocolateupload" element={<ChocolateUpload />}></Route>
           <Route path="/delivaryaddress" element={<Address />}></Route>
+          <Route path="/my-account" element={<MyAccount />}></Route>
+          {/* My Account Files */}
+          {/* <Route path="/my-order" element={<MyOrder />}></Route>
+          <Route path="/my-profile" element={<MyProfile />}></Route>
+          <Route path="/my-remainder" element={<MyRemainder />}></Route>
+          <Route path="/voucher" element={<GiftVoucher />}></Route>
+          <Route path="/address" element={<SaveAddress />}></Route>
+          <Route path="/password" element={<ChangePassword />}></Route> */}
         </Routes>
       </BrowserRouter>
     </>

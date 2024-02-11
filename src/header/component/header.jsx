@@ -6,7 +6,7 @@ import { Link, useParams } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import MenuItems from "./menuItems";
-import LoginItems from "./loginItems";
+import { LoginItems } from "./loginItems";
 import { useDispatch, useSelector } from "react-redux";
 const navigation = [
   { name: "Home", href: "/", current: false },
