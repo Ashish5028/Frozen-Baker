@@ -7,15 +7,19 @@ import { uploadDeivaryDetails } from "../../../product/productSlice";
 import OffersPage from "../../../product/productDetails/offersPage";
 import { ScrollPanel } from "primereact/scrollpanel";
 import { FooterPage } from "../../../component/footerPage";
-import IceCreamImage from "./smallImage";
+import { PastryImage } from "./smallImage";
 
-export default function IceCreamShop() {
+export default function PastryShop() {
   const dispatch = useDispatch();
   const param = useParams();
   const { _id } = param;
-  const { data, loading } = useSelector((state) => state.icecream);
-  // console.log(data);
+  //   console.log(_id);
+  const { data, loading } = useSelector((state) => state.pastry);
+  {
+    loading ? <h1>loading</h1> : null;
+  }
   const res = data.filter((e) => e._id === _id);
+
   return (
     <>
       <div className="flex justify-around font-text text-sm h-screen bg-stone-100 py-5 ">
@@ -42,7 +46,7 @@ export default function IceCreamShop() {
             </div>
             <div>
               <p>Pick an upgrade</p>
-              <IceCreamImage />
+              <PastryImage />
               <br />
               <DelivaryPage
                 onClickRegister={(e) => dispatch(uploadDeivaryDetails(e))}

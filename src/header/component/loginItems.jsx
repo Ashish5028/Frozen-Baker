@@ -7,13 +7,19 @@ import { FaUserCircle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../user/userSlice";
-export default function LoginItems() {
+import { HomeIndex } from "../../homePage";
+export function LoginItems() {
   const naviate = useNavigate();
   const dispatch = useDispatch();
   const data = useSelector((state) => state.users.item);
   const res = data.find((ele) => ele.data.category === "Seller");
   const user = useSelector((state) => state.users.item);
   const name = user[0]?.data.name;
+  // const logout = useSelector((state) => state.users.isLoggedIn);
+  const logoutUser = () => {
+    dispatch(logout());
+    naviate(<HomeIndex />);
+  };
 
   return (
     <div className="grid grid-cols-1 divide-y ">
@@ -26,7 +32,7 @@ export default function LoginItems() {
         </Link>
       )}
       {name && (
-        <Link to="/info">
+        <Link to="/my-account">
           <div className=" px-6  items-center py-2  flex  text-gray-700 hover:bg-zinc-200">
             <FaUserCircle fontSize="large" />
             <p className="px-3">My Account</p>
@@ -41,12 +47,14 @@ export default function LoginItems() {
           </div>
         </Link>
       )}
-      <Link to="/">
-        <div className="px-6  items-center py-2  flex   text-gray-700 hover:bg-zinc-200">
-          <IoMdCall fontSize="large" />
-          <p className="px-3"> Contact Us</p>
-        </div>
-      </Link>
+      {res ? (
+        <Link to="/">
+          <div className="px-6  items-center py-2  flex   text-gray-700 hover:bg-zinc-200">
+            <IoMdCall fontSize="large" />
+            <p className="px-3"> Contact Us</p>
+          </div>
+        </Link>
+      ) : null}
       <Link to="myorder">
         <div className=" px-6   items-center py-2  flex  text-gray-700 hover:bg-zinc-200">
           <MdInventory fontSize="medium" />
@@ -54,10 +62,14 @@ export default function LoginItems() {
         </div>
       </Link>
       <div>
-        <div className=" px-6  items-center py-2  flex   text-gray-700 hover:bg-zinc-200">
-          <HiOutlineLogout fontSize="large" />
-          <button className="px-3">Logout</button>
-        </div>
+        {name ? (
+          <div className=" px-6  items-center py-2  flex   text-gray-700 hover:bg-zinc-200">
+            <HiOutlineLogout fontSize="large" />
+            <button className="px-3" onClick={logoutUser}>
+              Logout
+            </button>
+          </div>
+        ) : null}
       </div>
     </div>
   );
