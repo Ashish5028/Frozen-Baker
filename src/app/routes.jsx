@@ -22,7 +22,6 @@ import { Truffle } from "../page/freshCake/navigatePage/truffle";
 import { Vanilla } from "../page/freshCake/navigatePage/vanilla";
 import SummaryMovie from "../ourTeam/component/summary";
 import CartItems from "../product/productDetails/cartItems";
-import Address from "../page/address/address";
 import ProductUpload from "../page/uploadProduct";
 import { CakeUpload } from "../page/uploadProduct/cake/cake";
 import { PastryUpload } from "../page/uploadProduct/pastry/pastry";
@@ -41,10 +40,17 @@ import MyRemainder from "../page/userAccount/navigateFiles/myRemainder";
 import GiftVoucher from "../page/userAccount/navigateFiles/gifts";
 import SaveAddress from "../page/userAccount/navigateFiles/saveAddress";
 import ChangePassword from "../page/userAccount/navigateFiles/changePassword";
-import AddressPage from "../product/productDetails/addressPage";
-import PaymentMethods from "../page/payment";
 
-export function AppRoutes() {
+import PaymentMethods from "../page/payment";
+import AddressPage from "../page/address/addressPage";
+import { useSelector } from "react-redux";
+
+export default function AppRoutes() {
+  // const user = useSelector((state) => state.users.item);
+  // const data = user.find((ele) => ele.data);
+  // const username = data.data;
+  // console.log(username);
+
   return (
     <>
       <BrowserRouter>
