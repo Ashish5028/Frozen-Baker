@@ -1,79 +1,98 @@
 import React from "react";
 import "./addressPage.css";
+import { Link } from "react-router-dom";
 
-export const AddressPage = () => {
+export default function AddressPage() {
+  const handlechange = () => {};
   return (
     <>
-      <div className=" flex   justify-center  h-screen  align-middle   ">
-        <div className=" bg-white w-2/4 p-5 border border-inherit shadow-md">
-          <h1 className="text-2xl pl-8 "> ORDER & DELIVERY DETAILS</h1>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <h1 className="text-2xl pl-8"> ADD DELIVERY ADDRESS</h1>
-          <div className=" h-100% m-8 bg-yellow-100">
+      <div className=" flex   justify-center   align-middle  text-textColor">
+        <div className=" bg-white w-1/2 p-5 border border-inherit shadow-md">
+          <h1 className="text-3xl pl-8 font-heading text-bgColor">
+            ORDER & DELIVERY DETAILS
+          </h1>
+          <h1 className="text-xl px-8 pt-4"> ADD DELIVERY ADDRESS</h1>
+          <div className=" m-8 bg-stone-200 rounded-md px-2 py-10">
             <div className="pl-5 ">
-              <input
-                type="checkbox"
-                id="circleCheckbox"
-                class="circle-checkbox"
-              />
-              <label for="circleCheckbox" className="pl-2">
+              <input type="checkbox" class="circle-checkbox" />
+              <label for="circleCheckbox" className="pl-2  text-xl">
                 Add New Address
               </label>
             </div>
-
-            <div className="grid grid-cols-2 gap-10  px-5 mt-5">
-              <input type="text" placeholder="Name" name="title" />
-              <input type="text" placeholder="Mobile No." />
-              <input name="address" type="text" placeholder="Address" />
-              <input type="text" placeholder="Other Email" />
-              <div>
-                <h1>Address Type</h1>
-                <div className="mt-4">
+            <div className="grid grid-cols-2 gap-10  px-5 mt-5 ">
+              <input
+                type="text"
+                placeholder="Name"
+                name="title"
+                className="p-2 rounded-md outline-none  ring-inset ring-zinc-400 ring-1 "
+              />
+              <input
+                type="text"
+                placeholder="Mobile No."
+                className="outline-none p-2 rounded-md ring-inset ring-zinc-400 ring-1"
+              />
+              <input
+                name="address"
+                type="text"
+                placeholder="Address"
+                className="py-2 outline-none p-2 rounded-md ring-inset ring-zinc-400 ring-1"
+              />
+              <input
+                type="text"
+                placeholder="Alt Mobile No"
+                className="outline-none p-2 rounded-md ring-inset ring-zinc-400 ring-1"
+              />
+              <input
+                type="email"
+                placeholder="Other Email"
+                className="outline-none p-2 rounded-md ring-inset ring-zinc-400 ring-1"
+              />
+              <input
+                type="email"
+                placeholder="Landmark"
+                className="outline-none p-2 rounded-md ring-inset ring-zinc-400 ring-1"
+              />
+            </div>
+            <div className="px-7 py-5 text-lg mt-5">
+              <h1 className="font-medium">Address Type</h1>
+              <div className=" w-full flex items-center space-x-4 py-4">
+                <label className="  pl-1 font-text flex ">
                   <input
-                    type="checkbox"
-                    id="circleCheckbox"
-                    class="circle-checkbox"
+                    onChange={handlechange}
+                    name="user"
+                    type="radio"
+                    value="Home"
+                    required
+                    className="w-4 mx-2"
                   />
-                  <label for="circleCheckbox" className="p-2">
-                    Home
-                  </label>
+                  Home
+                </label>
+                <label className="text-textColor  pl-1 font-text flex ">
                   <input
-                    type="checkbox"
-                    id="circleCheckbox"
-                    class="circle-checkbox"
+                    onChange={handlechange}
+                    name="user"
+                    type="radio"
+                    value="Offilce"
+                    required
+                    className="w-4 mx-2"
                   />
-                  <label for="circleCheckbox" className="p-2">
-                    Office
-                  </label>
-                  <input
-                    type="checkbox"
-                    id="circleCheckbox"
-                    class="circle-checkbox"
-                  />
-                  <label for="circleCheckbox" className="p-2">
-                    Other
-                  </label>
-                </div>
+                  Offilce
+                </label>
               </div>
             </div>
-            <div className="pt-16 pr-4 flex justify-end text-2xl text-white">
-              <span className="border border-3xl bg-conColor ">
-                SAVE & DELIVER HERE
-              </span>
-            </div>
-          </div>
-          <div className=" pl-8 mt-10 text-2xl text-white">
-            <span className="border border-5xl bg-slate-400">
-              PROCEED TO PAY
-            </span>
+            <Link to="/payment">
+              <div className="pt-5 pr-4 flex justify-end text-lg text-white">
+                <button
+                  className="border border-3xl bg-bgColor rounded-md py-2 px-6 "
+                  onSubmit="submit"
+                >
+                  Save & Pay
+                </button>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
     </>
   );
-};
+}

@@ -8,7 +8,6 @@ import { getApi } from "./teamSlice";
 import AppCart from "./component/cart";
 import CARTPAGE from "./component/cart";
 import ParlorForm from "./component/movieDetails";
-import { AddressPage } from "../product/productDetails/addressPage";
 
 export const TeamIndex = () => {
   const dispatch = useDispatch();
@@ -17,10 +16,9 @@ export const TeamIndex = () => {
   });
   return (
     <div className=" ">
-      {/* <Team /> */}
+      <Team />
       {/* <CARTPAGE /> */}
       {/* <ParlorForm /> */}
-      <AddressPage />
     </div>
   );
 };

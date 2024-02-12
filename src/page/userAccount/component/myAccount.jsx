@@ -6,11 +6,15 @@ import { MdLock } from "react-icons/md";
 import { MdLocalOffer } from "react-icons/md";
 import { FaUser } from "react-icons/fa6";
 import { FaUserCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./myAccount.css";
 import ChangePassword from "../navigateFiles/changePassword";
 export default function MyAccount() {
   const userData = useSelector((state) => state.users.item);
+  const navigate = useNavigate();
+  const password = () => {
+    <ChangePassword />;
+  };
 
   return (
     <div className="font-text h-screen bg-stone-200 text-lg flex justify-around px-10">
@@ -55,15 +59,15 @@ export default function MyAccount() {
             <p>Save Addresses</p>
           </div>
         </Link>
-        <Link to="/password" className="linkCss">
+        <Link className="linkCss">
           <div id="password" className="flex  items-center space-x-6 pl-16 ">
             <MdLock fontSize="20px" />
-            <p>Change Password</p>
+            <button onClick={password}>Change Password</button>
           </div>
         </Link>
       </div>
       <div className="w-3/4 bg-white ml-10">
-        {"password" ? <ChangePassword /> : null}
+        {password ? null : <ChangePassword />}
       </div>
     </div>
   );

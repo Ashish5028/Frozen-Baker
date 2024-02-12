@@ -41,8 +41,10 @@ import MyRemainder from "../page/userAccount/navigateFiles/myRemainder";
 import GiftVoucher from "../page/userAccount/navigateFiles/gifts";
 import SaveAddress from "../page/userAccount/navigateFiles/saveAddress";
 import ChangePassword from "../page/userAccount/navigateFiles/changePassword";
+import AddressPage from "../product/productDetails/addressPage";
+import PaymentMethods from "../page/payment";
 
-export default function AppRoutes() {
+export function AppRoutes() {
   return (
     <>
       <BrowserRouter>
@@ -98,8 +100,12 @@ export default function AppRoutes() {
           <Route path="/icecreamupload" element={<IcecreamUpload />}></Route>
           <Route path="/pastryupload" element={<PastryUpload />}></Route>
           <Route path="/chocolateupload" element={<ChocolateUpload />}></Route>
-          <Route path="/delivaryaddress" element={<Address />}></Route>
+          <Route path="/delivaryaddress" element={<AddressPage />}></Route>
           <Route path="/my-account" element={<MyAccount />}></Route>
+
+          {/* Payment */}
+          <Route path="/payment" element={<PaymentMethods />}></Route>
+
           {/* My Account Files */}
           {/* <Route path="/my-order" element={<MyOrder />}></Route>
           <Route path="/my-profile" element={<MyProfile />}></Route>
