@@ -111,14 +111,6 @@ export default function AppRoutes() {
 
           {/* Payment */}
           <Route path="/payment" element={<PaymentMethods />}></Route>
-
-          {/* My Account Files */}
-          {/* <Route path="/my-order" element={<MyOrder />}></Route>
-          <Route path="/my-profile" element={<MyProfile />}></Route>
-          <Route path="/my-remainder" element={<MyRemainder />}></Route>
-          <Route path="/voucher" element={<GiftVoucher />}></Route>
-          <Route path="/address" element={<SaveAddress />}></Route>
-          <Route path="/password" element={<ChangePassword />}></Route> */}
         </Routes>
       </BrowserRouter>
     </>

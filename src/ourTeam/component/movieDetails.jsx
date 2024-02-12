@@ -1,92 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
+import Team from "./team";
+import { GoGift } from "react-icons/go";
+import { FaUser } from "react-icons/fa6";
+import { TbAlarmSnooze } from "react-icons/tb";
 
-class ParlorForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = this.initialState();
-    // this is to set the initial state of the component
-    this.handleChange = this.handleChange.bind(this);
-    // as you probably
-    // know, if you're going to be passing functions around and invoke them as
-    // callbacks, you'll need to hold onto 'this' because it's bound at runtime
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+const Page1 = () => (
+  <div>
+    <Team />
+  </div>
+);
+const Page2 = () => <div>This is Page 2</div>;
+const Page3 = () => <div>This is Page 3</div>;
 
-  initialState() {
-    // woohoo, just an object that represents an empty parlor
-    return {
-      name: "",
-      street_address: "",
-      city: "",
-      state: "",
-      zip_code: "",
-      googleMapLink: "",
-    };
-  }
+const MyAccount = () => {
+  const [currentPage, setCurrentPage] = useState("page1");
 
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    this.props.dispatch(addParlor(this.state));
-    // this is just some redux.
-    // just trust that it does what it's supposed to do,
-    // send an ajax request to my server
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>Add New Parlor</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            id="autocomplete"
-            className="input-field"
-            ref="input"
-            type="text"
-          />
-          // this is the input field used specifically for autocomplete // note
-          that it doesn't respond to changes in state, // nor does it change
-          state // it's just talking to the Google Maps API // I've given it an
-          id so we can reference it when we // instantiate the Google
-          Autocomplete box
-          <input
-            name={"name"}
-            value={this.state.name}
-            placeholder={"Name"}
-            onChange={this.handleChange}
-          />
-          <input
-            name={"street_address"}
-            value={this.state.street_address}
-            placeholder={"Street Address"}
-            onChange={this.handleChange}
-          />
-          <input
-            name={"city"}
-            value={this.state.city}
-            placeholder={"City"}
-            onChange={this.handleChange}
-          />
-          <input
-            name={"state"}
-            value={this.state.state}
-            placeholder={"State"}
-            onChange={this.handleChange}
-          />
-          <input
-            name={"zip_code"}
-            value={this.state.zip_code}
-            placeholder={"Zipcode"}
-            onChange={this.handleChange}
-          />
-          <button onSubmit={this.handleSubmit}>Submit</button>
-        </form>
+  return (
+    <div className="font-text h-screen bg-stone-200 text-lg flex text-textColor justify-around px-10">
+      <div className="bg-white w-1/4  pt-5 divide-y ">
+        <div onClick={() => setCurrentPage("page1")}>
+          <div className="flex pl-16 items-center space-x-6 cursor-pointer">
+            <GoGift />
+            <p>My Orders</p>
+          </div>
+        </div>
+        <div onClick={() => setCurrentPage("page2")}>
+          <div className="flex  items-center space-x-6 pl-16">
+            <FaUser fontSize="20px" />
+            <p>My Profile</p>
+          </div>
+        </div>
+        <div onClick={() => setCurrentPage("page3")}>
+          <div className="flex  items-center space-x-5 pl-16">
+            <TbAlarmSnooze fontSize="26px" />
+            <p>My Remainers</p>
+          </div>
+        </div>
       </div>
-    );
-  }
-}
 
-export default ParlorForm;
+      <div className="w-3/4 bg-white ml-10">
+        {currentPage === "page1" && <Page1 />}
+        {currentPage === "page2" && <Page2 />}
+        {currentPage === "page3" && <Page3 />}
+      </div>
+    </div>
+  );
+};
+
+export default MyAccount;

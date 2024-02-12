@@ -69,9 +69,6 @@ export default function ProductDetails() {
           </ScrollPanel>
         </div>
       </div>
-      <div className=" ">
-        <FooterPage />
-      </div>
     </>
   );
 }
