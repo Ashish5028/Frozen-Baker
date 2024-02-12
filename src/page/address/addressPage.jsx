@@ -1,9 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { SaveAddress } from "./addressSlice";
 
 export default function AddressPage() {
-  const handlechange = () => {};
-  const FromSubmit = () => {};
+  const [user, setUser] = useState();
+  const [address, setAddress] = useState();
+  const [name, setName] = useState();
+  const [number, setNumber] = useState();
+  const [email, setEmail] = useState();
+  const [landmark, setLandmark] = useState();
+  const [altnumber, setAltnumber] = useState();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const handlechange = (e) => {
+    setUser(e.target.value);
+  };
+  const FromSubmit = (e) => {
+    e.preventDefault();
+    dispatch(
+      SaveAddress({ name, email, address, landmark, altnumber, number, user })
+    );
+  };
+
   return (
     <>
       <div className=" flex   justify-center   align-middle  text-textColor">
@@ -28,6 +47,7 @@ export default function AddressPage() {
                 required
                 placeholder="Name"
                 name="name"
+                onChange={(e) => setName(e.target.value)}
                 className="p-2 rounded-md outline-none  ring-inset ring-zinc-400 ring-1 "
               />
               <input
@@ -35,6 +55,7 @@ export default function AddressPage() {
                 name="mobile no"
                 required
                 placeholder="Mobile No."
+                onChange={(e) => setNumber(e.target.value)}
                 className="outline-none p-2 rounded-md ring-inset ring-zinc-400 ring-1"
               />
               <input
@@ -42,13 +63,15 @@ export default function AddressPage() {
                 type="text"
                 required
                 placeholder="Address"
+                onChange={(e) => setAddress(e.target.value)}
                 className="py-2 outline-none p-2 rounded-md ring-inset ring-zinc-400 ring-1"
               />
               <input
                 type="number"
-                name="number"
+                name="alt-number"
                 required
                 placeholder="Alt Mobile No"
+                onChange={(e) => setAltnumber(e.target.value)}
                 className="outline-none p-2 rounded-md ring-inset ring-zinc-400 ring-1"
               />
               <input
@@ -56,6 +79,7 @@ export default function AddressPage() {
                 name="landmark"
                 required
                 placeholder="Landmark"
+                onChange={(e) => setLandmark(e.target.value)}
                 className="outline-none p-2 rounded-md ring-inset ring-zinc-400 ring-1"
               />
               <input
@@ -63,6 +87,7 @@ export default function AddressPage() {
                 name="email"
                 required
                 placeholder="Other email"
+                onChange={(e) => setEmail(e.target.value)}
                 className="outline-none p-2 rounded-md ring-inset ring-zinc-400 ring-1"
               />
 
@@ -98,8 +123,9 @@ export default function AddressPage() {
               <button
                 className="border border-3xl bg-bgColor text-white rounded-md py-2 px-6 "
                 onSubmit="submit"
+                // onClick={() => console.log("clicked")}
               >
-                Save & Pay
+                Save Your Address
               </button>
             </form>
           </div>

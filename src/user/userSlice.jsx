@@ -23,7 +23,6 @@ export const createUser = createAsyncThunk(
 export const loginUser = createAsyncThunk(
   "loginUser",
   async ({ email, password }, { rejectWithValue }) => {
-    const dispatch = useDispatch();
     try {
       const response = await fetch(loginUserApi, {
         method: "POST",
@@ -32,8 +31,6 @@ export const loginUser = createAsyncThunk(
       });
       const data = await response.json();
       console.log(data);
-      // dispatch(login(data));
-      // localStorage.setItem("token", data.token);
     } catch (error) {
       return rejectWithValue(error);
     }

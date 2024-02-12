@@ -1,6 +1,7 @@
 const serverHost = "http://192.168.1.3:3001";
 
 // get Apis
+export const getAddress = `${serverHost}/api/get/address`;
 export const loginUserApi = `${serverHost}/api/user/login`;
 export const getUserApi = `${serverHost}/api/get/users`;
 export const getProductApi = `${serverHost}/api/get/image`;
@@ -23,3 +24,4 @@ export const createDelivaryDetails = `${serverHost}/api/upload/delivary/informat
 export const uploadPastryApi = `${serverHost}/api/upload/pastry`;
 export const uploadIcecreamApi = `${serverHost}/api/upload/icecream`;
 export const uploadChocolateApi = `${serverHost}/api/upload/chocolate`;
+export const uploadAddress = `${serverHost}/api/upload/address`;

@@ -6,6 +6,7 @@ import pastrySlice from "../page/uploadProduct/pastry/pastrySlice";
 import chocolateSlice from "../page/uploadProduct/chocolate/chocolateSlice";
 import icecreamSlice from "../page/uploadProduct/iceCream/icecreamSlice";
 import productSlice from "../product/productSlice";
+import addressSlice from "../page/address/addressSlice";
 const store = configureStore({
   reducer: {
     product: productSlice,
@@ -15,6 +16,7 @@ const store = configureStore({
     pastry: pastrySlice,
     chocolate: chocolateSlice,
     icecream: icecreamSlice,
+    address: addressSlice,
   },
 });
 

@@ -26,6 +26,7 @@ import { getUsers, loginUser } from "../../user/userSlice";
 import { getIcecreamDetails } from "../../page/uploadProduct/iceCream/icecreamSlice";
 import { getChocolateDetail } from "../../page/uploadProduct/chocolate/chocolateSlice";
 import { getPastryDetails } from "../../page/uploadProduct/pastry/pastrySlice";
+import { getUserAddress } from "../../page/address/addressSlice";
 
 export default function MainPage() {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ export default function MainPage() {
     dispatch(getTruffleData());
     dispatch(getRedvelvetData());
     dispatch(getFlowercakeData());
+    dispatch(getUserAddress());
   }, []);
   return (
     <>
