@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 
 import { useDispatch } from "react-redux";
 import { getApi } from "./teamSlice";
-import Team from "./component/team";
+
+import AppDetails from "./component/movieDetails";
 
 export const TeamIndex = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,9 @@ export const TeamIndex = () => {
   });
   return (
     <div className=" ">
-      <Team />
+      {/* <Team /> */}
+      {/* <CARTPAGE /> */}
+      <AppDetails />
     </div>
   );
 };

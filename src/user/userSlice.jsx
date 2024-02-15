@@ -5,11 +5,11 @@ import { useDispatch } from "react-redux";
 
 export const createUser = createAsyncThunk(
   "createUser",
-  async (datas, { rejectWithValue }) => {
+  async ({ email, password, name }, { rejectWithValue }) => {
     const response = await fetch(createUserApi, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(datas),
+      body: JSON.stringify({ email, password, name }),
     });
     try {
       const result = await response.json();
@@ -46,8 +46,7 @@ const UserSlice = createSlice({
   name: getUsers,
   initialState: {
     user: [],
-    data: [],
-    item: [],
+
     isLoggedIn: false,
     loading: false,
     error: null,
@@ -55,7 +54,7 @@ const UserSlice = createSlice({
   reducers: {
     login: (state, action) => {
       state.isLoggedIn = true;
-      state.item.push(action.payload);
+      state.user.push(action.payload);
     },
     logout: (state) => {
       state.isLoggedIn = false;
@@ -64,26 +63,26 @@ const UserSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getUsers.pending, (state) => {
+      // .addCase(getUsers.pending, (state) => {
+      //   state.loading = true;
+      // })
+      // .addCase(getUsers.fulfilled, (state, action) => {
+      //   state.loading = false;
+      //   state.user = action.payload;
+      // })
+      // .addCase(getUsers.rejected, (state, action) => {
+      //   state.loading = false;
+      //   state.error = action.error;
+      // })
+      .addCase(createUser.pending, (state) => {
         state.loading = true;
       })
-      .addCase(getUsers.fulfilled, (state, action) => {
+      .addCase(createUser.fulfilled, (state, action) => {
         state.loading = false;
         state.user = action.payload;
-      })
-      .addCase(getUsers.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error;
-      })
-      .addCase(loginUser.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(loginUser.fulfilled, (state, action) => {
-        state.loading = false;
-        state.data = action.payload;
         state.error = null;
       })
-      .addCase(loginUser.rejected, (state, action) => {
+      .addCase(createUser.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createUserApi } from "../../app/apiUrls";
 import { useState } from "react";
+import { login } from "../userSlice";
 
 export function Register({ onClickRegister, onClickLogin }) {
   const [name, setName] = useState();
@@ -22,6 +23,7 @@ export function Register({ onClickRegister, onClickLogin }) {
   const onSubmitInternal = async (e) => {
     onClickRegister(e);
     navigate("/");
+
     const result = await fetch(createUserApi, {
       method: "POST",
       headers: { "Content-Type": "application/json" },

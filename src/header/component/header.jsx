@@ -22,7 +22,7 @@ function classNames(...classes) {
 
 function HeaderPage() {
   const value = useSelector((state) => state.header.value);
-  const user = useSelector((state) => state.users.item);
+  const user = useSelector((state) => state.users.user);
   const name = user[0]?.data.name;
   const cartId = useSelector((state) => state.product.users);
 

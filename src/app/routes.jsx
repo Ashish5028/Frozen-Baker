@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { TeamIndex } from "../ourTeam";
 import ContactIndex from "../contact";
 import ProductIndex from "../product";
@@ -34,23 +34,12 @@ import IceCreamShop from "../page/iceCream/component/icecreamShop";
 import PastryShop from "../page/pastrys/component/pastryShop";
 import ChocolateShop from "../page/chocolate/component/chocolateShop";
 import MyAccount from "../page/userAccount/component/myAccount";
-import MyOrder from "../page/userAccount/navigateFiles/myOrder";
-import MyProfile from "../page/userAccount/navigateFiles/myProfile";
-import MyRemainder from "../page/userAccount/navigateFiles/myRemainder";
-import GiftVoucher from "../page/userAccount/navigateFiles/gifts";
-import SaveAddress from "../page/userAccount/navigateFiles/saveAddress";
-import ChangePassword from "../page/userAccount/navigateFiles/changePassword";
 
 import PaymentMethods from "../page/payment";
 import AddressPage from "../page/address/addressPage";
 import { useSelector } from "react-redux";
 
 export default function AppRoutes() {
-  // const user = useSelector((state) => state.users.item);
-  // const data = user.find((ele) => ele.data);
-  // const username = data.data;
-  // console.log(username);
-
   return (
     <>
       <BrowserRouter>

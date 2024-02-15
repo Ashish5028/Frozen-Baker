@@ -11,9 +11,9 @@ import { HomeIndex } from "../../homePage";
 export function LoginItems() {
   const naviate = useNavigate();
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.users.item);
+  const data = useSelector((state) => state.users.user);
   const res = data.find((ele) => ele.data.category === "Seller");
-  const user = useSelector((state) => state.users.item);
+  const user = useSelector((state) => state.users.user);
   const name = user[0]?.data.name;
   // const logout = useSelector((state) => state.users.isLoggedIn);
   const logoutUser = () => {

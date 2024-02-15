@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { FaUserCircle } from "react-icons/fa";
 
 export default function MyProfile() {
-  const userData = useSelector((state) => state.users.item);
+  const userData = useSelector((state) => state.users.user);
   return (
     <div>
       <p className="text-center font-heading text-3xl ">My Profile</p>

@@ -50,7 +50,7 @@ const Page6 = () => (
 
 export default function MyAccount() {
   const [currentPage, setCurrentPage] = useState("My Profile");
-  const userData = useSelector((state) => state.users.item);
+  const userData = useSelector((state) => state.users.user);
   const navigate = useNavigate();
   const password = () => {
     // navigate("/");
