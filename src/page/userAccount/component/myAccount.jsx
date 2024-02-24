@@ -8,7 +8,7 @@ import { FaUser } from "react-icons/fa6";
 import { FaUserCircle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import "./myAccount.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Team from "../../../ourTeam/component/team";
 import MyOrder from "../navigateFiles/myOrder";
 import MyProfile from "../navigateFiles/myProfile";
@@ -49,25 +49,22 @@ const Page6 = () => (
 );
 
 export default function MyAccount() {
+  const [user, setUser] = useState();
   const [currentPage, setCurrentPage] = useState("My Profile");
-  const userData = useSelector((state) => state.users.user);
-  const navigate = useNavigate();
-  const password = () => {
-    // navigate("/");
-  };
 
+  useEffect(() => {
+    let user = localStorage.getItem("User");
+    setUser(user);
+  }, []);
+  // console.log(user);
   return (
     <div className="font-text h-screen bg-stone-200 text-lg flex text-textColor justify-around px-10">
       <div className=" bg-white w-1/4  pt-5 divide-y ">
         <div className="flex pl-16 h-16 bg-bgColor items-center space-x-6 text-white">
-          {userData.map((res) => {
-            return (
-              <div className="flex items-center">
-                <FaUserCircle fontSize="20px" />
-                <div className="pl-4"> {res.data.name}</div>
-              </div>
-            );
-          })}
+          <div className="flex items-center">
+            <FaUserCircle fontSize="20px" />
+            <div className="pl-4"> {user}</div>
+          </div>
         </div>
         <div
           className="flex pl-16 items-center space-x-6 linkCss "
@@ -113,7 +110,7 @@ export default function MyAccount() {
           onClick={() => setCurrentPage("Change Password")}
         >
           <MdLock fontSize="20px" />
-          <button onClick={password}>Change Password</button>
+          <button onClick={() => password}>Change Password</button>
         </div>
       </div>
       <div className="w-3/4 bg-white ml-10">

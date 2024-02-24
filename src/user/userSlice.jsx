@@ -5,15 +5,25 @@ import { useDispatch } from "react-redux";
 
 export const createUser = createAsyncThunk(
   "createUser",
-  async ({ email, password, name }, { rejectWithValue }) => {
+  async ({ email, password, name, category }, { rejectWithValue }) => {
     const response = await fetch(createUserApi, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password, name }),
+      body: JSON.stringify({ name, category, email, password }),
     });
     try {
-      const result = await response.json();
-      return result;
+      if (response.ok) {
+        const result = await response.json();
+        let auth = result.auth;
+        let data = result.data.name;
+        let Catogery = result.data.category;
+
+        localStorage.setItem("auth", auth);
+        localStorage.setItem("User", data);
+        localStorage.setItem("Catogery", Catogery);
+
+        return result;
+      }
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -30,7 +40,6 @@ export const loginUser = createAsyncThunk(
         body: JSON.stringify({ email, password }),
       });
       const data = await response.json();
-      console.log(data);
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -79,7 +88,7 @@ const UserSlice = createSlice({
       })
       .addCase(createUser.fulfilled, (state, action) => {
         state.loading = false;
-        state.user = action.payload;
+        state.user.push(action.payload);
         state.error = null;
       })
       .addCase(createUser.rejected, (state, action) => {

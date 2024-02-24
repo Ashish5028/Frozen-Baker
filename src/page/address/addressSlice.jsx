@@ -20,7 +20,7 @@ export const SaveAddress = createAsyncThunk(
         }),
       });
       const res = await result.json();
-      console.log(res);
+      // console.log(res);
     } catch (error) {
       console.log(error);
     }
@@ -28,7 +28,7 @@ export const SaveAddress = createAsyncThunk(
 );
 export const getUserAddress = createAsyncThunk("getAddress", async () => {
   const result = await axios.get(getAddress);
-  console.log(result);
+  // console.log(result);
   return result.data;
 });
 

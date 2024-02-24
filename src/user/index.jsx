@@ -19,11 +19,7 @@ export default function UserIndex() {
             onClickLogin={() => {
               setRegister(false);
             }}
-            onClickRegister={(e) => {
-              dispatch(createUser(e)).then(() => {
-                navigate("/");
-              });
-            }}
+            onClickRegister={(e) => {}}
           />
         ) : (
           <LoginUser

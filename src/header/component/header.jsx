@@ -25,7 +25,7 @@ function HeaderPage() {
   const user = useSelector((state) => state.users.user);
   const name = user[0]?.data.name;
   const cartId = useSelector((state) => state.product.users);
-
+  // const auth = localStorage.getItem("auth");
   return (
     <Disclosure as="nav" className="bg-navBar ">
       {({ open }) => (
@@ -100,7 +100,6 @@ function HeaderPage() {
               </div>
             </div>
           </div>
-
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (

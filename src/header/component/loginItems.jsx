@@ -5,20 +5,24 @@ import { HiOutlineLogout } from "react-icons/hi";
 import { MdInventory } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../user/userSlice";
-import { HomeIndex } from "../../homePage";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 export function LoginItems() {
-  const naviate = useNavigate();
-  const dispatch = useDispatch();
+  const [name, setName] = useState();
+  const [category, setCategory] = useState();
+  const navigate = useNavigate();
+
   const data = useSelector((state) => state.users.user);
-  const res = data.find((ele) => ele.data.category === "Seller");
-  const user = useSelector((state) => state.users.user);
-  const name = user[0]?.data.name;
-  // const logout = useSelector((state) => state.users.isLoggedIn);
+
+  useEffect(() => {
+    let store = localStorage.getItem("User");
+    setName(store);
+    let Catogery = localStorage.getItem("Catogery");
+    setCategory(Catogery);
+  });
   const logoutUser = () => {
-    dispatch(logout());
-    naviate(<HomeIndex />);
+    localStorage.clear();
+    navigate("/");
   };
 
   return (
@@ -39,7 +43,7 @@ export function LoginItems() {
           </div>
         </Link>
       )}
-      {res && (
+      {category === "Seller" && (
         <Link to="/upload">
           <div className=" px-6  items-center py-2  flex  text-gray-700 hover:bg-zinc-200">
             <RiCake3Line fontSize="large" />
@@ -47,7 +51,7 @@ export function LoginItems() {
           </div>
         </Link>
       )}
-      {res ? (
+      {category === "Seller" ? (
         <Link to="/">
           <div className="px-6  items-center py-2  flex   text-gray-700 hover:bg-zinc-200">
             <IoMdCall fontSize="large" />

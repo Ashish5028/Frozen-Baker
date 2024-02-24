@@ -11,7 +11,6 @@ const initialState = {
 
 export const getPastryDetails = createAsyncThunk("getPastry", async () => {
   const response = await axios.get(getPastryApi);
-  console.log(response.data);
   return response.data;
 });
 

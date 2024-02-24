@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createUserApi } from "../../app/apiUrls";
 import { useState } from "react";
-import { login } from "../userSlice";
+import { createUser, login } from "../userSlice";
 
 export function Register({ onClickRegister, onClickLogin }) {
   const [name, setName] = useState();
@@ -23,20 +23,7 @@ export function Register({ onClickRegister, onClickLogin }) {
   const onSubmitInternal = async (e) => {
     onClickRegister(e);
     navigate("/");
-
-    const result = await fetch(createUserApi, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, category, email, password }),
-    });
-    let data = await result.json();
-
-    {
-      data.auth
-        ? localStorage.setItem("user", JSON.stringify(data.user)) &&
-          localStorage.setItem("jwtKey", JSON.stringify(data.auth))
-        : alert("enter correct details");
-    }
+    dispatch(createUser({ name, email, password, category }));
   };
 
   return (

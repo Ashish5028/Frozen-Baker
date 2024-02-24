@@ -15,21 +15,21 @@ export function LoginUser({ onClickRegister, onClickLogin }) {
   const onSubmitInternal = async (e) => {
     e.preventDefault();
     onClickLogin(e);
-
     const result = await fetch(loginUserApi, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
-    let data = await result.json();
-    dispatch(login(data));
-    {
-      data.auth
-        ? localStorage.setItem("user", JSON.stringify(data.user)) &&
-          localStorage.setItem("jwtKey", JSON.stringify(data.auth))
-        : alert("enter correct details");
+
+    if (result.ok) {
+      let data = await result.json();
+      let auth = data.auth;
+      let name = data.data.name;
+      localStorage.setItem("auth", auth);
+      localStorage.setItem("User", name);
+      dispatch(login(data));
+      navigate("/");
     }
-    navigate("/");
   };
 
   return (

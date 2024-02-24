@@ -1,12 +1,31 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useState } from "react";
 
-export default function CartItems() {
-  const dispatch = useDispatch();
-  const param = useParams();
-  const { _id } = param;
-  const { users, loading } = useSelector((state) => state.product);
-  const res = users.filter((e) => e._id === _id);
-  console.log(_id);
-  return <div>,dsmf,</div>;
-}
+const CartItems = () => {
+  const [count, setCount] = useState(1);
+  const [product, setProduct] = useState([]);
+
+  const addToCart = () => {
+    let cart = JSON.parse(localStorage.getItem("users"));
+    if (cart) {
+      alert("one item added");
+    } else {
+      cart = [
+        {
+          product,
+          quantity: count,
+        },
+      ];
+      console.log(cart);
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  };
+  return (
+    <div>
+      <h2>Cart</h2>
+      <h2>Products</h2>
+      <button onClick={addToCart}>addItem</button>
+    </div>
+  );
+};
+
+export default CartItems;
