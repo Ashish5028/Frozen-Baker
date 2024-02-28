@@ -5,7 +5,7 @@ function FooterPage() {
   return (
     <>
       <div className="bg-navBar h-[300px] ">
-        <div className="   flex justify-between px-10">
+        <div className="flex justify-around px-10">
           {FooterData.map((res) => {
             return (
               <>
@@ -23,8 +23,8 @@ function FooterPage() {
                     <p>{res.mail}</p>
                     <p className="footerCss">{res.email}</p>
                   </div>
-                  <p className="footerCss">{res.support}</p>
-                  <p className="footerCss">{res.term}</p>
+                  <p className="footerCss pl-2">{res.support}</p>
+                  <p className="footerCss pl-2">{res.term}</p>
                   <div className="flex space-x-6 pt-3 ">
                     <p className="footerCss">{res.twit}</p>
                     <p className="footerCss">{res.face}</p>

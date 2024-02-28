@@ -8,6 +8,7 @@ import OffersPage from "../../../product/productDetails/offersPage";
 import { ScrollPanel } from "primereact/scrollpanel";
 import { FooterPage } from "../../../component/footerPage";
 import IceCreamImage from "./smallImage";
+import { cartData } from "../../../user/userSlice";
 
 export default function IceCreamShop() {
   const dispatch = useDispatch();
@@ -46,6 +47,7 @@ export default function IceCreamShop() {
               <br />
               <DelivaryPage
                 onClickRegister={(e) => dispatch(uploadDeivaryDetails(e))}
+                addData={() => dispatch(cartData(res))}
               />
               <OffersPage />
             </div>

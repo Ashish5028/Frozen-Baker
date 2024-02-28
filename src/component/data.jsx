@@ -57,14 +57,7 @@ const FooterData = [
     term: "Terms & Condition",
     support: "Support",
   },
-  {
-    heading: "Quick Links",
-    add: "About Us",
-    call: "Contact Us",
-    email: "Our Services",
-    term: "Terms & Condition",
-    support: "Support",
-  },
+
   {
     heading: "Photo Gallery ",
   },

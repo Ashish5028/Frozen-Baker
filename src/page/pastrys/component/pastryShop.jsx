@@ -8,6 +8,7 @@ import OffersPage from "../../../product/productDetails/offersPage";
 import { ScrollPanel } from "primereact/scrollpanel";
 import { FooterPage } from "../../../component/footerPage";
 import { PastryImage } from "./smallImage";
+import { cartData } from "../../../user/userSlice";
 
 export default function PastryShop() {
   const dispatch = useDispatch();
@@ -51,6 +52,7 @@ export default function PastryShop() {
               <br />
               <DelivaryPage
                 onClickRegister={(e) => dispatch(uploadDeivaryDetails(e))}
+                addData={() => dispatch(cartData(res))}
               />
 
               <OffersPage />

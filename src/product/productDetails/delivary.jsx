@@ -74,7 +74,10 @@ export default function DelivaryPage({ onClickRegister, addData }) {
             to="/delivaryaddress"
             className="bg-bgColor shadow-md rounded-md flex justify-center"
           >
-            <button className="  text-white ml-2 p-3 flex items-center ">
+            <button
+              className="  text-white ml-2 p-3 flex items-center "
+              onSubmit="submit"
+            >
               <span class="material-symbols-outlined">flash_on</span> BUY NOW
             </button>
           </Link>
