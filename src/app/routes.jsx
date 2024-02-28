@@ -33,7 +33,7 @@ import { IceCreamDetails } from "../page/iceCream/component/iceCreamDetails";
 import IceCreamShop from "../page/iceCream/component/icecreamShop";
 import PastryShop from "../page/pastrys/component/pastryShop";
 import ChocolateShop from "../page/chocolate/component/chocolateShop";
-import { MyAccount } from "../page/userAccount/component/myAccount";
+import MyAccount from "../page/userAccount/component/myAccount";
 
 import PaymentMethods from "../page/payment";
 import AddressPage from "../page/address/addressPage";

@@ -18,8 +18,14 @@ function ProductList() {
   const addToCart = (product) => {
     const updatedCart = [...cart, product];
     setCart(updatedCart);
-    dispatch(cartData(cart));
+    // dispatch(cartData(cart));
   };
+
+  // const addToCart = (product) => {
+  //   const updatedCart = product;
+  //   setCart(updatedCart);
+  //   // dispatch(cartData(cart));
+  // };
 
   return (
     <div className="">
@@ -52,9 +58,3 @@ function ProductList() {
 }
 
 export default ProductList;
-
-// const addToCart = (product) => {
-//   const updatedCart = product;
-//   setCart(updatedCart);
-//   dispatch(cartData(cart));
-// };

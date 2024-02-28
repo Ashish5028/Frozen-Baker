@@ -13,16 +13,16 @@ export function Chocolates() {
         Fresh Chocolate
       </div>
       <div className=" grid grid-cols-2 px-14  gap-6 pt-4">
-        <Link to="/api/bestseller">
+        <Link to="/chocolate">
           <img src={splash} className="rounded-lg h-[350px] w-[600px]" />
         </Link>
-        <Link to="/api/dayseller">
+        <Link to="/chocolate">
           <img src={cadbury} className="rounded-lg h-[350px] w-[600px]" />
         </Link>
-        <Link to="/api/midnight">
+        <Link to="/chocolate">
           <img src={chocolate} className="rounded-lg h-[350px] w-[600px]" />
         </Link>
-        <Link to="/api/brandnew">
+        <Link to="/chocolate">
           <img src={choco} className="rounded-lg h-[350px] w-[600px]" />
         </Link>
       </div>

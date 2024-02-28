@@ -10,9 +10,7 @@ const ProductPage = () => {
   if (loading) {
     return <h3>loading</h3>;
   }
-  const add = (product) => {
-    console.log(dispatch(addtoCart(product)));
-  };
+  const add = (product) => {};
   return (
     <div className="h-screen  ">
       <div className=" m-10 grid grid-cols-4 gap-6 font-text ">

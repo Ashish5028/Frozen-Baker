@@ -29,6 +29,7 @@ export default function PastryShop() {
 
         <div className="w-1/2  bg-white ">
           <ScrollPanel className="h-screen p-4">
+            <button>add</button>
             <div>
               <p>
                 {res[0].name}
@@ -51,6 +52,7 @@ export default function PastryShop() {
               <DelivaryPage
                 onClickRegister={(e) => dispatch(uploadDeivaryDetails(e))}
               />
+
               <OffersPage />
             </div>
             <p className="font-text  text-2xl  border-b-[1px]  border-textColor py-2">
@@ -74,9 +76,6 @@ export default function PastryShop() {
             </div>
           </ScrollPanel>
         </div>
-      </div>
-      <div className=" ">
-        <FooterPage />
       </div>
     </>
   );

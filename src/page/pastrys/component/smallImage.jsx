@@ -10,7 +10,6 @@ export function PastryImage() {
     return <h1>loading</h1>;
   }
   const res = data.filter((e) => e._id === _id);
-  console.log(res);
 
   return (
     <div className="flex space-x-2 py-2">

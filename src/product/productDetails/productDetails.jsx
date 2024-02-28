@@ -6,7 +6,7 @@ import DelivaryPage from "./delivary";
 import { uploadDeivaryDetails } from "../productSlice";
 import OffersPage from "./offersPage";
 import { ScrollPanel } from "primereact/scrollpanel";
-import { FooterPage } from "../../component/footerPage";
+import { cartData } from "../../user/userSlice";
 
 export default function ProductDetails() {
   const dispatch = useDispatch();
@@ -14,6 +14,7 @@ export default function ProductDetails() {
   const { _id } = param;
   const { users, loading } = useSelector((state) => state.product);
   const res = users.filter((e) => e._id === _id);
+
   return (
     <>
       <div className="flex justify-around font-text text-sm h-screen bg-stone-100 py-5 ">
@@ -44,7 +45,16 @@ export default function ProductDetails() {
               <br />
               <DelivaryPage
                 onClickRegister={(e) => dispatch(uploadDeivaryDetails(e))}
+                addData={() => dispatch(cartData(res))}
               />
+              {/* <button
+                className="bg-[#88882b] p-3 shadow-md  text-white rounded-md flex justify-center items-center"
+                onClick={() => dispatch(cartData(res))}
+              >
+                <span class="material-symbols-outlined">shopping_cart</span> ADD
+                TO CART
+              </button> */}
+
               <OffersPage />
             </div>
             <p className="font-text  text-2xl  border-b-[1px]  border-textColor py-2">

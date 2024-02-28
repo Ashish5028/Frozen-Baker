@@ -6,7 +6,6 @@ export default function IceCreamImage() {
   const { _id } = param;
   const { data, loading } = useSelector((state) => state.icecream);
   const res = data.filter((e) => e._id === _id);
-
   return (
     <div className="flex space-x-2 py-2">
       <div>

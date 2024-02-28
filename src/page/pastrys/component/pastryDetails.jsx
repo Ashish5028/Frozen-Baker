@@ -10,9 +10,7 @@ const PastryDetails = () => {
   if (loading) {
     return <h3>loading</h3>;
   }
-  const add = (product) => {
-    console.log(dispatch(addtoCart(product)));
-  };
+  const add = () => {};
   return (
     <div className="h-4 ">
       <div className="flex justify-center pt-2 text-headingColor font-heading text-4xl">
