@@ -33,7 +33,7 @@ import { IceCreamDetails } from "../page/iceCream/component/iceCreamDetails";
 import IceCreamShop from "../page/iceCream/component/icecreamShop";
 import PastryShop from "../page/pastrys/component/pastryShop";
 import ChocolateShop from "../page/chocolate/component/chocolateShop";
-import MyAccount from "../page/userAccount/component/myAccount";
+import { MyAccount } from "../page/userAccount/component/myAccount";
 
 import PaymentMethods from "../page/payment";
 import AddressPage from "../page/address/addressPage";
@@ -57,22 +57,22 @@ export default function AppRoutes() {
           <Route path="/user/signin" element={<UserIndex />}></Route>
           <Route path="/setting" element={<HomeIndex />}></Route>
           <Route
-            path={`/product/BUY NOW/details/:_id`}
+            path={`/product/view/details/:_id`}
             element={<ProductDetails />}
           ></Route>
           <Route
-            path={`/icecreams/BUY NOW/details/:_id`}
+            path={`/icecreams/view/details/:_id`}
             element={<IceCreamShop />}
           ></Route>
           <Route
-            path={`/pastry/BUY NOW/details/:_id`}
+            path={`/pastry/view/details/:_id`}
             element={<PastryShop />}
           ></Route>
           <Route
-            path={`/chocolate/BUY NOW/details/:_id`}
+            path={`/chocolate/view/details/:_id`}
             element={<ChocolateShop />}
           ></Route>
-          <Route path={`/BUY NOW/:id`} element={<SummaryMovie />}></Route>
+          <Route path={`/view/:id`} element={<SummaryMovie />}></Route>
           <Route path="/api/anniversary" element={<AnniversaryPage />}></Route>
           <Route path="/api/birthday" element={<BirthdayPage />}></Route>
           <Route path="/api/bestseller" element={<Bestseller />}></Route>
