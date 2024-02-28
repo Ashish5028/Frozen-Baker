@@ -75,9 +75,7 @@ export default function ChocolateShop() {
           </ScrollPanel>
         </div>
       </div>
-      <div className=" ">
-        <FooterPage />
-      </div>
+      <div className=" "></div>
     </>
   );
 }

@@ -103,7 +103,8 @@ function IconOne() {
     <svg
       width="48"
       height="48"
-      viewBox="0 0 48 48"
+      BUY
+      NOWBox="0 0 48 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -136,7 +137,8 @@ function IconTwo() {
     <svg
       width="48"
       height="48"
-      viewBox="0 0 48 48"
+      BUY
+      NOWBox="0 0 48 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -162,7 +164,8 @@ function IconThree() {
     <svg
       width="48"
       height="48"
-      viewBox="0 0 48 48"
+      BUY
+      NOWBox="0 0 48 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

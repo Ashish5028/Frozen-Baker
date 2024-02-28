@@ -3,8 +3,10 @@ import FormInput from "../../component/formInput";
 import { useDispatch } from "react-redux";
 import { increment } from "../../header/headerSlice";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function DelivaryPage({ onClickRegister }) {
+  const [cart, setCart] = useState([]);
   const dispatch = useDispatch();
   const { handleSubmit, control } = useForm({
     mode: "onTouched",
@@ -13,7 +15,9 @@ export default function DelivaryPage({ onClickRegister }) {
   const onSubmitInternal = (e) => {
     onClickRegister(e);
   };
-  const handleAddCart = () => {
+  const handleAddCart = (product) => {
+    const updatedCart = [...cart, product];
+
     dispatch(increment());
   };
   return (

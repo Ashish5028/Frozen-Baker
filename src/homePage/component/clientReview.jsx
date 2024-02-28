@@ -1,9 +1,9 @@
-export default function ClientReview() {
+export default function ClientReBUY NOW() {
   return (
     <>
       <div></div>
       <div className="justify-center ml-auto">
-        <p>// CLIENT'S REVIEW</p>
+        <p>// CLIENT'S REBUY NOW</p>
         <p>
           More Than 20000 + <br />
           Customers Trusted US

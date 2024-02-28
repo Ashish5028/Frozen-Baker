@@ -17,11 +17,12 @@ export function LoginItems() {
   useEffect(() => {
     let store = localStorage.getItem("User");
     setName(store);
-    let Catogery = localStorage.getItem("Catogery");
+    let Catogery = localStorage.getItem("Category");
     setCategory(Catogery);
   });
   const logoutUser = () => {
     localStorage.clear();
+    setName(null);
     navigate("/");
   };
 
@@ -59,12 +60,14 @@ export function LoginItems() {
           </div>
         </Link>
       ) : null}
-      <Link to="myorder">
-        <div className=" px-6   items-center py-2  flex  text-gray-700 hover:bg-zinc-200">
-          <MdInventory fontSize="medium" />
-          <p className="px-3"> My Order</p>
-        </div>
-      </Link>
+      {name ? (
+        <Link to="myorder">
+          <div className=" px-6   items-center py-2  flex  text-gray-700 hover:bg-zinc-200">
+            <MdInventory fontSize="medium" />
+            <p className="px-3"> My Order</p>
+          </div>
+        </Link>
+      ) : null}
       <div>
         {name ? (
           <div className=" px-6  items-center py-2  flex   text-gray-700 hover:bg-zinc-200">

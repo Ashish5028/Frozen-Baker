@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createUserApi } from "../../app/apiUrls";
 import { useState } from "react";
-import { createUser, login } from "../userSlice";
+import { createUser } from "../userSlice";
 
 export function Register({ onClickRegister, onClickLogin }) {
   const [name, setName] = useState();

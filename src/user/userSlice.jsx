@@ -54,50 +54,52 @@ export const getUsers = createAsyncThunk("getUsers", async () => {
 const UserSlice = createSlice({
   name: getUsers,
   initialState: {
-    user: [],
-
+    cart: [],
     isLoggedIn: false,
     loading: false,
     error: null,
   },
   reducers: {
-    login: (state, action) => {
-      state.isLoggedIn = true;
-      state.user.push(action.payload);
-    },
-    logout: (state) => {
-      state.isLoggedIn = false;
-      state.item = null;
+    // login: (state, action) => {
+    //   state.isLoggedIn = true;
+    //   state.user.push(action.payload);
+    // },
+    // logout: (state) => {
+    //   state.isLoggedIn = false;
+    //   state.item = null;
+    // },
+    cartData: (state, action) => {
+      state.cart.push(action.payload);
     },
   },
   extraReducers: (builder) => {
-    builder
-      // .addCase(getUsers.pending, (state) => {
-      //   state.loading = true;
-      // })
-      // .addCase(getUsers.fulfilled, (state, action) => {
-      //   state.loading = false;
-      //   state.user = action.payload;
-      // })
-      // .addCase(getUsers.rejected, (state, action) => {
-      //   state.loading = false;
-      //   state.error = action.error;
-      // })
-      .addCase(createUser.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(createUser.fulfilled, (state, action) => {
-        state.loading = false;
-        state.user.push(action.payload);
-        state.error = null;
-      })
-      .addCase(createUser.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload;
-      });
+    builder;
+    // .addCase(getUsers.pending, (state) => {
+    //   state.loading = true;
+    // })
+    // .addCase(getUsers.fulfilled, (state, action) => {
+    //   state.loading = false;
+    //   state.user = action.payload;
+    // })
+    // .addCase(getUsers.rejected, (state, action) => {
+    //   state.loading = false;
+    //   state.error = action.error;
+    // })
+    // .addCase(createUser.pending, (state) => {
+    //   state.loading = true;
+    // })
+    // .addCase(createUser.fulfilled, (state, action) => {
+    //   state.loading = false;
+    //   state.user.push(action.payload);
+    //   state.error = null;
+    // })
+    // .addCase(createUser.rejected, (state, action) => {
+    //   state.loading = false;
+    //   state.error = action.payload;
+    // });
   },
 });
 
-export const { setUserData, login, logout } = UserSlice.actions;
+export const { cartData } = UserSlice.actions;
 
 export default UserSlice.reducer;

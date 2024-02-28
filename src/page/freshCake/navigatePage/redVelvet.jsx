@@ -21,7 +21,7 @@ const RedVelvet = () => {
       </div>
       <div className=" mx-10 mt-4 grid grid-cols-4 gap-6 font-text ">
         {velvet.map((photo) => (
-          <Link to={`view/details/${photo._id}`}>
+          <Link to={`BUY NOW/details/${photo._id}`}>
             <div
               key={photo._id}
               className="  rounded-sm bg-stone-50 shadow-md space-y-2"

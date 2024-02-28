@@ -11,7 +11,7 @@ function AdminPage() {
   const [shape, setShape] = useState("");
   const [image, setImage] = useState("");
   const [file, setFile] = useState("");
-  function previewFile(file) {
+  function preBUY NOWFile(file) {
     const reader = new FileReader();
     reader.readAsDataURL(file);
 
@@ -28,7 +28,7 @@ function AdminPage() {
   const handleChange = (e) => {
     const file = e.target.files[0];
     setFile(file);
-    previewFile(file);
+    preBUY NOWFile(file);
     console.log(file);
   };
   const uploadImage = async (base64EncodedImage) => {

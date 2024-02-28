@@ -9,7 +9,7 @@ const AboutMore = () => {
           that specializes in the creation and sale of various types of cakes
           and pastries. These establishments are dedicated to providing
           delicious and visually appealing baked goods for special occasions,
-          celebrations, or everyday enjoyment. Here's an overview of what you
+          celebrations, or everyday enjoyment. Here's an overBUY NOW of what you
           might find in a typical cakes bakery: Cake Varieties: Custom Cakes:
           Cakes bakeries often specialize in crafting custom cakes for special
           occasions like birthdays, weddings, anniversaries, and other

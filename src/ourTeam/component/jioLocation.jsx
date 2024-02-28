@@ -1,20 +1,60 @@
-const options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0,
-};
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { cartData } from "../../user/userSlice";
 
-function success(pos) {
-  const crd = pos.coords;
+function ProductList() {
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
+  const dispatch = useDispatch();
+  // Fetch products from the API
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
+      .catch((error) => console.error("Error fetching products:", error));
+  }, []);
 
-  console.log("Your current position is:");
-  console.log(`Latitude : ${crd.latitude}`);
-  console.log(`Longitude: ${crd.longitude}`);
-  console.log(`More or less ${crd.accuracy} meters.`);
+  // Function to add an item to the cart
+  const addToCart = (product) => {
+    const updatedCart = [...cart, product];
+    setCart(updatedCart);
+    dispatch(cartData(cart));
+  };
+
+  return (
+    <div className="">
+      <h1>Product List</h1>
+      <div>
+        {products.map((product) => (
+          <div key={product.id} className="m-3 w-40 bg-zinc-300">
+            <h2>{product.title}</h2>
+            <p>Price: ${product.price}</p>
+            <button
+              onClick={() => addToCart(product)}
+              className="bg-indigo-400 rounded-md px-6 py-2"
+            >
+              Add to Cart
+            </button>
+          </div>
+        ))}
+      </div>
+      <h2>Cart</h2>
+      <ul>
+        {cart.map((item) => (
+          <li key={item.id} className="m-3 w-40 bg-zinc-300">
+            {item.price}
+            {item.title}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-function error(err) {
-  console.warn(`ERROR(${err.code}): ${err.message}`);
-}
+export default ProductList;
 
-navigator.geolocation.getCurrentPosition(success, error, options);
+// const addToCart = (product) => {
+//   const updatedCart = product;
+//   setCart(updatedCart);
+//   dispatch(cartData(cart));
+// };

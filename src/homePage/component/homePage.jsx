@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { SimpleSlider } from "../../component/slider";
 import Team from "../../ourTeam/component/team";
-import ClientReview from "./clientReview";
+// import ClientReview from "./clientReview";
 import { useDispatch } from "react-redux";
 import {
   getButterScotchData,

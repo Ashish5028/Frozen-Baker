@@ -32,7 +32,7 @@ const ChocolateDetails = () => {
                   className="text-center items-center w-full bg-bgColor px-4 rounded-sm p-1"
                   onClick={add}
                 >
-                  BUY NOW
+                  VIEW
                 </button>
               </div>
             </div>

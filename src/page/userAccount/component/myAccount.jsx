@@ -49,13 +49,13 @@ const Page6 = () => (
 );
 
 export default function MyAccount() {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(null);
   const [currentPage, setCurrentPage] = useState("My Profile");
 
   useEffect(() => {
     let user = localStorage.getItem("User");
     setUser(user);
-  }, []);
+  });
   // console.log(user);
   return (
     <div className="font-text h-screen bg-stone-200 text-lg flex text-textColor justify-around px-10">

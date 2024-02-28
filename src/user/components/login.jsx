@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { loginUserApi } from "../../app/apiUrls";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../userSlice";
 
 export function LoginUser({ onClickRegister, onClickLogin }) {
   const [email, setEmail] = useState();
@@ -23,11 +22,13 @@ export function LoginUser({ onClickRegister, onClickLogin }) {
 
     if (result.ok) {
       let data = await result.json();
+      console.log(data);
       let auth = data.auth;
       let name = data.data.name;
+      let category = data.data.category;
       localStorage.setItem("auth", auth);
       localStorage.setItem("User", name);
-      dispatch(login(data));
+      localStorage.setItem("Category", category);
       navigate("/");
     }
   };

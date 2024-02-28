@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import AddIcCallIcon from "@mui/icons-material/AddIcCall";
 import { FaCartArrowDown } from "react-icons/fa";
 
@@ -21,9 +21,13 @@ function classNames(...classes) {
 }
 
 function HeaderPage() {
+  const [user, setUser] = useState("");
   const value = useSelector((state) => state.header.value);
-  const user = useSelector((state) => state.users.user);
-  const name = user[0]?.data.name;
+  useEffect(() => {
+    const data = localStorage.getItem("User");
+    setUser(data);
+  }, []);
+  let name;
   const cartId = useSelector((state) => state.product.users);
   // const auth = localStorage.getItem("auth");
   return (
@@ -73,8 +77,8 @@ function HeaderPage() {
                     <Menu.Button className="relative flex rounded-full  text-sm text-white">
                       <span className="absolute -inset-1.5" />
                       <div>
-                        {name ? (
-                          name
+                        {user ? (
+                          user
                         ) : (
                           <span className="material-symbols-outlined ">
                             account_circle
@@ -92,7 +96,7 @@ function HeaderPage() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute -right-5  z-30 mt-5 w-60 font-text  origin-top-right rounded-sm bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="absolute -right-5  z-30 mt-5 w-60 font-text  origin-top-right rounded-sm bg-white  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <LoginItems />
                     </Menu.Items>
                   </Transition>
