@@ -55,21 +55,17 @@ const UserSlice = createSlice({
   name: getUsers,
   initialState: {
     cart: [],
+    ordersData: [],
     isLoggedIn: false,
     loading: false,
     error: null,
   },
   reducers: {
-    // login: (state, action) => {
-    //   state.isLoggedIn = true;
-    //   state.user.push(action.payload);
-    // },
-    // logout: (state) => {
-    //   state.isLoggedIn = false;
-    //   state.item = null;
-    // },
     cartData: (state, action) => {
       state.cart.push(action.payload);
+    },
+    orders: (state, action) => {
+      state.ordersData.push(action.payload);
     },
   },
   extraReducers: (builder) => {
@@ -100,6 +96,6 @@ const UserSlice = createSlice({
   },
 });
 
-export const { cartData } = UserSlice.actions;
+export const { cartData, orders } = UserSlice.actions;
 
 export default UserSlice.reducer;

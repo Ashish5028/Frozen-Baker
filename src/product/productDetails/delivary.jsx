@@ -4,9 +4,8 @@ import { useDispatch } from "react-redux";
 import { increment } from "../../header/headerSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { cartData } from "../../user/userSlice";
 
-export default function DelivaryPage({ onClickRegister, addData }) {
+export default function DelivaryPage({ onClickRegister, addData, ordersData }) {
   const navigate = useNavigate();
   const [data, setData] = useState(null);
   const dispatch = useDispatch();
@@ -25,8 +24,9 @@ export default function DelivaryPage({ onClickRegister, addData }) {
     let res = localStorage.getItem("User");
     setData(res);
   });
-  const handleClick = () => {
+  const handleClick = (e) => {
     if (data) {
+      ordersData(e);
       navigate("/delivaryaddress");
     } else {
       alert("Please login or register");

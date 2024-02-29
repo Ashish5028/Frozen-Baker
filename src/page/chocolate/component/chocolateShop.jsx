@@ -8,7 +8,7 @@ import OffersPage from "../../../product/productDetails/offersPage";
 import { ScrollPanel } from "primereact/scrollpanel";
 import { FooterPage } from "../../../component/footerPage";
 import { ChocolateImage } from "./smallImage";
-import { cartData } from "../../../user/userSlice";
+import { cartData, orders } from "../../../user/userSlice";
 
 export default function ChocolateShop() {
   const dispatch = useDispatch();
@@ -52,6 +52,7 @@ export default function ChocolateShop() {
               <DelivaryPage
                 onClickRegister={(e) => dispatch(uploadDeivaryDetails(e))}
                 addData={() => dispatch(cartData(res))}
+                ordersData={() => dispatch(orders(res))}
               />
               <OffersPage />
             </div>

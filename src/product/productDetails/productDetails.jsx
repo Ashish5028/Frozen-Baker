@@ -6,7 +6,7 @@ import DelivaryPage from "./delivary";
 import { uploadDeivaryDetails } from "../productSlice";
 import OffersPage from "./offersPage";
 import { ScrollPanel } from "primereact/scrollpanel";
-import { cartData } from "../../user/userSlice";
+import { cartData, orders } from "../../user/userSlice";
 
 export default function ProductDetails() {
   const dispatch = useDispatch();
@@ -46,6 +46,7 @@ export default function ProductDetails() {
               <DelivaryPage
                 onClickRegister={(e) => dispatch(uploadDeivaryDetails(e))}
                 addData={() => dispatch(cartData(res))}
+                ordersData={() => dispatch(orders(res))}
               />
               {/* <button
                 className="bg-[#88882b] p-3 shadow-md  text-white rounded-md flex justify-center items-center"

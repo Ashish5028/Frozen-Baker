@@ -1,7 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import QrCode from "../../../assets/qrCode/qr.png";
 
 export default function GooglePayPayment() {
-  const handlechange = () => {};
+  const navigate = useNavigate();
+  const handlechange = () => {
+    alert("Your order is confirm");
+    navigate("/");
+  };
   return (
     <div className="space-y-5  text-textColor ">
       {/* // googlePay PAYMENT */}
@@ -49,7 +54,7 @@ export default function GooglePayPayment() {
       </div>
       <div className=" w-full flex items-center space-x-4 py-4">
         <button
-          onClick={() => alert("Your Order is Confirm")}
+          onClick={handlechange}
           className="w-full bg-bgColor py-2 text-white"
         >
           Cash On Delivary
