@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { SaveAddress } from "./addressSlice";
 
 export default function AddressPage() {
+  const [isAddressSaved, setIsAddressSaved] = useState(false);
   const [user, setUser] = useState();
   const [address, setAddress] = useState();
   const [name, setName] = useState();
@@ -22,7 +23,15 @@ export default function AddressPage() {
       SaveAddress({ name, email, address, landmark, altnumber, number, user })
     );
   };
-
+  const handleClick = () => {
+    if (address.trim() !== "") {
+      setIsAddressSaved(true);
+    }
+    alert("address is save");
+  };
+  const pay = () => {
+    navigate("/payment");
+  };
   return (
     <>
       <div className=" flex   justify-center   align-middle  text-textColor">
@@ -123,22 +132,22 @@ export default function AddressPage() {
               <button
                 className="border border-3xl bg-bgColor text-white rounded-md py-2 px-6 "
                 onSubmit="submit"
-                // onClick={() => console.log("clicked")}
+                onClick={handleClick}
               >
                 Save Your Address
               </button>
             </form>
           </div>
-          <Link to="/payment">
-            <div className="pt-5 pr-4 flex justify-end text-lg text-white">
+          <div className="mt-5 pr-4 float-right text-lg text-white">
+            {isAddressSaved ? (
               <button
                 className="border border-3xl bg-bgColor rounded-md py-2 px-16 "
-                onSubmit="submit"
+                onClick={pay}
               >
                 Pay
               </button>
-            </div>
-          </Link>
+            ) : null}
+          </div>
         </div>
       </div>
     </>

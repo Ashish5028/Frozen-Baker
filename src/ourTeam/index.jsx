@@ -12,7 +12,7 @@ export const TeamIndex = () => {
   });
   return (
     <div className=" ">
-      <Team />
+      <ProductList />
     </div>
   );
 };

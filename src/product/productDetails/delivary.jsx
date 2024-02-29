@@ -2,11 +2,13 @@ import { useForm } from "react-hook-form";
 import FormInput from "../../component/formInput";
 import { useDispatch } from "react-redux";
 import { increment } from "../../header/headerSlice";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { cartData } from "../../user/userSlice";
 
 export default function DelivaryPage({ onClickRegister, addData }) {
+  const navigate = useNavigate();
+  const [data, setData] = useState(null);
   const dispatch = useDispatch();
   const { handleSubmit, control } = useForm({
     mode: "onTouched",
@@ -19,7 +21,17 @@ export default function DelivaryPage({ onClickRegister, addData }) {
     addData(e);
     dispatch(increment());
   };
-
+  useEffect(() => {
+    let res = localStorage.getItem("User");
+    setData(res);
+  });
+  const handleClick = () => {
+    if (data) {
+      navigate("/delivaryaddress");
+    } else {
+      alert("Please login or register");
+    }
+  };
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmitInternal)}>
@@ -70,17 +82,13 @@ export default function DelivaryPage({ onClickRegister, addData }) {
             <span class="material-symbols-outlined">shopping_cart</span> ADD TO
             CART
           </button>
-          <Link
-            to="/delivaryaddress"
-            className="bg-bgColor shadow-md rounded-md flex justify-center"
+          <button
+            className="  text-white ml-2 p-3 flex items-center  bg-bgColor shadow-md rounded-md  justify-center"
+            onSubmit="submit"
+            onClick={handleClick}
           >
-            <button
-              className="  text-white ml-2 p-3 flex items-center "
-              onSubmit="submit"
-            >
-              <span class="material-symbols-outlined">flash_on</span> BUY NOW
-            </button>
-          </Link>
+            <span class="material-symbols-outlined">flash_on</span> BUY NOW
+          </button>
         </div>
       </form>
     </div>

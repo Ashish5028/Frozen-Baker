@@ -3,7 +3,7 @@ import QrCode from "../../../assets/qrCode/qr.png";
 export default function GooglePayPayment() {
   const handlechange = () => {};
   return (
-    <div className="space-y-10  text-textColor ">
+    <div className="space-y-5  text-textColor ">
       {/* // googlePay PAYMENT */}
       {/* <div className="space-y-2 ">
         <label className="font-text flex  items-center space-x-3">
@@ -44,7 +44,17 @@ export default function GooglePayPayment() {
         <img src={QrCode} alt="QR" className="h-72"></img>
         <p className="text-center text-xl"> Scan Qr Code</p>
       </div>
-      <div className=" w-full flex items-center space-x-4 py-4"></div>
+      <div className=" w-full flex items-center ">
+        <button className="w-full">Or</button>
+      </div>
+      <div className=" w-full flex items-center space-x-4 py-4">
+        <button
+          onClick={() => alert("Your Order is Confirm")}
+          className="w-full bg-bgColor py-2 text-white"
+        >
+          Cash On Delivary
+        </button>
+      </div>
     </div>
   );
 }

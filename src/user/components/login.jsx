@@ -22,7 +22,6 @@ export function LoginUser({ onClickRegister, onClickLogin }) {
 
     if (result.ok) {
       let data = await result.json();
-      console.log(data);
       let auth = data.auth;
       let name = data.data.name;
       let category = data.data.category;
