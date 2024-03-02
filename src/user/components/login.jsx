@@ -14,7 +14,7 @@ export function LoginUser({ onClickRegister, onClickLogin }) {
   const onSubmitInternal = async (e) => {
     e.preventDefault();
     onClickLogin(e);
-    const result = await fetch(loginUserApi, {
+    const result = await fetch("http://localhost:4050/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),

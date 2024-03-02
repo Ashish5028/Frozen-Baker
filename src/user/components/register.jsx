@@ -22,7 +22,7 @@ export function Register({ onClickRegister, onClickLogin }) {
 
   const onSubmitInternal = async (e) => {
     onClickRegister(e);
-    navigate("/");
+    navigate("/login");
     dispatch(createUser({ name, email, password, category }));
   };
 
@@ -106,6 +106,7 @@ export function Register({ onClickRegister, onClickLogin }) {
             <br />
             <button
               type="submit"
+              onClick={onSubmitInternal}
               className=" bg-bgColor text-center text-sm text-white rounded-md w-full h-10"
             >
               Create Account
