@@ -24,6 +24,7 @@ export function LoginItems() {
     localStorage.clear();
     setName(null);
     navigate("/");
+    window.location.reload();
   };
 
   return (

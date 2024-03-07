@@ -1,13 +1,13 @@
 import { Fragment, useEffect, useState } from "react";
 import AddIcCallIcon from "@mui/icons-material/AddIcCall";
-import { FaCartArrowDown } from "react-icons/fa";
+import { FaCartArrowDown, FaWindows } from "react-icons/fa";
 
 import { Link, useParams } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import MenuItems from "./menuItems";
 import { LoginItems } from "./loginItems";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 const navigation = [
   { name: "Home", href: "/", current: false },
   { name: "Shop", href: "Team", current: false },
@@ -27,7 +27,10 @@ function HeaderPage() {
     const data = localStorage.getItem("User");
     setUser(data);
   }, []);
-  let name;
+  
+
+
+
   const cartId = useSelector((state) => state.product.users);
   // const auth = localStorage.getItem("auth");
   return (
@@ -82,7 +85,7 @@ function HeaderPage() {
                         ) : (
                           <span className="material-symbols-outlined ">
                             account_circle
-                          </span>
+                          </span> 
                         )}
                       </div>
                     </Menu.Button>

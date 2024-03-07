@@ -57,10 +57,9 @@ export default function MainPage() {
         <Pastrys />
         <Chocolates />
         <IceCreams />
-        <Team />
         <FooterPage />
       </div>
-      {/* <ClientReview /> */}
+    
     </>
   );
 }

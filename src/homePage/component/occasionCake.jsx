@@ -9,7 +9,7 @@ export default function OccasionCake() {
       <p className="text-3xl flex justify-center font-heading my-5">
         Cakes by Occasion
       </p>
-      <div className="grid grid-cols-4 gap-5 px-14  ">
+      <div className="grid grid-cols-1 gap-5 px-14  md:grid-cols-4">
         <Link to="/api/momCake">
           <img src={momCake} className="rounded-lg ease-in shadow-md" />
           <p className="text-center text-xl py-3">Mother's Day Cakes</p>

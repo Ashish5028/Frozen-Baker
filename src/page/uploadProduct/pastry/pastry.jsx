@@ -55,7 +55,7 @@ function PastryUpload() {
           <IoCloudUploadSharp size="40px" className="mr-3" /> Welcome here for
           Upload Pastry
         </p>
-        <div className=" flex bg-opacity-60 justify-evenly px-5 pt-3">
+        <div className=" flex bg-opacity-60 justify-evenly px-5 pt-3 md:grid-cols-1">
           <div className=" 2/3 rounded-md  ">
             <p className="pt-4  font-heading text-textColor text-2xl flex justify-center items-center">
               <GiCakeSlice className="text-headingColor mr-3" fontSize="40px" />{" "}
@@ -63,7 +63,7 @@ function PastryUpload() {
             </p>
             <form
               onSubmit={(e) => handleSubmit(e)}
-              className="grid grid-cols-2 gap-6 my-3"
+              className="grid grid-cols-1 my-3 md:grid-cols-2 gap-6"
             >
               <div>
                 <label className="text-textColor  pl-1 font-text ">

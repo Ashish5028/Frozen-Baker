@@ -55,13 +55,13 @@ function CakeUpload() {
 
   return (
     <>
-      <div className="bg-stone-100 h-screen">
-        <p className="text-3xl   font-heading  text-bgColor flex justify-center pt-5 ">
+      <div className="bg-stone-100 h-full md:h-screen">
+        <p className="md:text-3xl   font-heading  text-bgColor flex justify-center pt-5 ">
           <IoCloudUploadSharp size="40px" className="mr-3" /> Welcome here for
           Upload Cake
         </p>
-        <div className=" flex bg-opacity-60 justify-evenly  px-5">
-          <div className=" 2/3 rounded-md  ">
+        <div className="md:flex bg-opacity-60 justify-evenly  md:px-5 px-12">
+          <div className=" w-2/3 rounded-md  ">
             <p className="pt-4  font-heading text-textColor text-2xl flex justify-center items-center py-3">
               <BsCake className="text-headingColor mr-3" fontSize="40px" />{" "}
               Upload Your Cake Details Here
@@ -69,7 +69,7 @@ function CakeUpload() {
 
             <form
               onSubmit={(e) => handleSubmit(e)}
-              className="grid grid-cols-2 gap-6"
+              className="grid grid-cols-1 gap-6  md:grid-cols-2"
             >
               <div>
                 <label className="text-textColor  pl-1 font-text ">
@@ -144,12 +144,12 @@ function CakeUpload() {
               </div>
             </form>
           </div>
-          <div className="px-8 w-1/3 my-4 ">
+          <div className=" my-4 py-5 ">
             <img
               src={image}
-              className="h-96 w-96 rounded-md text-2xl pl-1 font-heading text-textColor"
+              className="md:h-96  md:w-96  h-32 w-32  rounded-md "
               alt=" Uploded Image Shown Here"
-            ></img>
+            ></img> 
           </div>
         </div>
       </div>

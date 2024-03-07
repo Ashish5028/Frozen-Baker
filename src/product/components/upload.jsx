@@ -12,7 +12,7 @@ export default function Register({ onClickRegister }) {
     mode: "onTouched",
   });
 
-  function preBUY NOWFile(file) {
+  function preFile(file) {
     const reader = new FileReader();
     reader.readAsDataURL(file);
 
@@ -25,7 +25,7 @@ export default function Register({ onClickRegister }) {
   const handleChange = (e) => {
     const file = e.target.files[0];
     setFile(file);
-    preBUY NOWFile(file);
+    preFile(file);
     console.log(file);
   };
   const uploadImage = async (base64EncodedImage) => {

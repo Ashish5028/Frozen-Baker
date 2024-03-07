@@ -15,7 +15,7 @@ export default function FreshCake() {
   return (
     <div className="bg-white  shadow-md rounded-md py-3 mx-6">
       <p className="text-3xl pl-14 font-heading my-5">Bakery-Fresh Cakes</p>
-      <div className="grid grid-cols-4 gap-5 px-14  ">
+      <div className="grid grid-cols-1 gap-5 px-14  md:grid-cols-4">
         <Link to="/chocolate">
           <img src={tempting} className="rounded-lg ease-in shadow-md" />
           <p className="text-center text-xl py-3">Chocolate Cake</p>

@@ -13,7 +13,7 @@ export function IceCreams() {
         <img src={icon} className=" h-16  " />
         Ice-Creams
       </div>
-      <div className=" grid grid-cols-2 px-14  gap-6 pt-4">
+      <div className=" grid grid-cols-1 px-14  gap-6 pt-4 md:grid-cols-2">
         <Link to="/icecreams">
           <img src={splash} className="rounded-lg h-[350px] w-[600px]" />
         </Link>

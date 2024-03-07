@@ -8,7 +8,7 @@ export function CelebrationPage() {
         <p className="text-3xl pl-14 font-heading my-5">
           Celebrate Special Occasions
         </p>
-        <div className="grid grid-cols-2 gap-5 px-14  ">
+        <div className="grid grid-cols-1 gap-5 px-14  md:grid-cols-2">
           <Link to="/api/birthday">
             <img src={Birthday} className="rounded-lg ease-in shadow-md" />
             <p className="text-center text-xl py-3">Birthday</p>

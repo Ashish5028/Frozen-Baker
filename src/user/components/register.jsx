@@ -54,6 +54,7 @@ export function Register({ onClickRegister, onClickLogin }) {
                   type="radio"
                   value="User"
                   required
+                  maxLength="20"
                   className="w-4 ml-2"
                 />
               </label>

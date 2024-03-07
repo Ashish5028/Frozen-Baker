@@ -10,18 +10,18 @@ export function CakeFlavour() {
       <p className="text-center text-3xl font-heading py-10 space-x-2">
         Cake : Fresh & Flavour
       </p>
-      <div className=" grid grid-cols-2 px-14  gap-6">
+      <div className=" grid grid-cols-1 px-14  gap-6 md:grid-cols-2">
         <Link to="/api/bestseller">
-          <img src={bestSeller} className="rounded-lg" />
+          <img src={bestSeller} className="rounded-lg h-52 md:h-full" />
         </Link>
         <Link to="/api/dayseller">
-          <img src={day} className="rounded-lg" />
+          <img src={day} className="rounded-lg h-52  md:h-full" />
         </Link>
         <Link to="/api/midnight">
-          <img src={mid} className="rounded-lg" />
+          <img src={mid} className="rounded-lg h-52  md:h-full" />
         </Link>
         <Link to="/api/brandnew">
-          <img src={mid1} className="rounded-lg" />
+          <img src={mid1} className="rounded-lg h-52 md:h-full" />
         </Link>
       </div>
     </div>

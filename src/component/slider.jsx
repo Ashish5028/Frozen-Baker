@@ -23,17 +23,17 @@ export function SimpleSlider() {
     cssEase: "linear",
   };
   return (
-    <div className=" overflow-hidden cursor-pointer ">
+    <div className=" overflow-hidden cursor-pointer px-5 md:px-1">
       <Slider {...settings}>
-        <img src={love} className="d-block w-100 h-72" alt="..." />
-        <img src={Cake1} className="d-block w-100 h-72" alt="..." />
-        <img src={Ecommerce} className="d-block w-100 h-72" alt="..." />
-        <img src={banner2} className="d-block w-100 h-72" alt="..." />
-        <img src={Moniginis} className="d-block w-100 h-72" alt="..." />
-        <img src={chocolate} className="d-block w-100 h-72" alt="..." />
-        <img src={Anniversary} className="d-block w-100 h-72" alt="..." />
-        <img src={Home} className="d-block w-100 h-72" alt="..." />
-        <img src={ramji} className="d-block w-100 h-72" alt="..." />
+        <img src={love} className="d-block w-20 h-24 md:w-100 md:h-72" alt="..." />
+        <img src={Cake1} className="d-block w-20 h-24 md:w-100 md:h-72" alt="..." />
+        <img src={Ecommerce} className="d-block w-20 h-24 md:w-100 md:h-72" alt="..." />
+        <img src={banner2} className="d-block w-20 h-24 md:w-100 md:h-72" alt="..." />
+        <img src={Moniginis} className="d-block w-20 h-24 md:w-100 md:h-72" alt="..." />
+        <img src={chocolate} className="d-block w-20 h-24 md:w-100 md:h-72" alt="..." />
+        <img src={Anniversary} className="d-block w-20 h-24 md:w-100 md:h-72" alt="..." />
+        <img src={Home} className="d-block w-20 h-24 md:w-100 md:h-72" alt="..." />
+        <img src={ramji} className="d-block w-20 h-24 md:w-100 md:h-72" alt="..." />
       </Slider>
     </div>
   );
